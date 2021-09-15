@@ -34,7 +34,7 @@ int main()
             }
         }
     }
-    retuen 0;
+    return 0;
 }
 
 
