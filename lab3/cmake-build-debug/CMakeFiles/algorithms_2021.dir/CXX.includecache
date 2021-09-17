@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/lab3/z1.3.cpp
+iostream
+-
+windows.h
+-
+algorithm
+-
+
