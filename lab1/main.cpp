@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 
+using namespace std;
 int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "RUSSIAN");
@@ -71,7 +72,7 @@ int main(int argc, char* argv[])
 	cin >> a;
 	cout << endl;
 
-	cout << "Сторона b: ";
+	cout << "Сторона b:  ";
 	cin >> b;
 	cout << endl;
 
