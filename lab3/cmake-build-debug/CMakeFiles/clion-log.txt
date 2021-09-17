@@ -1,4 +1,7 @@
 "D:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" D:\PTcodes\c++\GitPull\Algorithms_2021\lab3
 -- Configuring done
--- Generating done
--- Build files have been written to: D:/PTcodes/c++/GitPull/Algorithms_2021/lab3/cmake-build-debug
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: algorithms_2021
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

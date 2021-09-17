@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/PTcodes/c++/GitPull/Algorithms_2021/lab4/z2.4.cpp" "D:/PTcodes/c++/GitPull/Algorithms_2021/lab4/cmake-build-debug/CMakeFiles/algorithms_2021.dir/z2.4.cpp.obj"
+  "D:/PTcodes/c++/GitPull/Algorithms_2021/lab4/z2.3.cpp" "D:/PTcodes/c++/GitPull/Algorithms_2021/lab4/cmake-build-debug/CMakeFiles/algorithms_2021.dir/z2.3.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
