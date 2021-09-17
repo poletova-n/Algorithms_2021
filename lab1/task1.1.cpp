@@ -11,7 +11,7 @@ double get_sqrt_discriminant(int a, int b, int c) {
     }
 }
 
-int get_double() {
+int get_int() {
     int temp = 0;
     std::cin >> temp;
     if (std::cin.fail() or std::cin.peek() != '\n') {
@@ -32,15 +32,15 @@ void print_roots(int a, int b, double sqrt_discriminant) {
 
 int main() {
     std::cout << "Введите первый коэфициент: ";
-    int a = get_double();
+    int a = get_int();
     if (a == 0) {
         std::cout << "Коэфициент не может быть нулевым";
         std::exit(1);
     }
     std::cout << "Введите второй коэфициент: ";
-    int b = get_double();
+    int b = get_int();
     std::cout << "Введите третий коэфициент: ";
-    int c = get_double();
+    int c = get_int();
     double sqrt_discriminant = get_sqrt_discriminant(a, b, c);
     print_roots(a, b, sqrt_discriminant);
     return 0;
