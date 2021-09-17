@@ -1,10 +1,11 @@
 #include <iostream>
 #include <cmath>
-
+#include <windows.h>
 using namespace std;
 int main(int argc, char* argv[])
 {
-	setlocale(LC_ALL, "RUSSIAN");
+	
+	SetConsoleOutputCP(65001);
 
 	//double a, b, c;
 	//int discr = 0;
