@@ -37,3 +37,4 @@
 /.vs
 *.iml
 *.xml
+./build
