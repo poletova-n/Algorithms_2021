@@ -1,10 +1,10 @@
 #include <iostream>
 
-int get_int() {
-    int temp = 0;
+template <typename T> T get_value() {
+    T temp = 0;
     std::cin >> temp;
     if (std::cin.fail() or std::cin.peek() != '\n') {
-        std::cout << "Коэфициент должен быть целочисленным\n";
+        std::cout << "Ошибка чтения!\n";
         std::exit(1);
     }
     return temp;
@@ -28,12 +28,12 @@ template <typename T> T get_min(T a, T b) {
 
 int main () {
     uint32_t a, b, c;
-    std::cout << "" << std::endl;
-    a = get_int();
-    std::cout << "" << std::endl;
-    b = get_int();
-    std::cout << "" << std::endl;
-    c = get_int();
+    std::cout << "Введите первую сторону: " << std::endl;
+    a = get_value<int>();
+    std::cout << "Введите вторую сторону: " << std::endl;
+    b = get_value<int>();
+    std::cout << "Введите третью сторону: " << std::endl;
+    c = get_value<int>();
     uint32_t sum = a + b + c;
     uint32_t max = get_max(get_max(a,b), c);
     if (sum - max <= max) {
