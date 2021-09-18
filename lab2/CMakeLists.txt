@@ -4,4 +4,4 @@ project(algorithms_2021)
 set(CMAKE_CXX_STANDARD 20)
 
 
-add_executable(algorithms_2021 2.2.cpp)
+add_executable(algorithms_2021 2.3.cpp)
