@@ -10,7 +10,7 @@ template <typename T> T get_value() {
     return temp;
 }
 
-int main () {
+int main () { // ахах
     std::cout << "Введите X ладьи: ";
     uint32_t tower_x = get_value<uint32_t>();
     std::cout << "Введите Y ладьи: ";
