@@ -36,7 +36,7 @@ inline void IntProof()
 
 inline void isCorrect(int x, int y)
 {
-	if ((x < 1) or (x > 8) or (y < 1) or (y > 8))
+    if ((x < 1) or (x > 8) or (y < 1) or (y > 8))
 	{
 		cout << "¬ведите правильно координаты фигуры!";
 		exit(1);
