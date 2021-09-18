@@ -5,7 +5,7 @@ int main()
     int year;
     std::cout << "Enter year: " << std::endl;
     std::cin >> year;
-    if ((year % 4 == 0) and (year % 100 != 0) and (year % 400 == 0))
+    if (((year % 4 == 0) or (year % 400 == 0)) and (year % 100 != 0))
     {
         std::cout << "This is a leap year.";
     }
