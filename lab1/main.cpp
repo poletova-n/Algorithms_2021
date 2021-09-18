@@ -5,7 +5,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	
-	SetConsoleOutputCP(65001);
+	setlocale(LC_ALL, "RUSSIAN");
 
 	//double a, b, c;
 	//int discr = 0;
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 	//{
 	//	if ((cal % 10 == 3) or (cal % 10 == 2) or (cal % 10 == 4)) // проверка на какую цифру заканчивается
 	//		cout << "В стае " << cal << " вороны";
-	//	else if ((cal % 10 == 5) or (cal % 10 == 6) or (cal % 10 == 7) or (cal % 10 == 8) or (cal % 10 == 9))
+	//	else if ((cal % 10 == 5) or (cal % 10 == 6) or (cal % 10 == 7) or (cal % 10 == 8) or (cal % 10 == 9) or (cal%10 == 0)
 	//		cout << "В стае " << cal << " ворон";
 	//	else if (cal % 10 == 1)
 	//		cout << "В стае " << cal << " воронa";
@@ -68,12 +68,12 @@ int main(int argc, char* argv[])
 
 	int a, b, c;
 
-	cout << "Введите значение трёх сторон: " << endl << endl;
+	cout << "Введите значение трёх сторон в порядке возрастания: " << endl << endl;
 	cout << "Сторона а: ";
 	cin >> a;
 	cout << endl;
 
-	cout << "Сторона b:  ";
+	cout << "Сторона b: ";
 	cin >> b;
 	cout << endl;
 
@@ -81,16 +81,44 @@ int main(int argc, char* argv[])
 	cin >> c;
 	cout << endl;
 
+
 	if (cin.fail() or cin.peek() != 10) // проверка на число
 	{
 		cout << "Введите корректные данные!";
 	}
 	else
 	{
-		if (pow(c, 2) == pow(b, 2) + pow(a, 2)) cout << "Треугольник прямоугольный!" << endl;;
-		if (pow(c, 2) < pow(b, 2) + pow(a, 2)) cout << "Треугольник остроугольный!" << endl;
-		if (pow(c, 2) > pow(b, 2) + pow(a, 2)) cout << "Треугольник тупоугольный!" << endl;;
-	}
+		if ((a < 0) or (b < 0) or (c < 0))
+		{
+			cout << "Такого треугольника не существует!";
+			return -1;
+		}
+		if ((a + b) <= c)
+		{
+			cout << "Такого треугольника не существует!";
+			return -1;
+		}
+		if (pow(c, 2) == pow(b, 2) + pow(a, 2))
+		{
+			cout << "Треугольник прямоугольный!" << endl;
+			return -1;
+		}
 
+		if (pow(c, 2) < pow(b, 2) + pow(a, 2))
+		{
+			cout << "Треугольник остроугольный!" << endl;
+			return -1;
+		}
+
+		if (pow(c, 2) > pow(b, 2) + pow(a, 2))
+		{
+			cout << "Треугольник тупоугольный!" << endl;
+			return -1;
+		}
+
+
+
+
+	}
 	return 0;
 }
