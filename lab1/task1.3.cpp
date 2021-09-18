@@ -28,11 +28,11 @@ template <typename T> T get_min(T a, T b) {
 
 int main () {
     uint32_t a, b, c;
-    std::cout << "Введите первую сторону: " << std::endl;
+    std::cout << "Введите первую сторону: ";
     a = get_value<int>();
-    std::cout << "Введите вторую сторону: " << std::endl;
+    std::cout << "Введите вторую сторону: ";
     b = get_value<int>();
-    std::cout << "Введите третью сторону: " << std::endl;
+    std::cout << "Введите третью сторону: ";
     c = get_value<int>();
     uint32_t sum = a + b + c;
     uint32_t max = get_max(get_max(a,b), c);
