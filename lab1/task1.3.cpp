@@ -44,7 +44,7 @@ int main () {
         std::cout << "Треугольник равносторонний." << std::endl;
     } else if ((a == b) || (a == c) || (b == c)) {
         std::cout << "Треугольник равносторонний." << std::endl;
-    } else if ((a*a + b*b == c*c) && (a*a + c*c == b*b) && (b*b + c*c == a*a)) {
+    } else if ((a*a + b*b == c*c) || (a*a + c*c == b*b) || (b*b + c*c == a*a)) {
         std::cout << "Треугольник прямоугольный." << std::endl;;
     } else {
         std::cout << "Треугольник общего вида." << std::endl;
