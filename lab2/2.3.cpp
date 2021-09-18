@@ -2,7 +2,7 @@
 
 int main()
 {
-    int a, b, c, count = 0;
+    int a, b, c;
     std::cout << "Enter three numbers" << std:: endl;
     std::cin >> a >> b >> c;
     if ((a == b) && (a == c))
