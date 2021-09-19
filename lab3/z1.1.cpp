@@ -6,6 +6,7 @@ void disc(int a,int b,int c);
 int sqrt(int in);
 
 const char* ERROR_INVALID_COF = "Ошибка: коэффициенты должны быть заданы целыми числами, завершение программы.";
+
 const char* ERROR_INVALID_FIRST_COF = "Ошибка: коэффициент x^2 не может быть равен нулю, завершение программы.";
 
 int main()

@@ -18,4 +18,3 @@ int main()
         std::cout << "This year isn't a leap year";
     }
 }
-

@@ -29,18 +29,14 @@ int main()
 
 void drawFigure(int n)
 {
-    for (int i = 0; i < n + 1; ++i)
-    {
-        drawTr(i, n);
-    }
+    for (int i = 0; i < n + 1; ++i){drawTr(i, n);}
     for (int i = n - 1; i > 0; --i)
     {
         drawTr(i, n);
     }
 }
 
-void drawTr(int i, int n)
-{
+void drawTr(int i, int n){
     for (int j = 0; j < n - i; ++j)
     {
         std::cout << " ";

@@ -20,17 +20,20 @@ int main()
 int repNum(int* arr)
 {
     int c = 0;
-    if(arr[0] == arr[1])
+    if(arr[0] == arr[1] && arr[0] == arr[2])
     {
-        c++;
+        return 3;
+    }
+    if(arr[0] == arr[1] || )
+    {
+        return 2;
     }
     if(arr[1] == arr[2])
     {
-        c++;
+        return 2;
     }
     if(arr[0] == arr[2])
     {
-        c++;
+        return 2;
     }
-    return c;
 }

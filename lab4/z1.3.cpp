@@ -1,18 +1,18 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain positive numbers";
+const char* ERROR_INVALID_INPUT = "Error: input must only contain positive integers";
 
 int main()
 {
     try {
-        double sum = 0;
+        int sum = 0;
         int c = 0;
-        double input = 0;
+        int input = 0;
         do
         {
             std::cout << "Enter number:";
             std::cin >> input;
-            if(std::cin.fail() || std::cin.peek() != 10 || input <= 0)
+            if(std::cin.fail() || std::cin.peek() != 10 || input < 0)
             {
                 throw ERROR_INVALID_INPUT;
             }

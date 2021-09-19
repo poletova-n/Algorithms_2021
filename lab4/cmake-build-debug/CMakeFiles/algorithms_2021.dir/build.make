@@ -55,33 +55,33 @@ include CMakeFiles\algorithms_2021.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\algorithms_2021.dir\flags.make
 
-CMakeFiles\algorithms_2021.dir\z2.3.cpp.obj: CMakeFiles\algorithms_2021.dir\flags.make
-CMakeFiles\algorithms_2021.dir\z2.3.cpp.obj: ..\z2.3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithms_2021.dir/z2.3.cpp.obj"
+CMakeFiles\algorithms_2021.dir\z1.3.cpp.obj: CMakeFiles\algorithms_2021.dir\flags.make
+CMakeFiles\algorithms_2021.dir\z1.3.cpp.obj: ..\z1.3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithms_2021.dir/z1.3.cpp.obj"
 	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\algorithms_2021.dir\z2.3.cpp.obj /FdCMakeFiles\algorithms_2021.dir\ /FS -c D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\z2.3.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\algorithms_2021.dir\z1.3.cpp.obj /FdCMakeFiles\algorithms_2021.dir\ /FS -c D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\z1.3.cpp
 <<
 
-CMakeFiles\algorithms_2021.dir\z2.3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_2021.dir/z2.3.cpp.i"
-	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\algorithms_2021.dir\z2.3.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\z2.3.cpp
+CMakeFiles\algorithms_2021.dir\z1.3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_2021.dir/z1.3.cpp.i"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\algorithms_2021.dir\z1.3.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\z1.3.cpp
 <<
 
-CMakeFiles\algorithms_2021.dir\z2.3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_2021.dir/z2.3.cpp.s"
+CMakeFiles\algorithms_2021.dir\z1.3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_2021.dir/z1.3.cpp.s"
 	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\z2.3.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\z2.3.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\z1.3.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\z1.3.cpp
 <<
 
 # Object files for target algorithms_2021
 algorithms_2021_OBJECTS = \
-"CMakeFiles\algorithms_2021.dir\z2.3.cpp.obj"
+"CMakeFiles\algorithms_2021.dir\z1.3.cpp.obj"
 
 # External object files for target algorithms_2021
 algorithms_2021_EXTERNAL_OBJECTS =
 
-algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\z2.3.cpp.obj
+algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\z1.3.cpp.obj
 algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\build.make
 algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable algorithms_2021.exe"

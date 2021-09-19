@@ -1,13 +1,13 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain numbers";
+const char* ERROR_INVALID_INPUT = "Error: input must only contain integers";
 
 int main()
 {
     try {
-        double sum = 0;
+        int sum = 0;
         int c = 0;
-        double input = 0;
+        int input = 0;
         do
         {
             std::cout << "Enter number:";

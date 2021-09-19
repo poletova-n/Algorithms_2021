@@ -118,29 +118,29 @@ algorithms_2021\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\build
 .PHONY : algorithms_2021\fast
 
-z2.3.obj: z2.3.cpp.obj
-.PHONY : z2.3.obj
+z1.3.obj: z1.3.cpp.obj
+.PHONY : z1.3.obj
 
 # target to build an object file
-z2.3.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\z2.3.cpp.obj
-.PHONY : z2.3.cpp.obj
+z1.3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\z1.3.cpp.obj
+.PHONY : z1.3.cpp.obj
 
-z2.3.i: z2.3.cpp.i
-.PHONY : z2.3.i
+z1.3.i: z1.3.cpp.i
+.PHONY : z1.3.i
 
 # target to preprocess a source file
-z2.3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\z2.3.cpp.i
-.PHONY : z2.3.cpp.i
+z1.3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\z1.3.cpp.i
+.PHONY : z1.3.cpp.i
 
-z2.3.s: z2.3.cpp.s
-.PHONY : z2.3.s
+z1.3.s: z1.3.cpp.s
+.PHONY : z1.3.s
 
 # target to generate assembly for a file
-z2.3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\z2.3.cpp.s
-.PHONY : z2.3.cpp.s
+z1.3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\z1.3.cpp.s
+.PHONY : z1.3.cpp.s
 
 # Help Target
 help:
@@ -151,9 +151,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... algorithms_2021
-	@echo ... z2.3.obj
-	@echo ... z2.3.i
-	@echo ... z2.3.s
+	@echo ... z1.3.obj
+	@echo ... z1.3.i
+	@echo ... z1.3.s
 .PHONY : help
 
 

@@ -1,13 +1,13 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain numbers.";
+const char* ERROR_INVALID_INPUT = "Error: input must only contain integers.";
 
 int main()
 {
     try {
-        double min = std::numeric_limits<double>::max();
-        double minC = 0;
-        double input = 100;
+        int min = std::numeric_limits<int>::max();
+        int minC = 0;
+        int input = 100;
         int c = 0;
         do
         {
