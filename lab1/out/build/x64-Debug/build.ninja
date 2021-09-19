@@ -50,14 +50,14 @@ build CMakeFiles\algorithms_2021.dir\main.cpp.obj: CXX_COMPILER__algorithms_2021
   TARGET_COMPILE_PDB = CMakeFiles\algorithms_2021.dir\
   TARGET_PDB = algorithms_2021.pdb
 
-build CMakeFiles\algorithms_2021.dir\Code_2.cpp.obj: CXX_COMPILER__algorithms_2021_Debug ..\..\..\Code$ 2.cpp || cmake_object_order_depends_target_algorithms_2021
+build CMakeFiles\algorithms_2021.dir\Task2.cpp.obj: CXX_COMPILER__algorithms_2021_Debug ..\..\..\Task2.cpp || cmake_object_order_depends_target_algorithms_2021
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
   OBJECT_DIR = CMakeFiles\algorithms_2021.dir
   OBJECT_FILE_DIR = CMakeFiles\algorithms_2021.dir
   TARGET_COMPILE_PDB = CMakeFiles\algorithms_2021.dir\
   TARGET_PDB = algorithms_2021.pdb
 
-build CMakeFiles\algorithms_2021.dir\Code_3.cpp.obj: CXX_COMPILER__algorithms_2021_Debug ..\..\..\Code$ 3.cpp || cmake_object_order_depends_target_algorithms_2021
+build CMakeFiles\algorithms_2021.dir\Task3.cpp.obj: CXX_COMPILER__algorithms_2021_Debug ..\..\..\Task3.cpp || cmake_object_order_depends_target_algorithms_2021
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++latest
   OBJECT_DIR = CMakeFiles\algorithms_2021.dir
   OBJECT_FILE_DIR = CMakeFiles\algorithms_2021.dir
@@ -72,7 +72,7 @@ build CMakeFiles\algorithms_2021.dir\Code_3.cpp.obj: CXX_COMPILER__algorithms_20
 #############################################
 # Link the executable algorithms_2021.exe
 
-build algorithms_2021.exe: CXX_EXECUTABLE_LINKER__algorithms_2021_Debug CMakeFiles\algorithms_2021.dir\main.cpp.obj CMakeFiles\algorithms_2021.dir\Code_2.cpp.obj CMakeFiles\algorithms_2021.dir\Code_3.cpp.obj
+build algorithms_2021.exe: CXX_EXECUTABLE_LINKER__algorithms_2021_Debug CMakeFiles\algorithms_2021.dir\main.cpp.obj CMakeFiles\algorithms_2021.dir\Task2.cpp.obj CMakeFiles\algorithms_2021.dir\Task3.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
