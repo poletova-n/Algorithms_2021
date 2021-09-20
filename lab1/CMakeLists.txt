@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.17)
-project(algorithms_2021)
+cmake_minimum_required(VERSION 3.20)
+project(main)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(algorithms_2021 main.cpp)
+add_executable(lab lab1.1.cpp)
