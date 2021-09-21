@@ -3,4 +3,4 @@ project(algorithms_2021)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(algorithms_2021 task3.cpp)
+add_executable(algorithms_2021 task1.cpp)
