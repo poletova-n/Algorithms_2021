@@ -2,13 +2,13 @@
 #include <windows.h>
 #include <cmath>
 
-
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);
-    double x1, x2, D, a, b, c;
+    double a, b, c, D, x1, x2;
     std::cout << "Введите значение коэффицентов квадратного уравнения "<< std::endl;
     std::cin >> a >> b >> c;
+
     if (std::cin.peek() != '\n')
     {
         std::cout << "Коэффициенты уравнения должны быть заданы числами. Завершение программы";
