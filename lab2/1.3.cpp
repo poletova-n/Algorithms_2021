@@ -17,6 +17,10 @@ int main()
         {
             std::cout << "The coordinates of the figures must be numbers. End of the program.";
         }
+        else if (l1 < 1 or l2 < 1 or col1 < 1 or col2 < 1 or l1 > 8 or l2 > 8 or col1 > 8 or col2 > 8)
+        {
+            std::cout << "The coordinates of the figures must be greatest than one less than 8. End of the program.";
+        }
         else
         {
             if (abs(l1-l2) == abs(col1-col2))
