@@ -128,21 +128,23 @@ int main()
     amin = min(c, min(a, b)); //сторона с минимальной длинной
     bsr = a + b + c - cmax - amin; //сторона со средней длинной
     if (bsr + amin <= cmax) //проверка на существование треугольника
+    {
         std::cout << "Треугольник c такими сторонами получить нельзя, завершение программы";
+        exit(0);
+    }
     else
-        if ((cmax == amin) and (amin == bsr))
-            std::cout << "Треугольник равносторонний";
+        if (pow(cmax, 2) == pow(amin, 2) + pow(bsr, 2)) // проверка на прямоугольный треугольник и.т.д
+            std::cout << "Треугольник прямоугольный";
         else
-            if ((cmax == amin) or (amin == bsr) or (cmax == bsr))
-                std::cout << "Треугольник равнобедренный";
+            if (pow(cmax, 2) > pow(amin, 2) + pow(bsr, 2))
+                std::cout << "Треугольник тупоугольный";
             else
-                if (pow(cmax, 2) == pow(amin, 2) + pow(bsr, 2)) // проверка на прямоугольный треугольник и.т.д
-                    std::cout << "Треугольник прямоугольный";
-                else
-                    if (pow(cmax, 2) > pow(amin, 2) + pow(bsr, 2))
-                        std::cout << "Треугольник тупоугольный";
-                    else
-                        if (pow(cmax, 2) < pow(amin, 2) + pow(bsr, 2))
-                            std::cout << "Треугольник остроугольный";
+                if (pow(cmax, 2) < pow(amin, 2) + pow(bsr, 2))
+                    std::cout << "Треугольник остроугольный";
+    if ((cmax == amin) and (amin == bsr))
+        std::cout << " и равносторонний";
+    else
+        if ((cmax == amin) or (amin == bsr) or (cmax == bsr))
+            std::cout << " и равнобедренный";
     return 0;
 }
