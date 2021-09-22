@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <cmath>
 
 int main()
 {
@@ -28,17 +29,39 @@ int main()
         {
             if (pow(a, 2) + pow(b, 2) > pow(c, 2))
             {
-                std::cout << "Треугольник остроугольный";
+                if (a == b and b == c)
+                {
+                    std::cout << "Треугольник остроугольный и равносторонний";
+                }
+                else
+                {
+                    std::cout << "Треугольник остроугольный";
+                }
+
             }
-            if (pow(a, 2) + pow(b, 2) < pow(c, 2))
+            else if (pow(a, 2) + pow(b, 2) < pow(c, 2))
             {
-                std::cout << "Треугольник тупоугольный";
+                if ((a == b and a != c) or (a == c and a != b) or (b == c and c != a))
+                {
+                    std::cout << "Треугольник тупоугольный и равнобедренный";
+                }
+                else
+                {
+                    std::cout << "Треугольник тупоугольный";
+                }
             }
-            if (pow(a, 2) + pow(b, 2) == pow(c, 2))
+            else if (pow(a, 2) + pow(b, 2) == pow(c, 2))
             {
-                std::cout << "Треугольник прямоугольный";
+                if ((a == b and a != c) or (a == c and a != b) or (b == c and c != a))
+                {
+                    std::cout << "Треугольник прямоугольный и равнобедренный";
+                }
+                else
+                {
+                    std::cout << "Треугольник прямоугольный";
+                }
+
             }
         }
     }
-    return 0;
 }
