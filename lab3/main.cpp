@@ -66,4 +66,99 @@ int main()
 		return -1;
 	}
 
+
+
+
+
+
+
+
+
+
+	/*int cal = 0;
+
+	cout << "Enter the number of crows: ";
+
+	try
+	{
+		cin >> cal;
+		IntProof();
+	}
+	catch (const string& error)
+	{
+		cerr << "Àn error was caught: " << error;
+		return -1;
+	}
+
+	if ((cal % 10 == 3) or (cal % 10 == 2) or (cal % 10 == 4))
+		cout << "V stae " << cal << " voroni";
+	else if ((cal % 10 == 5) or (cal % 10 == 6) or (cal % 10 == 7) or (cal % 10 == 8) or
+		(cal % 10 == 9) or (cal % 100 == 11) or (cal % 100 == 12) or (cal % 100 == 13) or (cal % 100 == 4))
+		cout << "V stae " << cal << " voron";
+	else if (cal % 10 == 1)
+		cout << "V stae " << cal << " vorona";*/
+
+
+
+
+
+
+
+	//cout << "Enter the value of the three sides in ascending order: " << endl << endl;
+	//int a, b, c = 0;
+	//try
+	//{
+	//	cout << "Side a ";
+	//	cin >> a;
+	//	IntProof();
+	//	cout << endl;
+
+	//	cout << "Side  b: ";
+	//	cin >> b;
+	//	IntProof();
+	//	cout << endl;
+
+	//	cout << "Side  c: ";
+	//	cin >> c;
+	//	IntProof();
+	//	cout << endl;
+
+	//}
+	//catch (const string& error)
+	//{
+	//	cerr << "Àn error was caught: " << error;
+	//	return -1;
+	//}
+
+
+	//if ((a < 0) or (b < 0) or (c < 0))
+	//{
+	//	cout << "There is no such triangle!";
+	//	return -1;
+	//}
+
+	//if ((a + b) <= c)
+	//{
+	//	cout << "There is no such triangle!";
+	//	return -1;
+	//}
+
+	//if (pow(c, 2) == pow(b, 2) + pow(a, 2))
+	//{
+	//	cout << "The triangle is rectangular!" << endl;
+	//	return -1;
+	//}
+
+	//if (pow(c, 2) < pow(b, 2) + pow(a, 2))
+	//{
+	//	cout << "Acute triangle!" << endl;
+	//	return -1;
+	//}
+
+	//if (pow(c, 2) > pow(b, 2) + pow(a, 2))
+	//{
+	//	cout << "The triangle is obtuse!" << endl;
+	//	return -1;
+	//}
+
 }
