@@ -4,7 +4,7 @@ int get_int() {
     int temp = 0;
     std::cin >> temp;
     if (std::cin.fail() or std::cin.peek() != '\n') {
-        std::cout << "Коэфициент должен быть целочисленным.\n";
+        std::cout << "Коэффициент должен быть положительным и целочисленным.\n";
         std::exit(1);
     }
     return temp;
