@@ -28,7 +28,8 @@ int main()
                 count++;
             }
         }
-        cout << "The arithmetic mean of positive numbers is: " << sum / count;
+        double total = (double)sum / count;
+        cout << "The arithmetic mean of positive numbers is: " << total;
     }
     catch(const string& error)
     {

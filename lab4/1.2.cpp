@@ -25,7 +25,8 @@ int main()
             sum += input;
             count++;
         }
-        cout << "The arithmetic mean of all numbers is: " << sum / count;
+        double total = (double)sum / (double)count;
+        cout << "The arithmetic mean of all numbers is: " << total;
     }
     catch(const string& error)
     {
