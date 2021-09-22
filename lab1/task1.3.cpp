@@ -47,7 +47,9 @@ int main () {
         std::cout << "Треугольник равносторонний." << std::endl;
     } else if ((a == b) || (a == c) || (b == c)) {
         std::cout << "Треугольник равнобедренный." << std::endl;
-    }
+    } else {
+		std::cout << "Треугольник общего вида." << std::endl;
+	}
 	if (middle*middle + min*min == max*max) {
         std::cout << "Треугольник прямоугольный." << std::endl;
     } else if (middle*middle + min*min < max*max) {
