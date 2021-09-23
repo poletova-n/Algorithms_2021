@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);
-    int a, b, c, ab, bc, ac;
+    int a, b, c;
     cout << "Введите длины строн треугольника в порядке неубывания" << endl;
     cin >> a >> b >> c;
 
@@ -25,6 +25,11 @@ int main()
         }
         else
         {
+            if (a == b and b == c)
+            {
+                cout << "Треугольник равносторонний";
+                exit(0);
+            }
             if (pow(a, 2) + pow(b, 2) > pow(c, 2))
             {
                 cout << "Треугольник остроугольный";
