@@ -12,7 +12,9 @@ int main() {
             if (std::cin.peek() != '\n')
             {
                 throw error_invalid_number;
-            } else {
+            }
+            else
+            {
                 sum += num;
             }
         }
