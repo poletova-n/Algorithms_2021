@@ -1,5 +1,5 @@
 #include <iostream>
-const char* error_invalid_number = "Numbers must be entered. End of the program.";
+const char* error_invalid_number = "Numbers must be entered. End of the program";
 
 int main() {
     int sum = 0, num = -1;
