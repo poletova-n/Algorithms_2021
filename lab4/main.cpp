@@ -6,6 +6,8 @@ using namespace std;
 
 const string NO_INT = " Vvedeno ne tcheloe chiclo! ";
 const string NE_V_POLE = " Koordinati ne pravilnie!";
+const string NO_FIGUR = " Takou figuri net!";
+const string NO_MAKE = " Takou figuru ne narisovat!";
 
 inline void IntProof()
 {
@@ -31,8 +33,8 @@ inline int IsCorrect(int x, int y)
 
 int main()
 {
-	setlocale(LC_ALL, "RU");
 
+	setlocale(LC_ALL, "RU");
 
 	int lenght = 0;
 
@@ -42,6 +44,8 @@ int main()
 	{
 		cin >> lenght;
 		IntProof();
+		if (lenght <= 0) throw  NO_FIGUR;
+		if (lenght < 2) throw NO_MAKE;
 	}
 	catch (const string& error)
 	{
@@ -82,16 +86,16 @@ int main()
 
 
 
-
-
 	//int lenght = 0;
 
-	//cout << "Vvedite rasmer storoni treugolnika: " << endl;
+	//cout << "Vvedite rasmer storoni treugolnika1: " << endl;
 
 	//try
 	//{
 	//	cin >> lenght;
 	//	IntProof();
+	//	if (lenght <= 0) throw  NO_FIGUR;
+	//	if (lenght < 2) throw NO_MAKE;
 	//}
 	//catch (const string& error)
 	//{
@@ -102,30 +106,16 @@ int main()
 
 	//for (int i = 0; i < lenght; i++)
 	//{
-	//	for (int j = 1; j < lenght-i; j++)
+	//	for (int j = 1; j < lenght - i; j++)
 	//	{
 	//		cout << " ";
 	//	}
-	//	for (int j = 0; j <= i; j++)
+	//	for (int j = 0; j <= i * 2; j++)
 	//	{
 	//		cout << "*";
 	//	}
 	//	cout << endl;
 	//}
-
-	//for (int i = 0; i < lenght; i++)
-	//{
-	//	for (int j = 1; j <= i; j++)
-	//	{
-	//		cout << " ";
-	//	}
-	//	for (int j = 0; j < lenght-i; j++)
-	//	{
-	//		cout << "*";
-	//	}
-	//	cout << endl;
-	//}
-
 
 
 
