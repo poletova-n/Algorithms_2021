@@ -25,7 +25,7 @@ int main()
         }
         std::cout << "Average of all positive numbers: " << aver;
     }
-    catch (const char *error)
+    catch (const char* error)
     {
         std::cerr << std::endl << error << std::endl;
     }

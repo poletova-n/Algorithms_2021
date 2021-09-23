@@ -21,10 +21,10 @@ int main()
                 ser_num = count;
             }
         }
-        std::cout << "Average of all positive numbers: " << maxN<< std::endl;
+        std::cout << "Maximum positive numbers: " << maxN<< std::endl;
         std::cout << "Serial number: " << ser_num;
     }
-    catch (const char *error)
+    catch (const char* error)
     {
         std::cerr << std::endl << error << std::endl;
     }

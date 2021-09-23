@@ -3,8 +3,7 @@ const char* error_invalid_number = "Numbers must be entered. End of the program"
 
 int main()
 {
-    int sum = 0, num = -1, count = -1;
-    double aver;
+    int num = -1, count = 0, minN = INT_MAX, ser_num = 0;
     try
     {
         std::cout << "Enter numbers: " << std::endl;
@@ -16,10 +15,14 @@ int main()
             {
                 throw error_invalid_number;
             }
-            sum += num;
-            aver = (double(sum)/count);
+            if ((num < minN) and (num > 0))
+            {
+                minN = num;
+                ser_num = count;
+            }
         }
-        std::cout << "Average of all numbers: " << aver;
+        std::cout << "Minimum positive numbers: " << minN<< std::endl;
+        std::cout << "Serial number: " << ser_num;
     }
     catch (const char* error)
     {

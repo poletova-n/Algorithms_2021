@@ -21,7 +21,7 @@ int main()
         }
         std::cout << "Sum of all numbers: " << sum;
     }
-    catch (const char *error)
+    catch (const char* error)
     {
         std::cerr << std::endl << error << std::endl;
     }
