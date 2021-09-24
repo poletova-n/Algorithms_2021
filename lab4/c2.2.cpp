@@ -1,7 +1,7 @@
 #include <iostream>
 
 const char* error_coordinate_not_number = "The coordinates of the figures must be numbers. End of the program.";
-const char* error_invalid_coordinates = "The coordinates of the figures must be numbers. End of the program.";
+const char* error_invalid_coordinates = "The coordinates of the figures must be greatest than zero less than nine. End of the program.";
 
 int main()
 {
