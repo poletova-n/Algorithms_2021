@@ -24,6 +24,7 @@ int main()
             {
                 if (abs(l1-i) == abs(col1-j))
                 {
+                    if (i != l1 and j != col1)
                     std::cout << "(" << i << ";" << j << ")";
                 }
             }

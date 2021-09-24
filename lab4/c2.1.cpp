@@ -20,8 +20,14 @@ int main()
         }
         for (int i = 1; i < 9; i++)
         {
-            std::cout << "(" << l1 << ";" << i << ")";
-            std::cout << "(" << i << ";" << col1 << ")";
+            if(i != col1)
+            {
+                std::cout << "(" << l1 << ";" << i << ")";
+            }
+           if (i != l1)
+           {
+               std::cout << "(" << i << ";" << col1 << ")";
+           }
         }
     }
     catch (const char* error)
