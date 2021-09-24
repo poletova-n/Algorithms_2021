@@ -1,12 +1,12 @@
 #include <iostream>
 
-const char* error_not_number = "The side of the square must be numbers. End of the program.";
+const char* error_not_number = "The side of the triangle must be numbers. End of the program.";
 const char* error_less_zero = "The side of the square must be greatest than zero. End of the program.";
 
 int main()
 {
     int N;
-    std::cout << "Enter the side of the square: " << std::endl;
+    std::cout << "Enter the side of the triangle: " << std::endl;
     std::cin >> N;
     try
     {
