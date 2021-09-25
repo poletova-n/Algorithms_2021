@@ -22,7 +22,9 @@ int main() {
         std::cout << "В стае " << ravensCount << " ворон." << std::endl;
     } else if (ravensCount % 10 == 1) {
         std::cout << "В стае " << ravensCount << " ворона." << std::endl;
-    } else {
+    } else if (ravensCount == 5){
+		std::cout << "В стае " << ravensCount << " ворон." << std::endl;
+	} else {
         std::cout << "В стае " << ravensCount << " вороны." << std::endl;
     }
 }
