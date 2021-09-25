@@ -1,7 +1,7 @@
 #include <iostream>
 
 const char* error_not_number = "The side of the rhombus must be numbers. End of the program.";
-const char* error_less_zero = "The side of the rhombus must be greatest than zero. End of the program.";
+const char* error_less_zero = "The side of the rhombus must be greatest than zero. End of the program";
 
 int main()
 {
