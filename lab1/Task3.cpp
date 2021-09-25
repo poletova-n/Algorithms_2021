@@ -133,18 +133,22 @@ int main()
         exit(0);
     }
     else
-        if (pow(cmax, 2) == pow(amin, 2) + pow(bsr, 2)) // проверка на прямоугольный треугольник и.т.д
-            std::cout << "Треугольник прямоугольный";
+        if ((cmax == amin) and (amin == bsr))
+        {
+            std::cout << "Треугольник равносторонний";
+            exit(0);
+        }
         else
-            if (pow(cmax, 2) > pow(amin, 2) + pow(bsr, 2))
-                std::cout << "Треугольник тупоугольный";
+            if (pow(cmax, 2) == pow(amin, 2) + pow(bsr, 2)) // проверка на прямоугольный треугольник и.т.д
+                std::cout << "Треугольник прямоугольный";
             else
-                if (pow(cmax, 2) < pow(amin, 2) + pow(bsr, 2))
-                    std::cout << "Треугольник остроугольный";
-    if ((cmax == amin) and (amin == bsr))
-        std::cout << " и равносторонний";
-    else
-        if ((cmax == amin) or (amin == bsr) or (cmax == bsr))
-            std::cout << " и равнобедренный";
+                if (pow(cmax, 2) > pow(amin, 2) + pow(bsr, 2))
+                    std::cout << "Треугольник тупоугольный";
+                else
+                    if (pow(cmax, 2) < pow(amin, 2) + pow(bsr, 2))
+                        std::cout << "Треугольник остроугольный";
+
+    if ((cmax == amin) or (amin == bsr) or (cmax == bsr))
+        std::cout << " и равнобедренный";
     return 0;
 }
