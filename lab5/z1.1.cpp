@@ -10,6 +10,7 @@ int main()
         int second = 0;
         int third = 1;
         int count = 0;
+        std::cout << "Enter numbers:" << std::endl;
         std::cin >> first;
         if(std::cin.fail() && std::cin.peek() != 10)
         {
@@ -39,7 +40,7 @@ int main()
             }
             if(third == 0)
             {
-                std::cout << count;
+                std::cout << "Number of strict local minima " << count;
                 break;
             }
             if(first > second && second < third)
