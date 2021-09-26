@@ -71,11 +71,12 @@ int main()
 
 	for (int i = 0; i < lenght; i++)
 	{
-		for (int j = 1; j <= i; j++)
+		for (int j = 0; j <= i; j++)
 		{
 			cout << " ";
 		}
-		for (int j = 1; j < (lenght - i) * 2; j++)
+
+		for (int j = 0; j < (lenght - i) * 2 - 3; j++)
 		{
 			cout << "*";
 		}
@@ -370,7 +371,7 @@ int main()
 
 
 	   /*int input = 0;
-	   int average = 0;
+	   double average = 0.0;
 	   int cal = 0;
 	   int inf = 0;
 
@@ -414,7 +415,7 @@ int main()
 
 
 	   /*int input = 0;
-	   int average = 0;
+	   double average = 0.0;
 	   int cal = 0;
 	   int inf = 0;
 	   cout << "Vvodite chicla: " << endl;
@@ -482,3 +483,4 @@ int main()
 		   cerr << error;
 		   return -1;
 	   }*/
+}
