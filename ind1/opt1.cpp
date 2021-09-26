@@ -9,29 +9,28 @@ int main()
     SetConsoleOutputCP(CP_UTF8);
     try
     {
-        int n = 0, count = -1, max = 0;
+        int n = 0, count = -1;
         while(1)
         {
-            std::cout << "Введите любое натуральное число или 0 чтобы закончить: ";
+            int max = n;
             std::cin >> n;
-            std::cout << std::endl;
-            if (std::cin.fail() || std::cin.peek() != 10)
-            {
+            if (std::cin.fail()) {
                 throw ERROR_NOT_NUMBER;
             }
-            if (n == 0)
-            {
+            if (n == 0) {
                 break;
             }
-            if(n > max)
+            if (n > max)
             {
-                max = n;
                 count++;
             }
         }
         if (count == -1)
         {
             throw ERROR_EMPTY_STRING;
+        }
+        if (std::cin.peek() != 10) {
+            throw ERROR_NOT_NUMBER;
         }
         else
         {
@@ -45,5 +44,3 @@ int main()
     }
     return 0;
 }
-
-
