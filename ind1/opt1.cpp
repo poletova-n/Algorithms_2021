@@ -9,32 +9,36 @@ int main()
     SetConsoleOutputCP(CP_UTF8);
     try
     {
-        int n = 0, count = -1;
-        std::cout << "Введите числa: ";
+        int n = 0, count = -1, m = INT_MIN;
+        std::cout << "Введите числa, и в конце 0: ";
         while(1)
         {
-            int m = n;
             std::cin >> n;
-            if (std::cin.fail()) {
+            if (std::cin.fail())
+            {
                 throw ERROR_NOT_NUMBER;
             }
-            if (n == 0) {
+            if (n == 0)
+            {
                 break;
             }
-            if (n > m || n < 0)
+            if (n > m)
             {
                 count++;
             }
+            m = n;
         }
         if (count == -1)
         {
             throw ERROR_EMPTY_STRING;
         }
-        if (std::cin.peek() != 10) {
+        if (std::cin.peek() != 10)
+        {
             throw ERROR_NOT_NUMBER;
         }
         else
         {
+            std::cout << std::endl;
             std::cout << count << " - количество чисел больше предыдущего";
         }
     }
