@@ -10,9 +10,10 @@ int main()
     try
     {
         int n = 0, count = -1;
+        std::cout << "Введите числa: ";
         while(1)
         {
-            int max = n;
+            int m = n;
             std::cin >> n;
             if (std::cin.fail()) {
                 throw ERROR_NOT_NUMBER;
@@ -20,7 +21,7 @@ int main()
             if (n == 0) {
                 break;
             }
-            if (n > max)
+            if (n > m || n < 0)
             {
                 count++;
             }
@@ -44,3 +45,6 @@ int main()
     }
     return 0;
 }
+
+
+
