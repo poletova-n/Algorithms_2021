@@ -14,13 +14,13 @@ int main()
         first = input();
         if(first == 0)
         {
-            std::cout << "Number of strict local minima " << count;
+            std::cout << "Number of strict local minima is " << count;
             return 0;
         }
         second = input();
         if(second == 0)
         {
-            std::cout << "Number of strict local minima " << count;
+            std::cout << "Number of strict local minima is " << count;
             return 0;
         }
         do
@@ -28,7 +28,7 @@ int main()
             third = input();
             if(third == 0)
             {
-                std::cout << "Number of strict local minima " << count;
+                std::cout << "Number of strict local minima is " << count;
                 break;
             }
             if(first > second && second < third)
