@@ -2,42 +2,30 @@
 
 const char* ERROR_INVALID_INPUT = "Error: input must only contain integers.";
 
+int input();
+
 int main()
 {
-    try
-    {
         int first = 0;
         int second = 0;
-        int third = 1;
+        int third = 0;
         int count = 0;
         std::cout << "Enter numbers:" << std::endl;
-        std::cin >> first;
-        if(std::cin.fail() && std::cin.peek() != 10)
-        {
-            throw ERROR_INVALID_INPUT;
-        }
+        first = input();
         if(first == 0)
         {
-            std::cout << count;
+            std::cout << "Number of strict local minima " << count;
             return 0;
         }
-        std::cin >> second;
-        if(std::cin.fail() && std::cin.peek() != 10)
-        {
-            throw ERROR_INVALID_INPUT;
-        }
+        second = input();
         if(second == 0)
         {
-            std::cout << count;
+            std::cout << "Number of strict local minima " << count;
             return 0;
         }
-        while (third != 0)
+        do
         {
-            std::cin >> third;
-            if(std::cin.fail() && std::cin.peek() != 10)
-            {
-                throw ERROR_INVALID_INPUT;
-            }
+            third = input();
             if(third == 0)
             {
                 std::cout << "Number of strict local minima " << count;
@@ -50,10 +38,24 @@ int main()
             first = second;
             second = third;
         }
+        while (third != 0);
+}
+
+int input()
+{
+    try
+    {
+        int input = 0;
+        std::cin >> input;
+        if(std::cin.fail() && std::cin.peek() != 10)
+        {
+            throw ERROR_INVALID_INPUT;
+        }
+        return input;
     }
     catch(const char* error)
     {
         std::cerr << std::endl << error << std::endl;
-        return -1;
+        exit(-1);
     }
 }

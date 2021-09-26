@@ -1,8 +1,8 @@
-# Install script for directory: D:/PTcodes/c++/GitPull/Algorithms_2021/lab5
+# Install script for directory: D:/PTcodes/c++/GitPull/Algorithms_2021/ind1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/algorithms_2021")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/PTcodes/c++/GitPull/Algorithms_2021/lab5/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/PTcodes/c++/GitPull/Algorithms_2021/ind1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
