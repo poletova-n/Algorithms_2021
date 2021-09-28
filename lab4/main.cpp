@@ -370,7 +370,7 @@ int main()
 
 
 
-	   /*int input = 0;
+	   int input = 0;
 	   double average = 0.0;
 	   int cal = 0;
 	   int inf = 0;
@@ -404,7 +404,7 @@ int main()
 	   {
 		   cerr << error;
 		   return -1;
-	   }*/
+	   }
 
 
 
