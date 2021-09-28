@@ -9,7 +9,7 @@ int main ()
 
     std::cout << "Enter elements (0 - exit):\n";
     std::cin>>a1;
-    min=a1;
+    min=1;
     if (std::cin.fail())
     {
         std::cerr << "wrong input, try again.\n";
@@ -36,7 +36,7 @@ int main ()
                         std::cout<<"nomer "<<N<<std::endl;
                         break;
                     }
-                    if (a2<min)
+                    if (a2<min && a2>0)
                     {
                         min = a2;
                         N=n;
