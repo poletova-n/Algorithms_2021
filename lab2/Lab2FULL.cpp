@@ -11,7 +11,7 @@ int Rook (int x1,int y1, int x2, int y2)
 }
 int Bishop (int x1,int y1, int x2, int y2)
 {
-    if ((x1+1==x2 && y1+1==y2) || (x1-1==x2 && y1-1==y2) || (x1+1==x2 && y1-1==y2) || (x1-1==x2 && y1+1==y2))
+    if ((x1 - x2 == y1 - y2))
         std::cout<<"Bishop ate the chessman";
     else
         std::cout<<"Bishop didn't eat the chessman";
@@ -19,7 +19,7 @@ int Bishop (int x1,int y1, int x2, int y2)
 }
 int Queen (int x1,int y1, int x2, int y2)
 {
-    if ((x1==x2 || y1==y2) || (x1+1==x2 && y1+1==y2) || (x1-1==x2 && y1-1==y2) || (x1+1==x2 && y1-1==y2) || (x1-1==x2 && y1+1==y2))
+    if ((x1==x2 || y1==y2) || ((x1 - x2 == y1 - y2)))
         std::cout<<"Queen ate the chessman";
     else
         std::cout<<"Queen didn't eat the chessman";
