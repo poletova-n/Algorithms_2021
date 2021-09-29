@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int year;
-    cout << "Enter a year" << endl;
+    cout << "Enter a year(current era)" << endl;
     cin >> year;
     if (cin.peek() != '\n')
     {
