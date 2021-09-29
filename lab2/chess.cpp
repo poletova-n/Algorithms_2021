@@ -28,6 +28,7 @@ cin >> x2 >> y2;
                     cout<<"rook took a piece";
                 else
                     cout<<"rook did not take a piece";
+                break;
             }
             case(2):
             {
@@ -35,6 +36,7 @@ cin >> x2 >> y2;
                     cout << "bishop took a piece";
                 else
                     cout << "bishop did not take a piece";
+                break;
             }
             case(3):
             {
@@ -42,6 +44,7 @@ cin >> x2 >> y2;
                     cout << "queen took a piece";
                 else
                     cout<<"queen did not take a piece";
+                break;
             }
             case(4):
             {
@@ -49,6 +52,7 @@ cin >> x2 >> y2;
                     cout<<"knight took a piece";
                 else
                     cout<<"knight did not take a piece";
+                break;
             }
             }
         }
