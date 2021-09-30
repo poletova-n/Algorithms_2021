@@ -2,7 +2,7 @@
 #include <cmath>
 #include <windows.h>
 
-const char* ERROR_INVALID_START_COEF = "Vvedeno ne chislo, zavershenie programmi";
+const char* ERROR_INVALID_START_COEF = "Vvedeno ne chislo, ili nekotorie is chisel ne celie, zavershenie programmi";
 const char* ERROR_INVALID_DISC_COEF = "Iz diskriminanta ne izvlekayetsya tseloye chislo!";
 const char* ERROR_INVALID_DISC_LO_ZERO = "Korney net, tak kak diskriminant men'she nulya";
 const char* ERROR_NOT_QUADRATIC_EQUATION = "Pervyy vvedennyy koeffitsiyent raven 0, eto ne kvadratnoye uravneniye, zaversheniye programmy";
