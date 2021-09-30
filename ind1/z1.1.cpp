@@ -27,6 +27,7 @@ int main()
                 std::cout << "Number of strict local minima " << count;
                 break;
             }
+            std::cout << std::cin.peek() << std::endl;
             if (first > second && second < third)
             {
                 count++;
@@ -42,3 +43,4 @@ int main()
         return -1;
     }
 }
+
