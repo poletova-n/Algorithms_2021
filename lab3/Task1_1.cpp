@@ -8,7 +8,7 @@ const char* ERROR_INVALID_DISC_LO_ZERO = "Korney net, tak kak diskriminant men's
 const char* ERROR_NOT_QUADRATIC_EQUATION = "Pervyy vvedennyy koeffitsiyent raven 0, eto ne kvadratnoye uravneniye, zaversheniye programmy";
 const char* ERROR_WHOLE_ROOTS = "Poluchennyye korni uravneniya ne yavlyayutsya tselymi chislami, zaversheniye programmy";
 
-int main()
+int main()a
 {
     SetConsoleOutputCP(CP_UTF8);
     double x1 = 0.0, x2 = 0.0;
