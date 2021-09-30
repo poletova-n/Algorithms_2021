@@ -41,25 +41,29 @@ int main() {
     }
 
     if (a == 0) {
-        cout << ("Если a = 0, значит это не квадратное уравнение")
-            return 1;
+        cout << ("Если a = 0, значит это не квадратное уравнение");
+        return 1;
     }
     dsk = sqrt((b * b) - (4 * a * c));
 
-    x1 = (-b + dsk) / (2*a);
-    x2 = (-b - dsk) / (2*a);
+    x1 = (-b + dsk) / (2 * a);
+    x2 = (-b - dsk) / (2 * a);
 
     x1check = (-b + dsk) / (2 * a);
     x2check = (-b - dsk) / (2 * a);
 
-    cout << "Корни:" << endl;
-
-    if (x1check == x1) {
-        cout << x1 << endl;
+    if ((x1check == x1) and (x2check == x2)) {
+        cout << "Корни: " << endl << x1 << endl << x2;
+    }
+    else if (x1check == x1) {
+        cout << "Целочисленный корень - " << x1 << endl;
     }
 
-    if (x2check == x2) {
-        cout << x2;
+    else if (x2check == x2) {
+        cout << "Целочисленный корень  - " << x2;
+    }
+    else {
+        cout << "Целочисленных корней не существует";
     }
 
     return 0;

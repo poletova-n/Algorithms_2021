@@ -1,0 +1,3 @@
+C:/Users/Иван/Desktop/test/Algorithms_2021/lab2/out/build/x64-Debug/CMakeFiles/algorithms_2021.dir
+C:/Users/Иван/Desktop/test/Algorithms_2021/lab2/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Иван/Desktop/test/Algorithms_2021/lab2/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
