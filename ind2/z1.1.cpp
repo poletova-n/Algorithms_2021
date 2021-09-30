@@ -1,10 +1,10 @@
 #include <iostream>
 
-const char* ERROR_INVALID_X_INPUT = "Error: x must be only float number greater than -1 and less than 1";
+const char* ERROR_INVALID_X_INPUT = "Error: x must be only number greater than -1 and less than 1";
 
 const char* ERROR_INVALID_TERM_MAX_NUMB_INPUT = "Error: max number of terms must be only positive integer";
 
-const char* ERROR_INVALID_ABS_ERROR_INPUT = "Error: absolute error must be only float number";
+const char* ERROR_INVALID_ABS_ERROR_INPUT = "Error: absolute error must be only number";
 
 const char* ERROR_CANT_REACH_ABS_ERROR = "Error: absolute error can't be reached";
 
