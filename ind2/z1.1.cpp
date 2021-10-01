@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 const char* ERROR_INVALID_X_INPUT = "Error: x must be only number greater than -1 and less than 1";
 
@@ -42,7 +43,7 @@ int main()
         {
             throw ERROR_CANT_REACH_ABS_ERROR;
         }
-        std::cout << "Result: " << result;
+        std::cout << "Result: " <<  std::setprecision(10) << result;
     }
     catch(const char* error)
     {
@@ -57,6 +58,7 @@ double calcCos(double x, int termMaxNumb, double absError)
     int i = 1;
     double term = 0.0;
     double sum = 1.0;
+
     do
     {
         term = calcPow(x, i*2)/ calcFact(i*2) * termSign;
@@ -65,6 +67,7 @@ double calcCos(double x, int termMaxNumb, double absError)
         termSign *= -1.0;
     }
     while (i <= termMaxNumb and abs(term) > absError);
+
     if(abs(term) > absError)
     {
         return -3;
@@ -74,11 +77,12 @@ double calcCos(double x, int termMaxNumb, double absError)
 
 double calcPow(double in, int power)
 {
+    double res = in;
     for (int i = 1; i < power; i++)
     {
-        in *= in;
+        res *= in;
     }
-    return in;
+    return res;
 }
 
 double calcFact(double in)
