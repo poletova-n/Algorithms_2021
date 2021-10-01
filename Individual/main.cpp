@@ -12,6 +12,9 @@ void IntProof(double x)
 	}
 	return;
 }
+
+
+
 int main()
 {
 	int cal = 0;
