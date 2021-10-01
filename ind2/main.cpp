@@ -73,7 +73,7 @@ int main()
 			sumfunc += sum;
 			cnt += 2;
 			i++;
-		} while (i < numbermax and sum > absError);
+		} while ((i < numbermax) and (abs(sum) > absError));
 
 		if (sum > absError) throw NO_GOOD;
 
@@ -87,8 +87,8 @@ int main()
 	}
 
 
-
-
+	cin.clear();
+	return 0;
 }
 
 
