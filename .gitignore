@@ -38,4 +38,4 @@
 *.iml
 *.xml
 ./build
-./out
+/out
