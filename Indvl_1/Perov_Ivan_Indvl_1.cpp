@@ -70,7 +70,7 @@ int main() {
 
         }
     }
-    std::cout << countr;
+    std::cout << countr << "Число локальных максимумов";
 
     return 0;
 }
