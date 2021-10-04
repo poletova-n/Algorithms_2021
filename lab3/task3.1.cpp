@@ -1,36 +1,51 @@
 #include <iostream>
-#include <string>
+#include <cmath>
 
-template <typename T> T get_value() {
-	T temp = 0;
-	std::cin >> temp;
-	if (std::cin.fail() or std::cin.peek() != '\n') {
-		std::cout << "Коэффициент должен быть положительным и целочисленным.\n";
-		std::exit(1);
-	}
-	return temp;
+double get_sqrt_discriminant(int a, int b, int c) {
+    int temp = b*b - 4*a*c;
+    if (temp < 0) {
+        throw L"Дискриминант меньше нуля.";
+    } else {
+        return std::sqrt(temp);
+    }
 }
 
-int main () {
-	int side = get_value<int>();
-	side = side*2 - 1;
-	std::string asterisk = "*";
-	std::string space = " ";
-	for (int32_t i = 1; i <= side; i+=2) {
-		//std::cout << i;
-		for (int32_t j = 0; j < i; j++) {
-			std::cout << "*";
+int get_int() {
+    int temp = 0;
+    std::cin >> temp;
+    if (std::cin.fail() or std::cin.peek() != '\n') {
+        throw L"Коэффициент должен быть положительным и целочисленным.";
+    }
+    return temp;
+}
+
+void print_roots(int a, int b, double sqrt_discriminant) {
+    if (sqrt_discriminant == 0) {
+        std::cout << "Единственный корень: " << -b/(2*a) << "\n";
+    } else {
+        std::cout << "Первый корень: " << (-b+sqrt_discriminant)/(2*a) << "\n";
+        std::cout << "Первый корень: " << (-b-sqrt_discriminant)/(2*a) << "\n";
+    }
+}
+
+int main() {
+	setlocale(LC_CTYPE, "");
+	try {
+		std::cout << "Введите первый коэффициент: ";
+		int a = get_int();
+		if (a == 0) {
+			std::cout << "";
+			throw L"Коэфициент A не может быть нулевым";
 		}
-		std::cout << std::endl;
+		std::cout << "Введите второй коэффициент: ";
+		int b = get_int();
+		std::cout << "Введите третий коэффициент: ";
+		int c = get_int();
+		double sqrt_discriminant = get_sqrt_discriminant(a, b, c);
+		print_roots(a, b, sqrt_discriminant);
+	} catch (const wchar_t* error) {
+		std::wcerr << error << std::endl;
+		return -1;
 	}
-	for (uint32_t i = side-2; i > 1; i-=2) {
-		for (uint32_t j = 0; j < side/2 - i; j++) {
-			std::cout << " ";
-		}
-		for (uint32_t j = 0; j < i; j++) {
-			std::cout << "*";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << "*";
+	return 0;
 }
