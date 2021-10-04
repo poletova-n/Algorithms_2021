@@ -48,5 +48,6 @@ bool task5 (int32_t horse_x, int32_t horse_y, int32_t target_x, int32_t target_y
 }
 
 int main() {
-	std::cout << task2(1,1,2,1);
+	//std::cout << task2(1,1,2,1);
+	return 1;
 }

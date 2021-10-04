@@ -1,10 +1,14 @@
 #include <iostream>
 #include <cmath>
 
+const char* ZERO_DISCRIMINANT = "Дискриминант меньше нуля.";
+const char* ZERO_ARGUMENT_A = "Коэффициент A не может быть нулевым";
+const char* WRONG_ARGUMENT = "Коэффициент должен быть положительным и целочисленным.";
+
 double get_sqrt_discriminant(int a, int b, int c) {
     int temp = b*b - 4*a*c;
     if (temp < 0) {
-        throw "Дискриминант меньше нуля.";
+        throw ZERO_DISCRIMINANT;
     } else {
         return std::sqrt(temp);
     }
@@ -14,7 +18,7 @@ int get_int() {
     int temp = 0;
     std::cin >> temp;
     if (std::cin.fail() or std::cin.peek() != '\n') {
-        throw "Коэффициент должен быть положительным и целочисленным.";
+        throw WRONG_ARGUMENT;
     }
     return temp;
 }
@@ -35,7 +39,7 @@ int main() {
 		int a = get_int();
 		if (a == 0) {
 			std::cout << "";
-			throw "Коэфициент A не может быть нулевым";
+			throw ZERO_ARGUMENT_A;
 		}
 		std::cout << "Введите второй коэффициент: ";
 		int b = get_int();
