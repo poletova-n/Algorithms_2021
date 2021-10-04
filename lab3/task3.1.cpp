@@ -4,7 +4,7 @@
 double get_sqrt_discriminant(int a, int b, int c) {
     int temp = b*b - 4*a*c;
     if (temp < 0) {
-        throw L"Дискриминант меньше нуля.";
+        throw "Дискриминант меньше нуля.";
     } else {
         return std::sqrt(temp);
     }
@@ -14,7 +14,7 @@ int get_int() {
     int temp = 0;
     std::cin >> temp;
     if (std::cin.fail() or std::cin.peek() != '\n') {
-        throw L"Коэффициент должен быть положительным и целочисленным.";
+        throw "Коэффициент должен быть положительным и целочисленным.";
     }
     return temp;
 }
@@ -35,7 +35,7 @@ int main() {
 		int a = get_int();
 		if (a == 0) {
 			std::cout << "";
-			throw L"Коэфициент A не может быть нулевым";
+			throw "Коэфициент A не может быть нулевым";
 		}
 		std::cout << "Введите второй коэффициент: ";
 		int b = get_int();
@@ -43,8 +43,8 @@ int main() {
 		int c = get_int();
 		double sqrt_discriminant = get_sqrt_discriminant(a, b, c);
 		print_roots(a, b, sqrt_discriminant);
-	} catch (const wchar_t* error) {
-		std::wcerr << error << std::endl;
+	} catch (const char* error) {
+		std::cerr << error << std::endl;
 		return -1;
 	}
 	return 0;
