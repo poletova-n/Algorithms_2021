@@ -1,0 +1,3 @@
+H:/aboba/Algorithms_2021/lab3/cmake-build-debug/CMakeFiles/Algorithms_2021.dir
+H:/aboba/Algorithms_2021/lab3/cmake-build-debug/CMakeFiles/edit_cache.dir
+H:/aboba/Algorithms_2021/lab3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
