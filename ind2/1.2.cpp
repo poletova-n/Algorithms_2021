@@ -48,7 +48,7 @@ int main()
 double arcTg(double x, int maxNum, double absError)
 {
     double summa = x;
-    double term = -1.0;
+    double term = 0.0;
     double termSign = -1.0;
     double count = 0;
     double i = 3;
