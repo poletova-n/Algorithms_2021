@@ -48,11 +48,11 @@ int main()
 double arcTg(double x, int maxNum, double absError)
 {
     double summa = x;
-    double term = 1.0;
+    double term = -1.0;
     double termSign = -1.0;
     double count = 0;
     double i = 3;
-    while ((count < maxNum) and (abs(summa) < absError))
+    while ((count < maxNum) and (abs(term) < absError))
     {
         term = (cPow(x,i)/i) * termSign;
         summa += term;
@@ -60,7 +60,7 @@ double arcTg(double x, int maxNum, double absError)
         i += 2;
         termSign *= -1.0;
     }
-    if (abs(summa) > absError)
+    if (abs(term) > absError)
     {
         return - 3;
     }
