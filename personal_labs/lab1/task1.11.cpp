@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 int main() {
 	int previous = 0;
 	int count = 0;

@@ -3,7 +3,7 @@
 
 const char* ZERO_DISCRIMINANT = "Дискриминант меньше нуля.";
 const char* ZERO_ARGUMENT_A = "Коэффициент A не может быть нулевым";
-const char* WRONG_ARGUMENT = "Коэффициент должен быть положительным и целочисленным.";
+const char* WRONG_ARGUMENT = "Коэффициент должен быть целочисленным.";
 
 double get_sqrt_discriminant(int a, int b, int c) {
     int temp = b*b - 4*a*c;
