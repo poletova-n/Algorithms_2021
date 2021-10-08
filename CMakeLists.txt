@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(algorithms_2021)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 add_executable(task1.1 lab1/task1.1.cpp)
 add_executable(task1.2 lab1/task1.2.cpp)
@@ -21,4 +21,4 @@ add_executable(task3.3 lab3/task3.3.cpp)
 
 add_executable(task4.1 lab4/task4.1.cpp)
 
-
+add_executable(personal_task1.11 personal_labs/lab1/task1.11.cpp)

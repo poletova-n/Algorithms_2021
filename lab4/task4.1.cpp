@@ -33,6 +33,7 @@ int main() {
 			minimal = temp;
 		}
 	}
+
 	float average = float(sum)/float(count);
 	float positive_average = float(positive_sum)/float(positive_count);
 
