@@ -42,4 +42,5 @@ int main()
         return 1;
     }
     std::cout << "Srednee arifmeticheskoe ravno: " << float(sum / k);
+    return 0; 
 }

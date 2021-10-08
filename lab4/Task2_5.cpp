@@ -11,12 +11,12 @@ int main()
     zero = N - 1;
     if ((std::cin.fail()) or (std::cin.peek() != 10))
     {
-        std::cout << "The side of the triangle must be number";
+        std::cout << "The side of the rhombus must be number";
         exit(0);
     }
     if (N <= 0)
     {
-        std::cout << "The side of the triangle must be greatest than zero";
+        std::cout << "The side of the rhombus must be greatest than zero";
         exit(0);
     }
     for (i = 0; i < N; i++)

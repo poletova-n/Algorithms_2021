@@ -15,7 +15,7 @@ int main()
     }
     if (N <= 0)
     {
-        std::cout << "The side of the triangle must be greatest than zero";
+        std::cout << "The side of the square must be greatest than zero";
         exit(0);
     }
     for (i = 0; i < N; i++)
