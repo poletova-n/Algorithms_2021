@@ -6,7 +6,7 @@ int main()
 {
     SetConsoleOutputCP(CP_UTF8);
     int N = 0, i = 0, j = 0, zero = 0;
-    std::cout << "Enter the side of the triangle: ";
+    std::cout << "Enter the side of the rhombus: ";
     std::cin >> N;
     zero = N - 1;
     if ((std::cin.fail()) or (std::cin.peek() != 10))
