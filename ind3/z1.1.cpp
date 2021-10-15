@@ -2,24 +2,19 @@
 
 int main()
 {
-    const int N = 10;
-    int max = std::numeric_limits<int>::min();
-    int count = 0;
-    int array[N] = {5, -100, 33, 35, -1, -25, 41, -56, 18, -89};
-    for (int i = 0; i < N; ++i)
+    char* p = "аоа";
+    int pos = 0;
+    for(int i = 0; i < size; i++)
     {
-        if(max < array[i])
+        if(i < sizeof(p))
         {
-            max = array[i];
-            count = 0;
+            res[pos] = p[i];
+            pos++;
         }
-        else
+        if(i < sizeof(q))
         {
-            if(array[i] < 0)
-            {
-                count++;
-            }
+            res[pos] = p[i];
+            pos++;
         }
     }
-    std::cout << count;
 }

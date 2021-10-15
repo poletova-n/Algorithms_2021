@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 
 const char* ERROR_INVALID_X_INPUT = "Error: x must be only number greater than -1 and less than 1";
 
@@ -15,20 +14,34 @@ double calcPow(double in, int power);
 
 double calcCos(double x, int termMaxNumb, double absError);
 
+double myRound(double in, double absError);
+
 int main()
 {
-    double x = 0.0;
+    double finish = 0.0;
     int termMaxNumb = 1;
     double absError = 1.0;
+    double start = 0.0;
+    double step = 0.0;
     std::cout << "Enter x, max number of terms and absolute error:";
     try
     {
-        std::cin >> x;
-        if(x > 1.0 && x < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
+        std::cin >> start;
+        if(start > 1.0 && start < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
+        {
+            throw ERROR_INVALID_X_INPUT;
+        }
+        std::cin >> finish;
+        if(finish > 1.0 && finish < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
         {
             throw ERROR_INVALID_X_INPUT;
         }
         std::cin >> termMaxNumb;
+        if(std::cin.fail() || (std::cin.peek() != 10 && std::cin.peek() != 32) || termMaxNumb < 1)
+        {
+            throw ERROR_INVALID_TERM_MAX_NUMB_INPUT;
+        }
+        std::cin >> step;
         if(std::cin.fail() || (std::cin.peek() != 10 && std::cin.peek() != 32) || termMaxNumb < 1)
         {
             throw ERROR_INVALID_TERM_MAX_NUMB_INPUT;
@@ -38,15 +51,18 @@ int main()
         {
             throw ERROR_INVALID_ABS_ERROR_INPUT;
         }
-        double result = calcCos(x,termMaxNumb, absError);
-        if(result == -3)
-        {
-            throw ERROR_CANT_REACH_ABS_ERROR;
+        for(double i = start; i > finish; i-=step){
+            double result = calcCos(i,termMaxNumb, absError);
+            if(result == -3)
+            {
+                throw ERROR_CANT_REACH_ABS_ERROR;
+            }
+            std::cout << "x = " << " " << myRound(i, step) << "\t," << "result: " << myRound(result, absError) << std::endl;
         }
-        std::cout << "Result: " <<  std::setprecision(10) << result;
     }
     catch(const char* error)
     {
+        system("cls");
         std::cerr << std::endl << error << std::endl;
         return -1;
     }
@@ -58,6 +74,7 @@ double calcCos(double x, int termMaxNumb, double absError)
     int i = 1;
     double term = 0.0;
     double sum = 1.0;
+    double lastTerm = 0.0;
 
     do
     {
@@ -65,10 +82,11 @@ double calcCos(double x, int termMaxNumb, double absError)
         sum+=term;
         i++;
         termSign *= -1.0;
+        lastTerm = term;
     }
-    while (i <= termMaxNumb and abs(term) > absError);
+    while (i <= termMaxNumb and abs(term-lastTerm) < absError);
 
-    if(abs(term) > absError)
+    if(termMaxNumb == i)
     {
         return -3;
     }
@@ -93,4 +111,9 @@ double calcFact(double in)
         res *= i;
     }
     return res;
+}
+
+double myRound(double in, double absError)
+{
+    return floor(in * (1 / absError)) / (1 / absError);
 }

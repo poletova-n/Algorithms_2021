@@ -18,44 +18,18 @@ int main()
         }
         else
         {
-            in >> n;
-            if(n < 1)
+            while(!in.eof())
             {
-                throw ERROR_INVALID_FILE_INPUT;
-            }
-            for (int i = 0; i < n; ++i)
-            {
-                in.seekg(curPos);
-                char curSumbol = '1';
                 int curN = 0;
-                int moveN = 0;
-                while (!in.eof()) {
-                    in.get(curSumbol);
-                    if (curSumbol == ' ')
-                    {
-                        curN++;
-                    }
-                    if (curSumbol == '\n')
-                    {
-                        moveN++;
-                        break;
-                    }
-                    moveN++;
-                }
-                if (moveN > 1) curN++;
-
+                in >> curN;
                 int *array = new int[curN];
                 int max = std::numeric_limits<int>::min();
                 int count = 0;
-
-                in.clear();
-                in.seekg(curPos);
 
                 for (int j = 0; j < curN; j++)
                 {
                     in >> array[j];
                 }
-                curPos += moveN + 1;
                 for (int j = 0; j < curN; j++)
                 {
                     if (max < array[j])
@@ -69,16 +43,21 @@ int main()
                         }
                     }
                 }
+                char check = ' ';
+                in.get(check);
+                if(check != 10 && !in.eof())
+                {
+                    throw "error";
+                }
                 std::cout << count << std::endl;
             }
         }
     }
     catch(const char* error)
     {
+        system("cls");
         std::cerr << std::endl << error << std::endl;
         return -1;
     }
 }
-
-
 
