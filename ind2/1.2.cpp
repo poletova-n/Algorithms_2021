@@ -51,16 +51,18 @@ double arcTg(double x, int maxNum, double absError)
     double term = 0.0;
     double termSign = -1.0;
     double count = 0;
+    double secTerm = 0.0;
     double i = 3;
-    while ((count < maxNum) and (abs(term) < absError))
+    while ((count < maxNum) and (abs(term-secTerm < absError)))
     {
         term = (cPow(x,i)/i) * termSign;
         summa += term;
         count ++;
         i += 2;
         termSign *= -1.0;
+        secTerm = term;
     }
-    if (abs(term) > absError)
+    if (abs(term-secTerm) > absError)
     {
         return - 3;
     }
