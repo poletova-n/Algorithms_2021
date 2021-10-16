@@ -65,7 +65,7 @@ int main()
             }
             else
             {
-                if(result == -3)//Если абсолютная погрешность не достигаема, вывод исключения
+                if(result == 1)//Если абсолютная погрешность не достигаема, вывод исключения
                 {
                     std::cout << "Точность не достигнута!" << std::endl;
                 }
@@ -101,7 +101,7 @@ double compLn(double x, int numberMax, double absError)//Функция выво
     while(i <= numberMax && absError <= abs(term));
     if (absError <= abs(term))//Функция вернет -3, если абсолютная погрешность станет меньше модуля числа слагаемого
     {
-        return -3;
+        return 1;
     }
     return x;
 }

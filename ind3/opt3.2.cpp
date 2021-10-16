@@ -1,6 +1,6 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: incorrect input";
+const char* ERROR_NOT_NUMBER = "You entered incorrect input";
 
 void swap(int& a, int& b)
 {
