@@ -16,14 +16,14 @@ int main () {
 	std::cout << "Введите сторону: ";
 	uint32_t N = get_uint32_t();
 	try {
-		for (uint32_t i = 0; i < N*2; i += 2) {
+		for (int32_t i = 0; i < static_cast<int>(N)*2; i += 2) {
 			std::string temp(i+1, '*');
-			std::cout << std::setw((2*N-i-1) / 2) << "";
+			std::cout << std::setw((2*static_cast<int>(N)-i-1) / 2) << "";
 			std::cout << temp << std::endl;
 		}
-		for (int32_t i = (N-2)*2; i >= 0; i -= 2) {
+		for (int32_t i = (static_cast<int>(N)-2)*2; i >= 0; i -= 2) {
 			std::string temp(i+1, '*');
-			std::cout << std::setw((2*N-i-1) / 2) << "";
+			std::cout << std::setw((2*static_cast<int>(N)-i-1) / 2) << "";
 			std::cout << temp << std::endl;
 		}
 	} catch (const char* error) {
