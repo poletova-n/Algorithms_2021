@@ -28,7 +28,7 @@ void print_roots(int a, int b, double sqrt_discriminant) {
         std::cout << "Единственный корень: " << -b/(2*a) << "\n";
     } else {
         std::cout << "Первый корень: " << (-b+sqrt_discriminant)/(2*a) << "\n";
-        std::cout << "Первый корень: " << (-b-sqrt_discriminant)/(2*a) << "\n";
+        std::cout << "Второй корень: " << (-b-sqrt_discriminant)/(2*a) << "\n";
     }
 }
 

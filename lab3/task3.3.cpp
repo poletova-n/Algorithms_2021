@@ -64,4 +64,5 @@ int main () {
 	catch (const char* error) {
 		std::cerr << error << std::endl;
 	}
+	return 0;
 }

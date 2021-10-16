@@ -20,5 +20,10 @@ add_executable(task3.2 lab3/task3.2.cpp)
 add_executable(task3.3 lab3/task3.3.cpp)
 
 add_executable(task4.1 lab4/task4.1.cpp)
+add_executable(task4.2.1 lab4/task4.2.1.cpp)
+add_executable(task4.2.2 lab4/task4.2.2.cpp)
+add_executable(task4.2.3 lab4/task4.2.3.cpp)
+add_executable(task4.2.4 lab4/task4.2.4.cpp)
+add_executable(task4.2.5 lab4/task4.2.5.cpp)
 
 add_executable(personal_task1.11 personal_labs/lab1/task1.11.cpp)
