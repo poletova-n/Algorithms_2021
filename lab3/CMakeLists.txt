@@ -3,4 +3,4 @@ project(algorithms_2021)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lab lab2.5.cpp)
+add_executable(lab lab3.3.cpp)
