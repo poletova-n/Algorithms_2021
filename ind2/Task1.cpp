@@ -29,16 +29,17 @@ int main()
         }
         std::cout << "Enter number of digits: ";
         std::cin >> count;
-        if ((std::cin.fail()) or (std::cin.peek() != 10) or (count < 0))
+        if ((std::cin.fail()) or (std::cin.peek() != 10) or (count <= 0))
         {
             throw ERROR_INPUT_FAIL;
         }
         std::cout << "Enter the absolute error: ";
         std::cin >> absError;
-        if ((std::cin.fail()) or (std::cin.peek() != 10) or (absError < 0))
+        if ((std::cin.fail()) or (std::cin.peek() != 10) or abs(absError) >= 1)
         {
             throw ERROR_INPUT_FAIL;
         }
+        absError = abs(absError);
         absError1 = absError;
         while (absError1 < 1)
         {
@@ -51,8 +52,20 @@ int main()
         {
             throw ERROR_INPUT_FAIL;
         }
-        double i = x1 + step;
-        for (i; i < x2; i += abs(step))
+        double i = 0;
+        if (x1 == -1)
+        {
+            i = x1 + step;
+        }
+        else
+        {
+            i = x1;
+        }
+        if (x2 == 1)
+        {
+            x2 = x2 - abs(step);
+        }
+        for (i; i <= x2; i += abs(step))
         {
             result = funci(i, count);
             if (abs(funci(i, count + 1) - funci(i, count)) < absError)

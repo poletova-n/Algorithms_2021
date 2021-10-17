@@ -19,6 +19,7 @@ int main()
         std::cout << "The side of the rhombus must be greatest than zero";
         exit(0);
     }
+    std::cout << std::endl;
     for (i = 0; i < N; i++)
     {
         for (j = 0; j < zero; j++)
