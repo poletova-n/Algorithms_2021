@@ -5,15 +5,15 @@ int main()
 {
 	setlocale(LC_ALL, "russian");
 	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	int a, b; 
-	int a1, b1;
-	std::cout << "Введите координаты ладьи: ";
-	std::cin >> a >> b; 
-	std::cout << "Введите координаты фигуры: ";
-	std::cin >> a1 >> b1; 
+	SetConsoleOutputCP(1251); 
 	try
 	{
+		int a, b;
+		int a1, b1;
+		std::cout << "Введите координаты ладьи: ";
+		std::cin >> a >> b;
+		std::cout << "Введите координаты фигуры: ";
+		std::cin >> a1 >> b1;
 		if (!std::cin) 
 		{
 			throw "Ошибка: должно быть задано число!";
@@ -22,20 +22,19 @@ int main()
 		{
 			throw "Вы вышли за границы"; 
 		}
+		if ((a - a1 == 0) || (b - b1 == 0))
+		{
+			std::cout << "дыа";
+		}
+		else
+		{
+			std::cout << "неа";
+		}
+		return 0;
 	}
 	catch (const char* error)
 	{
 		std::cerr << std::endl << error << std::endl;
 		return -1;
 	}
-	if ((a - a1 == 0) || (b - b1 == 0)) 
-	{
-		std::cout << "дыа";
-	}
-	else
-	{
-		std::cout << "неа";
-	}
-	return 0;
 }
-
