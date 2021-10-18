@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 
-const char* ERROR_FILE_NOT_FOUND = "Error: file not found.";
+const char* ERROR_INPUT_FILE_NOT_FOUND = "Error: input file not found.";
+
+const char* ERROR_OUTPUT_FILE_NOT_FOUND = "Error: output file not found.";
 
 const int sizeX = 3;
 
@@ -21,7 +23,7 @@ int main()
         std::ifstream input("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind5\\input\\input_1.txt");
         if (!input.is_open())
         {
-            throw ERROR_FILE_NOT_FOUND;
+            throw ERROR_INPUT_FILE_NOT_FOUND;
         }
 
         setArray(array, input);
@@ -31,8 +33,9 @@ int main()
         int answer = getDuplNumber(array);
 
         std::ofstream output("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind5\\output\\output_1.txt");
-        if (!output.is_open()) {
-            throw ERROR_FILE_NOT_FOUND;
+        if (!output.is_open())
+        {
+            throw ERROR_OUTPUT_FILE_NOT_FOUND;
         }
 
         output << answer;

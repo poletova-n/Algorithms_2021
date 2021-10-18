@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 
-const char* ERROR_FILE_NOT_FOUND = "Error: file not found.";
+const char* ERROR_INPUT_FILE_NOT_FOUND = "Error: input file not found.";
+
+const char* ERROR_OUTPUT_FILE_NOT_FOUND = "Error: output file not found.";
 
 void setArray(int** &array, int sizeX, int sizeY, std::ifstream &input);
 
@@ -17,7 +19,7 @@ int main()
 
         if (!input.is_open())
         {
-            throw ERROR_FILE_NOT_FOUND;
+            throw ERROR_INPUT_FILE_NOT_FOUND;
         }
 
         int sizeX = 0;
@@ -38,7 +40,7 @@ int main()
 
         if (!output.is_open())
         {
-            throw ERROR_FILE_NOT_FOUND;
+            throw ERROR_OUTPUT_FILE_NOT_FOUND;
         }
 
         output << answer;
