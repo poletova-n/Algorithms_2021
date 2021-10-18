@@ -1,57 +1,83 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 
 const char* ERROR_FILE_NOT_FOUND = "Error: file not found";
 
+const char* KEY_YES = "Yes";
+
+const char* KEY_NO = "No";
+
+const char* & hasDuplicates(char* &array);
+
 int main()
 {
-    std::ifstream in("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind4\\input.txt");
-    if (!in.is_open())
-    {
-        throw ERROR_FILE_NOT_FOUND;
-    }
-    int curPos = 0;
-    while (!in.eof())
-    {
-        in.seekg(curPos);
-        char curSumbol = '1';
-        int moveN = 0;
+    try {
+        std::ifstream in("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind4\\input.txt");
+
+        if (!in.is_open()) {
+            throw ERROR_FILE_NOT_FOUND;
+        }
+
+        int curPos = 0;
         bool isEnd = false;
 
-        while (curSumbol != 10 && !in.eof())
-        {
-            in.get(curSumbol);
-            moveN++;
-        }
+        while (!isEnd) {
 
-        if(in.eof())
-        {
-            moveN--;
-            isEnd = true;
-        }
+            in.seekg(curPos);
+            char curSumbol = '1';
+            int moveN = 0;
 
-
-        in.clear();
-        in.seekg(curPos);
-
-        char *array = new char[moveN];
-        bool hasDupl = false;
-
-        for (int i = 0; i < moveN; ++i) {
-            in >> array[i];
-            for (int j = 0; j < i; ++j) {
-                if(array[i] == array[j])
-                {
-                    hasDupl = true;
+            while (true) {
+                in.get(curSumbol);
+                if (curSumbol != 10 && !in.eof()) {
+                    moveN++;
+                } else {
                     break;
                 }
             }
+
+            if (in.eof()) {
+                isEnd = true;
+            }
+
+            in.clear();
+            in.seekg(curPos);
+
+            char* array = new char[moveN + 1];
+
+            for (int i = 0; i < moveN; ++i) {
+                in >> array[i];
+            }
+
+            array[moveN] = '\0';
+
+            curPos += moveN + 2;
+
+            std::cout << hasDuplicates(array) << std::endl;
+
+            delete [] array;
         }
-
-        curPos += moveN + 1;
-
-        std::cout << hasDupl << std::endl;
-        if(isEnd) break;
     }
+    catch(const char* error)
+    {
+        system("cls");
+
+        std::cerr << std::endl << error << std::endl;
+        exit(1);
+    }
+}
+
+const char* & hasDuplicates(char* &array)
+{
+    for (int i = 0; array[i]; ++i)
+    {
+        for (int j = 0; array[j]; ++j)
+        {
+            if(array[i] == array[j] && i != j)
+            {
+                return KEY_YES;
+            }
+        }
+    }
+    return KEY_NO;
 }

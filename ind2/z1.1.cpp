@@ -23,36 +23,48 @@ int main()
     double absError = 1.0;
     double start = 0.0;
     double step = 0.0;
-    std::cout << "Enter x, max number of terms and absolute error:";
+    std::cout << "Enter right boundary of the interval, left boundary of the interval, step, max number of terms and absolute error:";
     try
     {
         std::cin >> start;
+
         if(start > 1.0 && start < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
         {
             throw ERROR_INVALID_X_INPUT;
         }
+
         std::cin >> finish;
+
         if(finish > 1.0 && finish < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
         {
             throw ERROR_INVALID_X_INPUT;
         }
-        std::cin >> termMaxNumb;
-        if(std::cin.fail() || (std::cin.peek() != 10 && std::cin.peek() != 32) || termMaxNumb < 1)
-        {
-            throw ERROR_INVALID_TERM_MAX_NUMB_INPUT;
-        }
+
         std::cin >> step;
+
         if(std::cin.fail() || (std::cin.peek() != 10 && std::cin.peek() != 32) || termMaxNumb < 1)
         {
             throw ERROR_INVALID_TERM_MAX_NUMB_INPUT;
         }
+
+        std::cin >> termMaxNumb;
+
+        if(std::cin.fail() || (std::cin.peek() != 10 && std::cin.peek() != 32) || termMaxNumb < 1)
+        {
+            throw ERROR_INVALID_TERM_MAX_NUMB_INPUT;
+        }
+
         std::cin >> absError;
+
         if(std::cin.fail() || std::cin.peek() != 10)
         {
             throw ERROR_INVALID_ABS_ERROR_INPUT;
         }
+
         for(double i = start; i > finish; i-=step){
+
             double result = calcCos(i,termMaxNumb, absError);
+
             if(result == -3)
             {
                 throw ERROR_CANT_REACH_ABS_ERROR;
@@ -63,6 +75,7 @@ int main()
     catch(const char* error)
     {
         system("cls");
+
         std::cerr << std::endl << error << std::endl;
         return -1;
     }
@@ -96,20 +109,24 @@ double calcCos(double x, int termMaxNumb, double absError)
 double calcPow(double in, int power)
 {
     double res = in;
+
     for (int i = 1; i < power; i++)
     {
         res *= in;
     }
+
     return res;
 }
 
 double calcFact(double in)
 {
     double res = 1;
+
     for (int i = 2; i < in + 1; i++)
     {
         res *= i;
     }
+
     return res;
 }
 

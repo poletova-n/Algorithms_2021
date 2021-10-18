@@ -8,7 +8,9 @@ int main()
     int second = 0;
     int third = 0;
     int count = 0;
+
     std::cout << "Enter numbers:" << std::endl;
+
     try
     {
         do
@@ -18,6 +20,7 @@ int main()
             {
                 throw ERROR_INVALID_INPUT;
             }
+
             if (third == 0)
             {
                 if (std::cin.peek() != 10)
@@ -27,11 +30,14 @@ int main()
                 std::cout << "Number of strict local minima " << count;
                 break;
             }
+
             std::cout << std::cin.peek() << std::endl;
+
             if (first > second && second < third)
             {
                 count++;
             }
+
             first = second;
             second = third;
         }
