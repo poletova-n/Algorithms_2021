@@ -16,7 +16,6 @@ int main ()
     else
         while (a!=0)
         {
-            n++;
             cin>>b;
             if (cin.peek() != '\n')
             {
@@ -25,19 +24,27 @@ int main ()
             }
             else
             {
-                a=b;
-                sum+=a;
-                count++;
+                if(a<posmin && a>0)
+                {
+                    posmin = a;
+                    nposmin = n;
+                }
                 if (a>0)
                 {
                     possum+=a;
                     poscount++;
                 }
+                n++;
+                a=b;
+                sum+=a;
+                count++;
+
                 if (b>maxim)
                 {
                     maxim =b;
                     nmax = n;
                 }
+
                 if(b<posmin && b>0)
                 {
                     posmin = b;

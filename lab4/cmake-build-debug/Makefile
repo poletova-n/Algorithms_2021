@@ -118,29 +118,29 @@ Algorithms_2021\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\build
 .PHONY : Algorithms_2021\fast
 
-rhombus.obj: rhombus.cpp.obj
-.PHONY : rhombus.obj
+task1.obj: task1.cpp.obj
+.PHONY : task1.obj
 
 # target to build an object file
-rhombus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\rhombus.cpp.obj
-.PHONY : rhombus.cpp.obj
+task1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\task1.cpp.obj
+.PHONY : task1.cpp.obj
 
-rhombus.i: rhombus.cpp.i
-.PHONY : rhombus.i
+task1.i: task1.cpp.i
+.PHONY : task1.i
 
 # target to preprocess a source file
-rhombus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\rhombus.cpp.i
-.PHONY : rhombus.cpp.i
+task1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\task1.cpp.i
+.PHONY : task1.cpp.i
 
-rhombus.s: rhombus.cpp.s
-.PHONY : rhombus.s
+task1.s: task1.cpp.s
+.PHONY : task1.s
 
 # target to generate assembly for a file
-rhombus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\rhombus.cpp.s
-.PHONY : rhombus.cpp.s
+task1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\task1.cpp.s
+.PHONY : task1.cpp.s
 
 # Help Target
 help:
@@ -151,9 +151,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Algorithms_2021
-	@echo ... rhombus.obj
-	@echo ... rhombus.i
-	@echo ... rhombus.s
+	@echo ... task1.obj
+	@echo ... task1.i
+	@echo ... task1.s
 .PHONY : help
 
 

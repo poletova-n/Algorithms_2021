@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-H:/aboba/Algorithms_2021/lab4/rhombus.cpp
+H:/aboba/Algorithms_2021/lab4/task1.cpp
 iostream
+-
+limits
 -
 

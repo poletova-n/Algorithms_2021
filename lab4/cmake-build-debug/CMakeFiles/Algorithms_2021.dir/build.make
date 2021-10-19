@@ -55,33 +55,33 @@ include CMakeFiles\Algorithms_2021.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\Algorithms_2021.dir\flags.make
 
-CMakeFiles\Algorithms_2021.dir\rhombus.cpp.obj: CMakeFiles\Algorithms_2021.dir\flags.make
-CMakeFiles\Algorithms_2021.dir\rhombus.cpp.obj: ..\rhombus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=H:\aboba\Algorithms_2021\lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Algorithms_2021.dir/rhombus.cpp.obj"
+CMakeFiles\Algorithms_2021.dir\task1.cpp.obj: CMakeFiles\Algorithms_2021.dir\flags.make
+CMakeFiles\Algorithms_2021.dir\task1.cpp.obj: ..\task1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=H:\aboba\Algorithms_2021\lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Algorithms_2021.dir/task1.cpp.obj"
 	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Algorithms_2021.dir\rhombus.cpp.obj /FdCMakeFiles\Algorithms_2021.dir\ /FS -c H:\aboba\Algorithms_2021\lab4\rhombus.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Algorithms_2021.dir\task1.cpp.obj /FdCMakeFiles\Algorithms_2021.dir\ /FS -c H:\aboba\Algorithms_2021\lab4\task1.cpp
 <<
 
-CMakeFiles\Algorithms_2021.dir\rhombus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algorithms_2021.dir/rhombus.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe > CMakeFiles\Algorithms_2021.dir\rhombus.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E H:\aboba\Algorithms_2021\lab4\rhombus.cpp
+CMakeFiles\Algorithms_2021.dir\task1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algorithms_2021.dir/task1.cpp.i"
+	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe > CMakeFiles\Algorithms_2021.dir\task1.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E H:\aboba\Algorithms_2021\lab4\task1.cpp
 <<
 
-CMakeFiles\Algorithms_2021.dir\rhombus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algorithms_2021.dir/rhombus.cpp.s"
+CMakeFiles\Algorithms_2021.dir\task1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algorithms_2021.dir/task1.cpp.s"
 	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Algorithms_2021.dir\rhombus.cpp.s /c H:\aboba\Algorithms_2021\lab4\rhombus.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Algorithms_2021.dir\task1.cpp.s /c H:\aboba\Algorithms_2021\lab4\task1.cpp
 <<
 
 # Object files for target Algorithms_2021
 Algorithms_2021_OBJECTS = \
-"CMakeFiles\Algorithms_2021.dir\rhombus.cpp.obj"
+"CMakeFiles\Algorithms_2021.dir\task1.cpp.obj"
 
 # External object files for target Algorithms_2021
 Algorithms_2021_EXTERNAL_OBJECTS =
 
-Algorithms_2021.exe: CMakeFiles\Algorithms_2021.dir\rhombus.cpp.obj
+Algorithms_2021.exe: CMakeFiles\Algorithms_2021.dir\task1.cpp.obj
 Algorithms_2021.exe: CMakeFiles\Algorithms_2021.dir\build.make
 Algorithms_2021.exe: CMakeFiles\Algorithms_2021.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=H:\aboba\Algorithms_2021\lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Algorithms_2021.exe"

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "H:/aboba/Algorithms_2021/lab4/rhombus.cpp" "H:/aboba/Algorithms_2021/lab4/cmake-build-debug/CMakeFiles/Algorithms_2021.dir/rhombus.cpp.obj"
+  "H:/aboba/Algorithms_2021/lab4/task1.cpp" "H:/aboba/Algorithms_2021/lab4/cmake-build-debug/CMakeFiles/Algorithms_2021.dir/task1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
