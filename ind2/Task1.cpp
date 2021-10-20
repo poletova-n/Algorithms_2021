@@ -68,7 +68,7 @@ int main()
         for (i; i <= x2; i += abs(step))
         {
             result = funci(i, count);
-            if (abs(funci(i, count + 1) - funci(i, count)) < absError)
+            if ((abs(funci(i, count + 1) - funci(i, count)) < absError) and ((abs(sqrt(1 + i)) - result) < absError))
             {
                 std::cout << std::fixed << std::setprecision(k) << "x = " << i << ";   my result = " << result << ";    functiion result = " << sqrt(1 + i) << std::endl;
             }
@@ -128,7 +128,7 @@ double funcZ(int a)
     return mean;
 }
 
-double funci(double a, int count)
+double funci(double a, int count) // Первый член последовательности имеет i == 1, второй i == 2 => степень i-1 == 0, i-1 == 1
 {
     int  k = 0;
     double f = 1.0;
