@@ -6,7 +6,7 @@
 #include <time.h>
 #include <algorithm>
 
-const char* ERROR_INVALID_INPUT = "Either a non-integer positive number was entered, or a non-number was entered, end of the program!\a"; 
+const char* ERROR_INVALID_INPUT = "Either a non-integer positive number was entered, or a non-number was entered, end of the program!\a"; \
 const char* ERROR_INVALID_FILE_NUMBER = "An error occurred while reading from the file. Either the file was not found, or the sequence number not a positive integer!\a";
 
 int MyFunc(int array[], int count)
@@ -35,14 +35,14 @@ int main()
     int countOne = 1, countMaxOne = 0;
 
     countMaxOne = MyFunc(arrayOne, size);
-    std::cout << "longest monotonically decreasing fragment length the sequence from the initialized array is " << countMaxOne << std::endl << std::endl;
+    std::cout << "Longest monotonically decreasing fragment length the sequence from the initialized array is " << countMaxOne << std::endl << std::endl;
 
     int arrsize = 0;
     try
     {
         std::cout << "Enter the number of elements in a dynamic array: ";
         std::cin >> arrsize;
-        srand(time(NULL));
+        srand(time(0));
         if ((!std::cin) or std::cin.fail() or (std::cin.peek() != 10))
         {
             throw ERROR_INVALID_INPUT;
@@ -51,7 +51,7 @@ int main()
 
         for (int i = 0; i < arrsize; i++)
         {
-            arrayTwo[i] = rand() % INT_MAX;
+            arrayTwo[i] = rand() % 30001 - 15000;
         }
         int countTwo = 1, countMaxTwo = 0;
         countMaxTwo = MyFunc(arrayTwo, arrsize);
