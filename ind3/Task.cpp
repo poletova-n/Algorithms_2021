@@ -49,10 +49,14 @@ int main()
         }
         int* arrayTwo = new int[arrsize];
 
+        std::cout << "Values in a dynamic array: " << std::endl;
+
         for (int i = 0; i < arrsize; i++)
         {
             arrayTwo[i] = rand() % 30001 - 15000;
+            std::cout << arrayTwo[i] << std::endl;
         }
+
         int countTwo = 1, countMaxTwo = 0;
         countMaxTwo = MyFunc(arrayTwo, arrsize);
 
