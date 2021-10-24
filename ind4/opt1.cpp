@@ -1,66 +1,74 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-
 
 const char* ERROR_FILE_NOT_OPENED = "File didn't open!";
 
-std::string removeSpace(std::string input);
+char * removeSpace(const char * input, char * inputCopy);
 
 int main()
 {
-    try {
-        std::string input;
+    try
+    {
         int position = 0;
+        int sizeOfString;
         std::ifstream fin("C:\\Users\\anush\\Algorithms_2021\\ind4\\myText.txt");
-        if (!fin.is_open())
-        {
+        if (!fin.is_open()) {
             throw ERROR_FILE_NOT_OPENED;
         }
         else
         {
-            while(true)
+            while (!fin.eof())
             {
                 fin.seekg(position);
-                if(getline(fin, input))
+                fin >> sizeOfString;
+
+                char * arr = new char[sizeOfString];
+                char * arrCopy = new char[sizeOfString];
+
+                fin.seekg(position+3);
+                char currentSymbol;
+                int i = 0;
+
+                while(fin.get(currentSymbol) && i < sizeOfString)
                 {
-                    fin.clear();
-                    fin.seekg(position);
-
-                    std::cout << std::endl;
-
-                    position += input.length()+2;
-
-                    std::cout << removeSpace(input);
-                }
-                else
-                {
-                    break;
+                    arr[i] = currentSymbol;
+                    i++;
                 }
 
+                arr[sizeOfString] = '\0';
+
+                position += sizeOfString+5;
+
+                removeSpace(arr, arrCopy);
+
+                std::cout << " ";
             }
         }
         fin.close();
         return 0;
     }
-    catch(const char* error)
+    catch(const char * error)
     {
         std::cerr << std::endl << error << std::endl;
         return -1;
     }
 }
 
-
-std::string removeSpace(std::string input)
+char * removeSpace(const char * input, char * inputCopy)
 {
-    int length = input.length();
-    for(int i = length-1; i >= 0; --i)
+    for (int i = 0; input[i]; i++)
     {
-        if(input[i] == ' ')
+        for (int j = 0; input[j]; j++)
         {
-            input.erase(i,1);
+            if(input[i] == ' ')
+            {
+                i++;
+            }
+            inputCopy[j] = input[i];
         }
+        std::cout << inputCopy[i];
     }
-    return input;
+    return inputCopy;
 }
+
 
