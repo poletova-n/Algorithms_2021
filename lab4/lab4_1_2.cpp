@@ -8,9 +8,10 @@ int main()
 	SetConsoleOutputCP(1251);
 	try
 	{
-		int n = 0;
-		int count = 0;
-		int sum = 0;
+		double n = 0;
+		double count = 0;
+		double sum = 0;
+		double sredn = 0;
 		while (true)
 		{
 			std::cout << "Введите числа: ";
@@ -25,8 +26,9 @@ int main()
 			}
 			sum += n;
 			count++;
+			sredn = sum / count;
 		}
-		std::cout << "Среднее арифметическое: " << sum / count << std::endl;
+		std::cout << "Среднее арифметическое: " << sredn << std::endl;
 		return 0;
 	}
 	catch (const char* error)
