@@ -24,11 +24,17 @@ int get_int() {
 }
 
 int main () {
-	std::cout << "Введите первую координату: ";
-	int row = get_int();
-	std::cout << "Введите вторую координату: ";
-	int column = get_int();
-	try {
+    try {
+        std::cout << "Введите первую координату: ";
+        int row = get_int();
+        if (row < 0 || row > 8) {
+            throw "ROW MUST BE IN RANGE FROM 1 TO 8";
+        }
+        std::cout << "Введите вторую координату: ";
+        int column = get_int();
+        if (column < 0 || column > 8) {
+            throw "ROW MUST BE IN RANGE FROM 1 TO 8";
+        }
 		auto dots = fields(row-1, column-1);
 		for (auto &dot: dots) {
 			std::cout << dot[0] << " " << dot[1] << std::endl;
