@@ -27,7 +27,7 @@ int main() {
         space = 0;
         for (int i = n; i > -1; --i) {
             cout << std::endl;
-            for (int j = 0; j < space; j++) {
+            for (int j = 0; j < space; ++j) {
                 cout << " ";
             }
             for (int j = 0; j < i; ++j) {
