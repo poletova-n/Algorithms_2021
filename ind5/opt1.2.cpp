@@ -17,7 +17,7 @@ int main () {
     {
         int n=4,m=4;
         int **a;
-        std::ifstream fin("C:\\Users\\anush\\Algorithms_2021\\ind5\\inputFile.txt");
+        std::ifstream fin("C:\\Users\\anush\\Algorithms_2021\\ind5\\inputFile1.2.txt");
         if(!fin.is_open())
         {
             throw ERROR_FILE_DIDNT_OPEN;
@@ -27,7 +27,7 @@ int main () {
             readFile(a, n, m, fin);
             fin.close();
         }
-        std::ofstream fout("C:\\Users\\anush\\Algorithms_2021\\ind5\\outputFile.txt");
+        std::ofstream fout("C:\\Users\\anush\\Algorithms_2021\\ind5\\outputFile1.2.txt");
         if(!fout.is_open())
         {
             throw ERROR_FILE_DIDNT_OPEN;

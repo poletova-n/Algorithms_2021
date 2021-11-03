@@ -14,8 +14,8 @@ int main()
     {
         int arr[size1][size2];
 
-        std::ifstream fin("C:\\Users\\anush\\Algorithms_2021\\ind5\\inputFile.txt");
-        std::ofstream fout("C:\\Users\\anush\\Algorithms_2021\\ind5\\outputFile.txt");
+        std::ifstream fin("C:\\Users\\anush\\Algorithms_2021\\ind5\\inputFile1.1.txt");
+        std::ofstream fout("C:\\Users\\anush\\Algorithms_2021\\ind5\\outputFile1.1.txt");
         if (!fin.is_open() || !fout.is_open())
         {
             throw ERROR_FILE_NOT_OPENED;
