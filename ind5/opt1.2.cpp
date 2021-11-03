@@ -25,6 +25,7 @@ int main () {
         else
         {
             readFile(a, n, m, fin);
+            fin.close();
         }
         std::ofstream fout("C:\\Users\\anush\\Algorithms_2021\\ind5\\outputFile.txt");
         if(!fout.is_open())
@@ -34,7 +35,12 @@ int main () {
         else
         {
             printFile(a, n, m, fout);
+            fout.close()
         }
+        for (int i = 0; i < m; ++i) {
+            delete [] a[i];
+        }
+        delete [] a;
         return 0;
     }
     catch(const char * error)
@@ -111,12 +117,12 @@ int *saddle_points (int n, int m, int **a, int &k) {
                 k++;
             }
         }
-    if (k==0)
+    if (k == 0)
     {
         return NULL;
     }
-    int *s = new int [k*2];
-    if (s==NULL)
+    int *s = new int [k * 2];
+    if (s == NULL)
     {
         return NULL;
     }
@@ -125,7 +131,8 @@ int *saddle_points (int n, int m, int **a, int &k) {
         for (j = 0; j < m; j++) {
             if (saddle(n, m, a, i, j))
             {
-                s[l++] = i; s[l++] = j;
+                s[l++] = i;
+                s[l++] = j;
             }
         }
     return s;
