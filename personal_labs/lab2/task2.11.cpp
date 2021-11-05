@@ -1,6 +1,9 @@
 #include <iostream>
 #include <iomanip>
 
+const char* NOT_IN_RANGE = "X IS NOT IN RANGE [-1; 1]";
+const char* PRECISION_IS_NOT_REACHED = "PRECISION IS NOT REACHED";
+
 double dpower (double base, uint32_t n) {
 	double temp = 1;
 	for (uint32_t i = 0; i < n; i++) {
@@ -19,7 +22,7 @@ uint32_t factorial(uint32_t n) {
 
 double exp(uint32_t maximal, double x, double precision) {
 	if (x > 1 || x < -1) {
-		throw "X IS NOT IN RANGE [-1; 1]";
+		throw NOT_IN_RANGE;
 	}
 	double temp = 0.0;
 	double step;
@@ -30,7 +33,7 @@ double exp(uint32_t maximal, double x, double precision) {
 		i++;
 	} while (i < maximal && std::abs(step) > precision);
 	if (i == maximal && std::abs(step) > precision) {
-		throw "PRECISION IS NOT REACHED";
+		throw PRECISION_IS_NOT_REACHED;
 	} else {
 		return temp;
 	}
