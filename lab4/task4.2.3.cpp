@@ -2,19 +2,21 @@
 #include <string>
 
 uint32_t get_uint32_t() {
-	uint32_t temp;
+	int temp;
 	std::cin >> temp;
 	if (std::cin.fail() || std::cin.peek() != '\n') {
 		throw "WRONG ARGUMENT";
-	} else {
-		return temp;
+	} else if (temp < 0) {
+        throw "NEGATIVE ARGUMENT";
+    } else {
+		return static_cast<uint32_t>(temp);
 	}
 }
 
 int main () {
 	std::cout << "Введите сторону: ";
-	uint32_t N = get_uint32_t();
 	try {
+        uint32_t N = get_uint32_t();
 		std::string temp(N, '*');
 		for (uint32_t i = 0; i < N; i++) {
 			std::cout << temp << std::endl;
