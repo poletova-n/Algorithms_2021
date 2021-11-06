@@ -4,7 +4,7 @@ const char* error_invalid_number = "Numbers cannot be a letter";
 
 int main()
 {
-    int  a = 1, b = 32767, c = 0, d = 0; //a - number, b - summ, c - count, d - nom
+    int  a = 1, b = 32767, c = 0, d = 0; //a - number, b - min, c - count, d - nom
 
     try
     {
