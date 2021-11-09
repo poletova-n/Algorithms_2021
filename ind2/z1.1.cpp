@@ -1,6 +1,8 @@
 #include <iostream>
 
-const char* ERROR_INVALID_X_INPUT = "Error: x must be only number greater than -1 and less than 1";
+const char* ERROR_INVALID_FIRST_BORDER_INPUT = "Error: first border must be only number greater than -1 and less than 1";
+
+const char* ERROR_INVALID_SECOND_BORDER_INPUT = "Error: second border must be only number greater than -1 and less than 1 and less than greater than first boarder";
 
 const char* ERROR_INVALID_TERM_MAX_NUMB_INPUT = "Error: max number of terms must be only positive integer";
 
@@ -30,14 +32,14 @@ int main()
 
         if(start > 1.0 && start < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
         {
-            throw ERROR_INVALID_X_INPUT;
+            throw ERROR_INVALID_FIRST_BORDER_INPUT;
         }
 
         std::cin >> finish;
 
-        if(finish > 1.0 && finish < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
+        if(finish > 1.0 && finish < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32) || finish < start)
         {
-            throw ERROR_INVALID_X_INPUT;
+            throw ERROR_INVALID_SECOND_BORDER_INPUT;
         }
 
         std::cin >> step;
