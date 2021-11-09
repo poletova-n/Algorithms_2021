@@ -3,6 +3,7 @@
 
 const char* NOT_IN_RANGE = "X IS NOT IN RANGE [-1; 1]";
 const char* PRECISION_IS_NOT_REACHED = "PRECISION IS NOT REACHED";
+const char* WRONG_ARGUMENT = "WRONG ARGUMENT";
 
 double dpower (double base, uint32_t n) {
 	double temp = 1;
@@ -39,24 +40,46 @@ double exp(uint32_t maximal, double x, double precision) {
 	}
 }
 
+template <typename T> T get_value() {
+	T temp;
+	std::cin >> temp;
+	int next_char = std::cin.peek();
+	if (!(next_char == '\n' or next_char == ' ') or std::cin.fail()) {
+		throw WRONG_ARGUMENT;
+	}
+	return temp;
+}
+
 int main () {
 	double precision = 0.0;
 	uint32_t maximal = 0;
 	double left_border = 0.0;
 	double right_border = 0.0;
 	double step = 0.0;
-	std::cin >> precision;
-	std::cin >> maximal;
-	std::cin >> left_border;
-	std::cin >> right_border;
-	std::cin >> step;
-	for (double x = left_border; x <= right_border; x += step) {
-		try {
-			std::cout << std::setw(12) << std::right << std::setprecision(10) << x << std::left << " | ";
-			std::cout << exp(maximal, x, precision) << std::endl;
-		} catch (const char* error) {
-			std::cout << error << std::endl;
+	try {
+		precision = get_value<double>();
+		maximal = get_value<uint32_t>();
+		left_border  = get_value<double>();
+		right_border  = get_value<double>();
+		step  = get_value<double>();
+		for (double x = left_border; x <= right_border; x += step) {
+			try {
+				std::cout << std::setw(12) << std::right << std::setprecision(6) << x << std::left << " | ";
+				std::cout << exp(maximal, x, precision) << std::endl;
+			} catch (const char *error) {
+				std::cout << error << std::endl;
+			} catch (std::exception& error) {
+				std::cerr << error.what() << std::endl;
+			} catch (...) {
+				std::cerr << "UNKNOWN ERROR" << std::endl;
+			}
 		}
+		return 0;
+	} catch (const char* error) {
+		std::cerr << error << std::endl;
+	} catch (std::exception& error) {
+		std::cerr << error.what() << std::endl;
+	} catch (...) {
+		std::cerr << "UNKNOWN ERROR" << std::endl;
 	}
-	return 0;
 }
