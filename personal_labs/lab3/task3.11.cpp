@@ -27,7 +27,7 @@ int main () {
 
     std::vector<int> dynamic_array;
     int temp;
-    int length;
+    int length = 0;
     std::cin >> length;
     for (size_t i = 0; i < length; i++) {
         std::cin >> temp;
@@ -37,7 +37,7 @@ int main () {
     std::vector<std::vector<int>> arrays_from_file;
     std::ifstream input_file("arrays.txt");
     while (!input_file.eof()) {
-        arrays_from_file.resize(arrays_from_file.size()+1);
+        arrays_from_file.emplace_back();
         input_file >> length;
         for (size_t i = 0; i < length; i++) {
             input_file >> temp;
@@ -62,7 +62,7 @@ int main () {
     std::cout << std::endl;
 
     for (size_t i = 0; i < arrays_from_file.size(); i++) {
-        std::cout << "Array from file №" << i << " of: ";
+        std::cout << "Array from file #" << i << " of: ";
         for (int& item: arrays_from_file[i]) {
             std::cout << item << " ";
         }
