@@ -3,15 +3,19 @@
 
 const char* ERROR_FILE_NOT_OPEN = "The file was not open!";
 
-bool Comparison(char array1[], char array2[], int count1, int count2)
+bool Comparison(char const* array1, char const* array2)
 {
-    for (int i = 0; i < count1; i++)
+    int i = 0, j = 0;
+    while (array1[i] != '\0')
     {
-        for (int j = 0; j < count2; j++)
+        while (array2[j] != '\0')
         {
             if (array1[i] == array2[j])
                 return 1;
+            j++;
         }
+        j = 0;
+        i++;
     }
     return 0;
 }
@@ -19,6 +23,7 @@ int main()
 {
     int max_size = 0;
     std::ifstream input("C:/Users/PetrK/Documents/Visual Studio Files/ConsoleApplication15/input.txt");
+    std::ofstream output("C:/Users/PetrK/Documents/Visual Studio Files/ConsoleApplication15/output.txt");
     try
     {
         if (!input.is_open())
@@ -35,8 +40,8 @@ int main()
     {
         char object = 'a';
         input >> max_size;
-        char* array1 = new char[max_size];
-        char* array2 = new char[max_size];
+        char* array1 = new char[max_size + 1];
+        char* array2 = new char[max_size + 1];
 
         int i = 0;
         while ((i < max_size) && (object != '\0'))
@@ -46,8 +51,7 @@ int main()
             array1[i] = object;
             i++;
         }
-        //std::cout << std::endl;
-        int count1 = i;
+        array1[i] = '\0';
         i = 0;
         object = 'a';
         while ((i < max_size) && (object != '\0'))
@@ -57,15 +61,16 @@ int main()
             array2[i] = object;
             i++;
         }
+        array2[i] = '\0';
+
         //std::cout << std::endl;
-        int count2 = i;
-        if (Comparison(array1, array2, count1, count2) == 1)
+        if (Comparison(array1, array2) == 1)
         {
-            std::cout << "true" << std::endl;
+            output << "true" << std::endl;
         }
         else
         {
-            std::cout << "false" << std::endl;
+            output << "false" << std::endl;
         }
         delete[] array1;
         delete[] array2;
