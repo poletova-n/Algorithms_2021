@@ -74,6 +74,8 @@ int main()
         }
         delete[] array1;
         delete[] array2;
+        input.close();
+        output.close();
         return 0;
 
     }
