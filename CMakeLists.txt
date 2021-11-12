@@ -29,3 +29,4 @@ add_executable(task4.2.5 lab4/task4.2.5.cpp)
 add_executable(personal_task1.11 personal_labs/lab1/task1.11.cpp)
 
 add_executable(personal_task2.11 personal_labs/lab2/task2.11.cpp)
+add_executable(personal_task3.11 personal_labs/lab3/task3.11.cpp)

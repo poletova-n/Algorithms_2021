@@ -63,8 +63,8 @@ int main () {
 		right_border  = get_value<double>();
 		step  = get_value<double>();
 		for (double x = left_border; x <= right_border; x += step) {
+            std::cout << std::setw(12) << std::right << std::setprecision(6) << x << std::left << " | ";
 			try {
-				std::cout << std::setw(12) << std::right << std::setprecision(6) << x << std::left << " | ";
 				std::cout << exp(maximal, x, precision) << std::endl;
 			} catch (const char *error) {
 				std::cout << error << std::endl;
