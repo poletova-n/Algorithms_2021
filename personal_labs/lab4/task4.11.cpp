@@ -1,24 +1,35 @@
-#include <iostream>
+#include <cstdio>
 
-char* to_lower(char* destination, char* source) {
+char* to_lower(char* destination, const char* source) {
 	size_t i = 0;
 	char letter;
 	while ((letter = source[i]) != '\0') {
 		destination[i] = letter;
 		if ('A' <= letter && letter <= 'Z') {
-			destination[i] ^= 32;
+			destination[i] ^= 0b100000;
 		}
 		i++;
 	}
 	return destination;
 }
 
+size_t strlen(const char* source) {
+	size_t i = 0;
+	while (source[i] != '\0') {
+		i++;
+	}
+	return i;
+}
+
 int main () {
-	char[] test = "A big BROWN fox JUMPS over THE lazy DOG.";
-	size_t test_size = std::size(test);
-	char* destination = new char[test_size+1];
-	destination[test_size] = '\0';
-	std::cout << test;
-	std::cout << to_lower(test);
+	char* input = new char;
+	size_t input_size = -1;
+	getline(&input, &input_size, stdin);
+	input_size = strlen(input);
+
+	char* destination = new char[input_size+1];
+	destination[input_size] = '\0';
+
+	printf("%s", to_lower(destination, input));
 	return 0;
 }
