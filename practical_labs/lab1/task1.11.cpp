@@ -80,7 +80,7 @@ int main () {
 			"a*b-2",
 			"5+5",
 			"1\\a",
-			"1/11/1/1",
+			"1+2-3/7*2*0/2-9/9",
 			"5.5E+2",
 			"-5.123E-123",
 			"12.3E-12"
@@ -88,7 +88,7 @@ int main () {
 	int i = 1;
 	for (auto& expr: expressions) {
 		std::cout << "№" << i++;
-		std::cout << std::right << std::setw(16) << expr  << " : ";
+		std::cout << std::right << std::setw(24) << expr  << " : ";
 		std::cout << std::left  << (isExpression(expr) ? "true" : "false") << std::endl;
 	}
 }
