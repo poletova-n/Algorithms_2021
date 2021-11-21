@@ -74,21 +74,21 @@ bool isExpression (char*& str) {
 }
 
 int main () {
-	char* test = "a";
-	isFactor(test);
 	std::vector<char*> expressions = {
 			"a",
 			"1+a",
 			"a*b-2",
 			"5+5",
 			"1\\a",
-			"1/1",
+			"1/11/1/1",
 			"5.5E+2",
 			"-5.123E-123",
 			"12.3E-12"
 	};
+	int i = 1;
 	for (auto& expr: expressions) {
-		std::cout << std::right << std::setw(16);
-		std::cout << expr << " " << std::left << (isExpression(expr) ? "true" : "false") << std::endl;
+		std::cout << "№" << i++;
+		std::cout << std::right << std::setw(16) << expr  << " : ";
+		std::cout << std::left  << (isExpression(expr) ? "true" : "false") << std::endl;
 	}
 }
