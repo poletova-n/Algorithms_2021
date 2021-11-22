@@ -34,19 +34,7 @@ bool isUInt(char*& str) {
 }
 
 bool isFactor(char*& str) {
-	char* past_state = str;
-
-	if (isUInt(str)) {
-		return true;
-	}
-
-	str = past_state;
-
-	if (isID(str)) {
-		return true;
-	}
-
-	return false;
+	return isUInt(str) || isID(str);
 }
 
 bool isTerm(char*& str) {
