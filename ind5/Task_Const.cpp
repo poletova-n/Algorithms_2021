@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-
+#include <fstream>
 
 const char* ERROR_INVALID_INPUT = "The array contains a number out of the range of an integer type! \n";
 const int Columns = 5, Lines = 4;
@@ -9,6 +9,7 @@ int CheckColumns(long long Mass[][Columns], int const lines);
 
 int main()
 {
+	std::ofstream output("C:/Users/PetrK/Documents/Visual Studio Files/ConsoleApplication16/output.txt");
 	long long Const_A[Lines][Columns] = { { 1, 2, 5, 4, 2 }, { 7, 8, 4, 5, 1 }, { 9, 9, 2, 6, 2 }, { 10, 3, 6, 7, 9 } };
 
 	std::cout << "Const Array: \n";
@@ -35,7 +36,7 @@ int main()
 		std::cerr << "\n" << error;
 		return -1;
 	}
-	std::cout << "The number of columns whose elements are ordered in ascending order of elements is: " << CheckColumns(Const_A, Lines) << "\n";
+	output << "The number of columns whose elements are ordered in ascending order of elements is: " << CheckColumns(Const_A, Lines) << "\n";
 
 	return 0;
 
