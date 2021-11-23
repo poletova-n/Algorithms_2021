@@ -3,26 +3,13 @@
 #include <stdlib.h>
 
 const char* ERROR_FILE_NOT_OPEN = "The file was not open!\n";
-const char* ERROR_INVALID_INPUT = "Either a non-integer  number was entered, or a non-number was entered, end of the program!\n";
-const int Columns = 5, Lines = 4;
-int CheckColumns(int Mass[][Columns], int const lines);
+const char* ERROR_INVALID_INPUT = "Either a non-integer number was entered, or a non-number was entered, end of the program!\n";
+
 int FindMinSum(int** Mass, int line, int columns);
 int** inputArray(std::ifstream& input, int** Mass, int line, int columns);
 
 int main()
 {
-	int Const_A[Lines][Columns] = { { 1, 2, 5, 4, 2 }, { 7, 8, 4, 5, 1 }, { 9, 9, 2, 6, 2 }, { 10, 3, 6, 7, 9 } };
-	std::cout << "Const Array: \n";
-	for (int i = 0; i < Lines; i++)
-	{
-		for (int j = 0; j < Columns; j++)
-		{
-			std::cout << Const_A[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << "The number of columns whose elements are ordered in ascending order of elements is: " << CheckColumns(Const_A, Lines) << "\n";
-
 	std::ifstream input("C:/Users/PetrK/Documents/Visual Studio Files/ConsoleApplication16/input.txt");
 	std::ofstream output("C:/Users/PetrK/Documents/Visual Studio Files/ConsoleApplication16/output.txt");
 	int line = 0, columns = 0;
@@ -57,30 +44,6 @@ int main()
 	output.close();
 	return 0;
 
-}
-
-int CheckColumns(int Mass[][Columns], int const lines)
-{
-	int count = 0;
-	bool flag = 0;
-	for (int j = 0; j < Columns; j++)
-	{
-		flag = 0;
-		for (int i = 0; i < lines - 1; i++)
-		{
-
-			if (Mass[i][j] >= Mass[i + 1][j])
-			{
-				flag = 1;
-				break;
-			}
-		}
-		if (flag == 0)
-		{
-			count++;
-		}
-	}
-	return count;
 }
 
 
