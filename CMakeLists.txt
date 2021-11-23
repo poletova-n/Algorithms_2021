@@ -37,3 +37,4 @@ add_executable(personal_task4.11 personal_labs/lab4/task4.11.cpp)
 add_executable(personal_task5.11 personal_labs/lab5/task5.11.cpp)
 
 add_executable(practical_task1.11 practical_labs/lab1/task1.11.cpp)
+add_executable(OOP_task1 practical_labs/OOP_lab1/tasks.cpp)
