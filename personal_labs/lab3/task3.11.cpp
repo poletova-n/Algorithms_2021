@@ -36,10 +36,11 @@ int main () {
 
     std::vector<std::vector<int>> arrays_from_file;
     std::ifstream input_file("arrays.txt");
-    while (!input_file.eof()) {
-        arrays_from_file.emplace_back();
+    while (input_file.is_open() && !input_file.eof()) {
         input_file >> length;
-        for (size_t i = 0; i < length; i++) {
+		if(length != 0)
+			arrays_from_file.emplace_back();
+        for (size_t i = 0; i < length && !input_file.eof(); i++) {
             input_file >> temp;
             arrays_from_file[arrays_from_file.size()-1].push_back(temp);
         }
