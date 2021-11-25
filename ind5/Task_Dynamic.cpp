@@ -126,5 +126,11 @@ int FindMinSum(int** Mass, int line, int columns)
 		}
 
 	}
+	for (int i = 0; i < line; i++)
+	{
+		delete[] Mass[i];
+	}
+	delete[] Mass;
+
 	return std::min(SumMin1, SumMin2);
 }
