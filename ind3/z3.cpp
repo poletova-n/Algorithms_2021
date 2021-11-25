@@ -10,7 +10,7 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
     int n;
     std::string line;
-    std::ifstream file("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind3\\input");
+    std::ifstream file("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind3\\input1");
     if (file.is_open()) {
         file >> n;
     }

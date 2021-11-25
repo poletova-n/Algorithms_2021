@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/miha1/CLionProjects/Algorithms_2021/lab3/lab3.1.cpp
+iostream
+-
+windows.h
+-
+cmath
+-
+

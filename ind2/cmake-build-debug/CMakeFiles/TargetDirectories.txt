@@ -1,0 +1,3 @@
+C:/Users/miha1/CLionProjects/Algorithms_2021/ind2/cmake-build-debug/CMakeFiles/lab.dir
+C:/Users/miha1/CLionProjects/Algorithms_2021/ind2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/miha1/CLionProjects/Algorithms_2021/ind2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

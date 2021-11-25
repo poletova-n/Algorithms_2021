@@ -18,7 +18,7 @@ int main() {
         char * arr2 = new char[size];
         int size1(0);
         int size2(0);
-        ifstream fin("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind4\\input");
+        ifstream fin("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind4\\input1");
         if (!fin.is_open()) {
             throw ERROR_FILE_NOT_OPENED;
         }
