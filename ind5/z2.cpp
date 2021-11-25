@@ -7,7 +7,7 @@ const char* ERROR_INPUT_FILE_NOT_FOUND = "Error: input file not found.";
 
 const char* ERROR_OUTPUT_FILE_NOT_FOUND = "Error: output file not found.";
 
-void setArray(int** &array, int sizeX, int sizeY, std::ifstream &input);
+void setArray(int** &array, int sizeX, int sizeY, ifstream &input);
 
 void ans( int**& array, int sizeX, int sizeY);
 
@@ -15,7 +15,7 @@ void outArray(int** &array, int sizeX, int sizeY, ofstream &output);
 
 int main() {
     try {
-        std::ifstream input("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind5\\input2");
+        ifstream input("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind5\\input2");
 
         if (!input.is_open()) {
             throw ERROR_INPUT_FILE_NOT_FOUND;
@@ -33,7 +33,7 @@ int main() {
 
         input.close();
 
-        std::ofstream output("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind5\\output2");
+        ofstream output("C:\\Users\\miha1\\CLionProjects\\Algorithms_2021\\ind5\\output2");
         ans( array, sizeX, sizeY);
         outArray(array, sizeX, sizeY, output);
         if (!output.is_open()) {
@@ -47,7 +47,7 @@ int main() {
     }
 }
 
-void setArray(int** &array, int sizeX, int sizeY, std::ifstream &input) {
+void setArray(int** &array, int sizeX, int sizeY, ifstream &input) {
 
     array = new int* [sizeX];
 
