@@ -31,7 +31,7 @@ int main()
                     arr[count] = symbol;
                     count++;
                 }
-                arr[size] = '\0';
+                arr[size+1] = '\0';
                 DelNum(arr, finArr);
                 delete[] arr;
                 delete[] finArr;
