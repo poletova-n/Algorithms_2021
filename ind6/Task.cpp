@@ -71,8 +71,6 @@ bool IsExpression(std::string line)
 				factorTemp = factorTemp + line[k];
 			}
 		}
-		std::cout << factor << "\n";
-		std::cout << factorTemp << "\n";
 		if (IsTerm(factor) and (IsExpression(factorTemp)))
 		{
 			return 1;
