@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/miha1/CLionProjects/Algorithms_2021/ind3/counter.h
+
 C:/Users/miha1/CLionProjects/Algorithms_2021/ind3/z2.cpp
 iostream
 -
 windows.h
 -
+counter.h
+C:/Users/miha1/CLionProjects/Algorithms_2021/ind3/counter.h
 
