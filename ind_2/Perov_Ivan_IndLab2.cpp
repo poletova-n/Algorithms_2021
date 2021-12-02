@@ -30,8 +30,6 @@ long double power(double x, int iter) {
     return x;
 }
 
-
-
 int main() {
     setlocale(0, "");
 
@@ -159,12 +157,8 @@ int main() {
                 itg = itg * -1;
             }
 
-
             cout << xtemp << "               " << sum1 << "                " << sum2 << "                 " ;
-
-                   
-
-
+    
             if (itg > absError) {
                 cout << "Точнность не достигнута" << endl;
 
