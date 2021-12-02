@@ -39,7 +39,6 @@ int main()
 			int lenAlph = (sizeof(alph) / sizeof(*alph));
 			ans = 0;
 			while (temp != '\\' and !rFile.eof())
-
 			{
 				rFile >> temp;
 				if (!isalpha(temp)) { continue; } // Проверка на буквы
@@ -68,6 +67,7 @@ int main()
 			}
 
 		}
+
 		rFile.close();
 		wFile.close();
 		return 0;
