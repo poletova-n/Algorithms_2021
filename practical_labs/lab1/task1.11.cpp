@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <vector>
 
+
 bool isLetter(char*& str) {
 	if ('a' <= *str && *str <= 'e') {
 		str++;
