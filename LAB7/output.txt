@@ -1,0 +1,4 @@
+123.456 False
+234567 False
+345.678E1 True
+-32.99E2 True

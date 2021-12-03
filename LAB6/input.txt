@@ -1,0 +1,7 @@
+6
+Petrov Vanya     1999
+Ivanov Semen     2001
+Sidorov Kostya   2001
+Petrov Vanya   1945
+Petrova Zinaida	 2001
+Petrov Vanya   1945
