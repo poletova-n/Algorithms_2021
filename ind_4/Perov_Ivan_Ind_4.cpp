@@ -31,7 +31,7 @@ int main()
 		{
 			if (num > 0)
 			{
-				wFile << (26 - ans) << " matches on line " << num << endl;
+				wFile <<ans << " matches on line " << num << endl;
 			}
 			char temp = ' ';
 			++num;
