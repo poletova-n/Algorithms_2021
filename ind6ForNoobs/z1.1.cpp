@@ -9,6 +9,8 @@ const char* ERROR_INCORRECT_INPUT_FILE_NAME = "Error: input file not found.";
 
 const char* ERROR_INCORRECT_OUTPUT_FILE_NAME = "Error: output file not found.";
 
+const char* ERROR_INCORRECT_LENGTH = "Error: length must be integer greater than 0.";
+
 int main(){
     try {
 
@@ -29,6 +31,11 @@ int main(){
         if(!input.is_open()) throw ERROR_INCORRECT_INPUT_FILE_NAME;
 
         input >> length;
+        if(input.fail() || input.peek() != 10 || length < 1)
+        {
+            throw ERROR_INCORRECT_LENGTH;
+        }
+
 
         SubscribersManager::readArray(subscribers, length, input);
         input.close();
