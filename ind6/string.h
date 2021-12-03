@@ -9,7 +9,9 @@ private:
 	size_t length;
 public:
 	String () {
+		this->_raw_string = new char;
 		*(this->_raw_string) = '\0';
+		this->length = 0;
 	}
 
 	String (char* str) {
