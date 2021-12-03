@@ -6,8 +6,8 @@ int SubscribersManager::getNumberOfDiffPhonesOnOneTrafficCode(Subscriber * &subs
     int answer = 0;
     for (int i = 0; i < length; ++i) {
         for (int j = 0; j < length; ++j) {
-            if(i != j && subscribers[j].getCode().getInfo().compare(subscribers[i].getCode().getInfo()) == 2){
-                if(subscribers[j].getPhone().getInfo().compare(subscribers[i].getPhone().getInfo()) != 2) {
+            if(i != j && subscribers[j].getCode().getInfo().compare(subscribers[i].getCode().getInfo()) == 0){
+                if(subscribers[j].getPhone().getInfo().compare(subscribers[i].getPhone().getInfo()) != 0) {
                     answer++;
                     break;
                 }
@@ -24,7 +24,7 @@ int SubscribersManager::getNumberOfUniqTrafficCodes(Subscriber * &subscribers, i
         current = true;
         for (int j = 0; j < length; ++j) {
             if(i != j){
-                if(subscribers[j].getCode().getInfo().compare(subscribers[i].getCode().getInfo()) == 2){
+                if(subscribers[j].getCode().getInfo().compare(subscribers[i].getCode().getInfo()) == 0){
                     current = false;
                     break;
                 }

@@ -19,7 +19,7 @@ std::fstream &operator<<(std::fstream &output, Subscriber &subscriber) {
     return output;
 }
 
-void Subscriber::Folder::setInfo(String info) {
+void Subscriber::Folder::setInfo(std::string info) {
     this->_info = info;
 }
 
@@ -28,7 +28,7 @@ int Subscriber::Folder::compare(Subscriber::Folder folder) {
 }
 
 std::fstream &operator>>(std::fstream &input, Subscriber::Folder &folder) {
-    String inputString;
+    std::string inputString;
     input >> inputString;
     if(folder.isPatternCorrect(inputString)) {
         folder.setInfo(inputString);
@@ -40,30 +40,29 @@ std::fstream &operator>>(std::fstream &input, Subscriber::Folder &folder) {
 }
 
 std::fstream &operator<<(std::fstream &output, Subscriber::Folder &folder) {
-    String string = folder.getInfo();
+    std::string string = folder.getInfo();
     output << string;
     return output;
 }
 
 bool operator>(Subscriber &subscriber, Subscriber &anotherSubscriber) {
 
-    //std::cout << subscriber._secondName.compare(anotherSubscriber._secondName);
 
-    if(subscriber._secondName.compare(anotherSubscriber._secondName) != 2){
-        return subscriber._secondName.compare(anotherSubscriber._secondName);
-    }
-    if(subscriber._firstName.compare(anotherSubscriber._firstName) != 2)
-    {
-        return subscriber._firstName.compare(anotherSubscriber._firstName);
-    }
-    if(subscriber._code.compare(anotherSubscriber._code) != 2)
-    {
-        return subscriber._code.compare(anotherSubscriber._code);
-    }
-    if( subscriber._phone.compare(anotherSubscriber._phone) != 2)
-    {
-        return  subscriber._phone.compare(anotherSubscriber._phone);
-    }
+    int answer = subscriber._secondName.compare(anotherSubscriber._secondName);
+
+    if(answer != 0){return (answer+2)%2;}
+
+    answer = subscriber._firstName.compare(anotherSubscriber._firstName);
+
+    if(answer != 0){return (answer+2)%2;}
+
+    answer = subscriber._code.compare(anotherSubscriber._code);
+
+    if( answer != 0){return (answer+2)%2;}
+
+    answer =  subscriber._phone.compare(anotherSubscriber._phone);
+
+    if( answer != 0){return  (answer+2)%2;}
 }
 
 const Subscriber::FirstNameFolder &Subscriber::getFirstName() const {
@@ -82,11 +81,11 @@ const Subscriber::TariffCodeFolder &Subscriber::getCode() const {
     return _code;
 }
 
-bool Subscriber::Folder::isPatternCorrect(String &string) {
+bool Subscriber::Folder::isPatternCorrect(std::string &string) {
     return false;
 }
 
-String Subscriber::Folder::getInfo() const {
+std::string Subscriber::Folder::getInfo() const {
     return this->_info;
 }
 
@@ -94,14 +93,14 @@ void Subscriber::Folder::printError() {
     throw ERROR_PATTERN_NOT_CORRECT;
 }
 
-bool Subscriber::PhoneNumberFolder::isPatternCorrect(String &string) {
-    int length = string.getLength();
+bool Subscriber::PhoneNumberFolder::isPatternCorrect(std::string &string) {
+    int length = string.length();
     if(length != 16) return false;
-    if(string.get(0) != '+' || string.get(2) != '(' || string.get(6) != ')'
-       || string.get(13) != '-' || string.get(10) != '-') return false;
+    if(string.at(0) != '+' || string.at(2) != '(' || string.at(6) != ')'
+       || string.at(13) != '-' || string.at(10) != '-') return false;
     for (int i = 1; i < length; ++i) {
         if(i != 2 && i != 6 && i != 13 && i != 10){
-            if(string.get(i) < '0' && string.get(i) > '9') return false;
+            if(string.at(i) < '0' && string.at(i) > '9') return false;
         }
     }
 }
@@ -110,10 +109,10 @@ void Subscriber::PhoneNumberFolder::printError() {
     throw ERROR_PATTERN_NOT_CORRECT;
 }
 
-bool Subscriber::TariffCodeFolder::isPatternCorrect(String &string) {
-    if (string.getLength() != 3) return false;
-    for (int i = 0; i < string.getLength(); ++i) {
-        if (string.get(i) < '0' || string.get(i) > '9') return false;
+bool Subscriber::TariffCodeFolder::isPatternCorrect(std::string &string) {
+    if (string.length() != 3) return false;
+    for (int i = 0; i < string.length(); ++i) {
+        if (string.at(i) < '0' || string.at(i) > '9') return false;
     }
     return true;
 }
@@ -126,24 +125,23 @@ void Subscriber::TariffCodeFolder::printError() {
     throw ERROR_PATTERN_NOT_CORRECT;
 }
 
-bool Subscriber::FirstNameFolder::isPatternCorrect(String &string) {
-    return (string.get(0) >= 'A' && string.get(0) <= 'Y'
-        & string.get(1) == '.' && string.getLength() == 2);
+bool Subscriber::FirstNameFolder::isPatternCorrect(std::string &string) {
+    return (string.at(0) >= 'A' && string.at(0) <= 'Y'
+        & string.at(1) == '.' && string.length() == 2);
 }
 
 void Subscriber::FirstNameFolder::printError() {
     throw ERROR_PATTERN_NOT_CORRECT;
 }
 
-
-bool Subscriber::SecondNameFolder::isPatternCorrect(String &string) {
-    int length = string.getLength();
+bool Subscriber::SecondNameFolder::isPatternCorrect(std::string &string) {
+    int length = string.length();
     int defCount = 0;
-    if (length < 3 || length > 20 || string.get(0) == '-'
-        || string.get(length - 1) == '-'
-            || string.get(0) < 'A' || string.get(0) > 'Y') return false;
+    if (length < 3 || length > 20 || string.at(0) == '-'
+        || string.at(length - 1) == '-'
+            || string.at(0) < 'A' || string.at(0) > 'Y') return false;
     for (int i = 1; i < length - 1; ++i) {
-        if(string.get(i) == '-')
+        if(string.at(i) == '-')
         {
             if(defCount == 0) {
                 defCount++;
@@ -151,7 +149,7 @@ bool Subscriber::SecondNameFolder::isPatternCorrect(String &string) {
                 return false;
             }
         }
-        else if(string.get(i) < 'a' || string.get(i) > 'y') return false;
+        else if(string.at(i) < 'a' || string.at(i) > 'y') return false;
     }
     return true;
 }

@@ -12,6 +12,10 @@ const char* ERROR_INCORRECT_OUTPUT_FILE_NAME = "Error: output file not found.";
 int main(){
     try {
 
+        /*std::string string = "amogus";
+        std::string string1 = "amogus";
+        std::cout << string.compare(string1);*/
+
         char inputAddress[40];
         char outputAddress[40];
         int length;

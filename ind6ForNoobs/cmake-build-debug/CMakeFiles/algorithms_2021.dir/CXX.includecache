@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/ArrayManager.h
+fstream
+-
+iostream
+-
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/Subscriber.h
+String.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/String.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/SubscribersManager.cpp
+SubscribersManager.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/SubscribersManager.h
+Subscriber.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/Subscriber.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/SubscribersManager.h
+ArrayManager.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/ArrayManager.h
+Subscriber.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6ForNoobs/Subscriber.h
+

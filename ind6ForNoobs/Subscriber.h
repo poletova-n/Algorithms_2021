@@ -1,6 +1,5 @@
 #ifndef ALGORITHMS_2021_SUBSCRIBER_H
 #define ALGORITHMS_2021_SUBSCRIBER_H
-#include "String.h"
 
 class Subscriber {
 
@@ -11,9 +10,9 @@ public:
 
         Folder() = default;
 
-        void setInfo(String info);
+        void setInfo(std::string info);
 
-        [[nodiscard]] String getInfo() const;
+        [[nodiscard]] std::string getInfo() const;
 
         virtual int compare(Folder folder);
 
@@ -21,12 +20,12 @@ public:
 
         friend std::fstream& operator<<(std::fstream& input, Folder &folder);
 
-        virtual bool isPatternCorrect(String &string);
+        virtual bool isPatternCorrect(std::string &string);
 
         virtual void printError();
 
     private:
-        String _info;
+        std::string _info;
 
         const char * ERROR_PATTERN_NOT_CORRECT = "Error:";
     };
@@ -34,7 +33,7 @@ public:
     class PhoneNumberFolder : public Folder {
     public:
 
-        bool isPatternCorrect(String &string) override;
+        bool isPatternCorrect(std::string &string) override;
 
         void printError() override;
 
@@ -45,7 +44,7 @@ public:
     class TariffCodeFolder: public Folder{
     public:
 
-        bool isPatternCorrect(String &string) override;
+        bool isPatternCorrect(std::string &string) override;
 
         int compare(Folder folder) override;
 
@@ -58,7 +57,7 @@ public:
     class FirstNameFolder: public Folder{
     public:
 
-        bool isPatternCorrect(String &string) override;
+        bool isPatternCorrect(std::string &string) override;
 
         void printError() override;
 
@@ -69,7 +68,7 @@ public:
     class SecondNameFolder: public Folder{
     public:
 
-        bool isPatternCorrect(String &string) override;
+        bool isPatternCorrect(std::string &string) override;
 
         void printError() override;
 
