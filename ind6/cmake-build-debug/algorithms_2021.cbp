@@ -84,6 +84,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/ArrayManager.cpp">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/ArrayManager.h">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/String.cpp">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/String.h">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/Subscriber.cpp">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/Subscriber.h">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/SubscribersManager.cpp">
+			<Option target="algorithms_2021"/>
+		</Unit>
+		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/SubscribersManager.h">
+			<Option target="algorithms_2021"/>
+		</Unit>
 		<Unit filename="D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/z1.1.cpp">
 			<Option target="algorithms_2021"/>
 		</Unit>

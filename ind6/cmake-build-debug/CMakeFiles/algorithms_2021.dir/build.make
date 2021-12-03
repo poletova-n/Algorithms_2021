@@ -74,17 +74,101 @@ CMakeFiles\algorithms_2021.dir\z1.1.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\z1.1.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\z1.1.cpp
 <<
 
+CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.obj: CMakeFiles\algorithms_2021.dir\flags.make
+CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.obj: ..\ArrayManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/algorithms_2021.dir/ArrayManager.cpp.obj"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\algorithms_2021.dir\ArrayManager.cpp.obj /FdCMakeFiles\algorithms_2021.dir\ /FS -c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\ArrayManager.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_2021.dir/ArrayManager.cpp.i"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\ArrayManager.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_2021.dir/ArrayManager.cpp.s"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\ArrayManager.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\ArrayManager.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.obj: CMakeFiles\algorithms_2021.dir\flags.make
+CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.obj: ..\SubscribersManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/algorithms_2021.dir/SubscribersManager.cpp.obj"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.obj /FdCMakeFiles\algorithms_2021.dir\ /FS -c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\SubscribersManager.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_2021.dir/SubscribersManager.cpp.i"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\SubscribersManager.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_2021.dir/SubscribersManager.cpp.s"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\SubscribersManager.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\String.cpp.obj: CMakeFiles\algorithms_2021.dir\flags.make
+CMakeFiles\algorithms_2021.dir\String.cpp.obj: ..\String.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/algorithms_2021.dir/String.cpp.obj"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\algorithms_2021.dir\String.cpp.obj /FdCMakeFiles\algorithms_2021.dir\ /FS -c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\String.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\String.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_2021.dir/String.cpp.i"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\algorithms_2021.dir\String.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\String.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\String.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_2021.dir/String.cpp.s"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\String.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\String.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\Subscriber.cpp.obj: CMakeFiles\algorithms_2021.dir\flags.make
+CMakeFiles\algorithms_2021.dir\Subscriber.cpp.obj: ..\Subscriber.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/algorithms_2021.dir/Subscriber.cpp.obj"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\algorithms_2021.dir\Subscriber.cpp.obj /FdCMakeFiles\algorithms_2021.dir\ /FS -c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\Subscriber.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\Subscriber.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_2021.dir/Subscriber.cpp.i"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\algorithms_2021.dir\Subscriber.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\Subscriber.cpp
+<<
+
+CMakeFiles\algorithms_2021.dir\Subscriber.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_2021.dir/Subscriber.cpp.s"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\algorithms_2021.dir\Subscriber.cpp.s /c D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\Subscriber.cpp
+<<
+
 # Object files for target algorithms_2021
 algorithms_2021_OBJECTS = \
-"CMakeFiles\algorithms_2021.dir\z1.1.cpp.obj"
+"CMakeFiles\algorithms_2021.dir\z1.1.cpp.obj" \
+"CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.obj" \
+"CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.obj" \
+"CMakeFiles\algorithms_2021.dir\String.cpp.obj" \
+"CMakeFiles\algorithms_2021.dir\Subscriber.cpp.obj"
 
 # External object files for target algorithms_2021
 algorithms_2021_EXTERNAL_OBJECTS =
 
 Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\z1.1.cpp.obj
+Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.obj
+Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.obj
+Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\String.cpp.obj
+Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\Subscriber.cpp.obj
 Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\build.make
 Dir_where_executable_program_is_located\algorithms_2021.exe: CMakeFiles\algorithms_2021.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Dir_where_executable_program_is_located\algorithms_2021.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Dir_where_executable_program_is_located\algorithms_2021.exe"
 	"D:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\algorithms_2021.dir --rc="D:\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.19041.0\x86\mt.exe" --manifests -- "D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\algorithms_2021.dir\objects1.rsp @<<
  /out:Dir_where_executable_program_is_located\algorithms_2021.exe /implib:Dir_where_executable_program_is_located\algorithms_2021.lib /pdb:D:\PTcodes\c++\GitPull\Algorithms_2021\ind6\cmake-build-debug\Dir_where_executable_program_is_located\algorithms_2021.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

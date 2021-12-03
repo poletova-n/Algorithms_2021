@@ -6,9 +6,19 @@
 
 #IncludeRegexTransform: 
 
-D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/z1.1.cpp
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/String.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/Subscriber.cpp
+istream
+-
 iostream
 -
-string
+fstream
 -
+Subscriber.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/Subscriber.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/Subscriber.h
+String.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/ind6/String.h
 

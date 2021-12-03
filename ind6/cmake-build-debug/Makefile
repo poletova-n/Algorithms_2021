@@ -118,6 +118,102 @@ algorithms_2021\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\build
 .PHONY : algorithms_2021\fast
 
+ArrayManager.obj: ArrayManager.cpp.obj
+.PHONY : ArrayManager.obj
+
+# target to build an object file
+ArrayManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.obj
+.PHONY : ArrayManager.cpp.obj
+
+ArrayManager.i: ArrayManager.cpp.i
+.PHONY : ArrayManager.i
+
+# target to preprocess a source file
+ArrayManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.i
+.PHONY : ArrayManager.cpp.i
+
+ArrayManager.s: ArrayManager.cpp.s
+.PHONY : ArrayManager.s
+
+# target to generate assembly for a file
+ArrayManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\ArrayManager.cpp.s
+.PHONY : ArrayManager.cpp.s
+
+String.obj: String.cpp.obj
+.PHONY : String.obj
+
+# target to build an object file
+String.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\String.cpp.obj
+.PHONY : String.cpp.obj
+
+String.i: String.cpp.i
+.PHONY : String.i
+
+# target to preprocess a source file
+String.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\String.cpp.i
+.PHONY : String.cpp.i
+
+String.s: String.cpp.s
+.PHONY : String.s
+
+# target to generate assembly for a file
+String.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\String.cpp.s
+.PHONY : String.cpp.s
+
+Subscriber.obj: Subscriber.cpp.obj
+.PHONY : Subscriber.obj
+
+# target to build an object file
+Subscriber.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\Subscriber.cpp.obj
+.PHONY : Subscriber.cpp.obj
+
+Subscriber.i: Subscriber.cpp.i
+.PHONY : Subscriber.i
+
+# target to preprocess a source file
+Subscriber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\Subscriber.cpp.i
+.PHONY : Subscriber.cpp.i
+
+Subscriber.s: Subscriber.cpp.s
+.PHONY : Subscriber.s
+
+# target to generate assembly for a file
+Subscriber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\Subscriber.cpp.s
+.PHONY : Subscriber.cpp.s
+
+SubscribersManager.obj: SubscribersManager.cpp.obj
+.PHONY : SubscribersManager.obj
+
+# target to build an object file
+SubscribersManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.obj
+.PHONY : SubscribersManager.cpp.obj
+
+SubscribersManager.i: SubscribersManager.cpp.i
+.PHONY : SubscribersManager.i
+
+# target to preprocess a source file
+SubscribersManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.i
+.PHONY : SubscribersManager.cpp.i
+
+SubscribersManager.s: SubscribersManager.cpp.s
+.PHONY : SubscribersManager.s
+
+# target to generate assembly for a file
+SubscribersManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithms_2021.dir\SubscribersManager.cpp.s
+.PHONY : SubscribersManager.cpp.s
+
 z1.1.obj: z1.1.cpp.obj
 .PHONY : z1.1.obj
 
@@ -151,6 +247,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... algorithms_2021
+	@echo ... ArrayManager.obj
+	@echo ... ArrayManager.i
+	@echo ... ArrayManager.s
+	@echo ... String.obj
+	@echo ... String.i
+	@echo ... String.s
+	@echo ... Subscriber.obj
+	@echo ... Subscriber.i
+	@echo ... Subscriber.s
+	@echo ... SubscribersManager.obj
+	@echo ... SubscribersManager.i
+	@echo ... SubscribersManager.s
 	@echo ... z1.1.obj
 	@echo ... z1.1.i
 	@echo ... z1.1.s
