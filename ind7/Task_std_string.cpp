@@ -71,7 +71,7 @@ Person& Person::operator=(const Person& right)
 //
 //Task 1
 //
-template < typename T >
+template < typename T > //шаблонная сортировка
 Person* sort_person(T* arr, int size)
 {
     Person temp;
