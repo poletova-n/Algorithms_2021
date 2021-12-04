@@ -3,9 +3,29 @@
 #include <fstream>
 #include <string>
 #include <list>
+#include <vector>
 
 
 //class
+//class String
+//{
+//public:
+//    String()
+//    {
+//        stroka.clear();
+//    }
+//    String & operator=(const String& right);
+//private:
+//    std::vector <char> stroka;
+//};
+//
+//String& operator=(const String& right)
+//{
+//    this->clear();
+//}
+
+
+
 class Person
 {
 public:
@@ -23,6 +43,8 @@ public:
         this->name = Name;
         this->year = Year;
     }
+    template < typename T >
+    Person* sort_person(T* arr, int size);
 
     void setSurname(std::string Surname) { surname = Surname; }
     void setName(std::string Name) { name = Name; }
@@ -46,12 +68,57 @@ Person& Person::operator=(const Person& right)
     return *this;
 }
 
+//
+//Task 1
+//
+template < typename T >
+Person* sort_person(T* arr, int size)
+{
+    Person temp;
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = 0; j < size - i - 1; j++)
+        {
+            if (arr[j].getSurname() > arr[j + 1].getSurname())
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+            else
+            {
+                if (arr[j].getSurname() == arr[j + 1].getSurname())
+                {
+                    if (arr[j].getName() > arr[j + 1].getName())
+                    {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                    else
+                    {
+                        if (arr[j].getName() == arr[j + 1].getName())
+                        {
+                            if (arr[j].getYear() > arr[j + 1].getYear())
+                            {
+                                temp = arr[j];
+                                arr[j] = arr[j + 1];
+                                arr[j + 1] = temp;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return arr;
+}
+
 //functions
 bool isFileNameOK(std::string line);
 std::string findSurname(std::string line);
 std::string findName(std::string line, std::string line2);
 std::string findYear(std::string line);
-Person* sort_person(Person* arr, int size);
 int Find_person_quant(Person arr[], int number);
 int Find_person_SurName_quant(Person arr[], int number);
 
@@ -164,7 +231,8 @@ int main()
 
     output << "\nNumber of persons with matching first and last names: \n";
     output << Find_person_SurName_quant(array, number) << "\n";
-
+    output.close();
+    input.close();
     delete[] array;
     return 0;
 }
@@ -271,50 +339,6 @@ bool isFileNameOK(std::string line)
 }
 
 
-//
-//Task 1
-//
-Person* sort_person(Person* arr, int size)
-{
-    Person temp;
-    for (int i = 0; i < size - 1; i++)
-    {
-        for (int j = 0; j < size - i - 1; j++)
-        {
-            if (arr[j].getSurname() > arr[j + 1].getSurname())
-            {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-            else
-            {
-                if (arr[j].getSurname() == arr[j + 1].getSurname())
-                {
-                    if (arr[j].getName() > arr[j + 1].getName())
-                    {
-                        temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
-                    else
-                    {
-                        if (arr[j].getName() == arr[j + 1].getName())
-                        {
-                            if (arr[j].getYear() > arr[j + 1].getYear())
-                            {
-                                temp = arr[j];
-                                arr[j] = arr[j + 1];
-                                arr[j + 1] = temp;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return arr;
-}
 
 
 //
