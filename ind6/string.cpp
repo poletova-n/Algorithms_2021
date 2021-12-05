@@ -1,6 +1,3 @@
-
-#include "string.h"
-
 String::String() { // конструктор по умолчанию
 	this->_raw_string = new char;
 	*(this->_raw_string) = '\0';

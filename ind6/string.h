@@ -8,23 +8,23 @@ private:
 	char* _raw_string;
 	size_t length;
 public:
-	String ();
+	String (); // дефолтный конструктор инициализации
 
-	String (const char* str); // конструктор ин
+	explicit String (const char* str); // конструктор инициализации
 
 	String (const String& str); // конструктор копирования
 
 	String (String&& str) noexcept; // конструктор перемещения
 
-	~String ();
+	~String (); // деструктор
 
 	size_t get_length () {
 		return this->length;
 	}
 
-	char& operator[](size_t index);
-	String& operator=(const String& str);
-	String& operator=(String&& str) noexcept;
+	char& operator[](size_t index); // оператор доступа по индексу
+	String& operator=(const String& str); // оператор присваивания копированием
+	String& operator=(String&& str) noexcept; // оператор присваивания перемещением
 
 	int32_t compare (String& str);
 
