@@ -12,7 +12,9 @@ public:
 
 	String (const char* str);
 
-	String (const String& str);
+	String (const String& str); // конструктор копирования
+
+	String (String&& str) noexcept; // конструктор перемещения
 
 	~String ();
 
@@ -20,8 +22,9 @@ public:
 		return this->length;
 	}
 
-	char& operator[] (size_t index);
-	String& operator= (const String& str);
+	char& operator[](size_t index);
+	String& operator=(const String& str);
+	String& operator=(String&& str) noexcept;
 
 	int32_t compare (String& str);
 
