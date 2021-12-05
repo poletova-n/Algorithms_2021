@@ -1,137 +1,98 @@
-//Вводим библиотеки
 #include <iostream>
 #include <windows.h>
 #include <cmath>
 
-//Вводим исключения
-const char* ERROR_INCORRECT_X = "Ошибка: вы вышли за пределы диапазона или ввели не число!";
-const char* ERROR_POSITIVE_TERM_MAX_NUMBER = "Ошибка: максимальное число последовательности должно быть положительным";
-const char* ERROR_NOT_NUMBER_ABS_ERROR = "Ошибка: абсолютная погрешность должно быть числом";
+using namespace std;
 
-//Объявляем функции
-double compLn(double x, int numberMax, double absError);
-double compPow(double n, int power);
-double compDen(double n);
-double compNum(double n);
+const char* INVALID_RANGE = "Неверно заданы пределы диапазона!";
+const char* INVALID_MAX_NUMBER = "Неверно задано максимальное число последовательности!";
+const char* INVALID_ABS_ERROR = "Неверно задана абсолютная погрешность!";
 
-int main()
-{
+double result(double x, int numberMax, double absError);
+double up(double n);
+double down(double n);
+
+int main() {
     SetConsoleOutputCP(CP_UTF8);
-    //Объявляем переменные
-    double x1 = 0.0, x2 = 0.0;
-    int numberMax = 4;
-    double shag;
-    double absError = 10E-5;
-    //Проверяем исключения
-    try
-    {
-        std::cout << "Введите интервал от x1 и x2: ";
-        std::cin >> x1 >> x2;
-        if(((x1 >= 1.0 || x1 <= -1.0) || (x2 >= 1.0 || x2 <= -1.0)) || (std::cin.peek() != 10 && std::cin.peek() != 32))//Если х меньше -0.9 или больше 0.9 или введенное значение не число, вывод исключения
-        {
-            throw ERROR_INCORRECT_X;
+    double x1(0), x2(0);
+    int numberMax(0);
+    double shag(0);
+    double absError(0);
+    try {
+        cout << "Введите интервал от x1 и x2: ";
+        cin >> x1 >> x2;
+        if(((x1 >= 1.0 or x1 <= -1.0) or (x2 >= 1.0 or x2 <= -1.0)) or (cin.peek() != 10 and cin.peek() != 32)) {
+            throw INVALID_RANGE;
         }
-        std::cout << std::endl;
-        std::cout << "Введите шаг интервала: ";
-        std::cin >> shag;
-        if(shag < 0 || (shag > abs(x2) || shag > abs(x1)) || (std::cin.peek() != 10 && std::cin.peek() != 32))//Если х меньше -0.9 или больше 0.9 или введенное значение не число, вывод исключения
-        {
-            throw ERROR_INCORRECT_X;
+        cout << "\n" <<"Введите шаг интервала: ";
+        cin >> shag;
+        if(shag < 0 or (shag > abs(x2) or shag > abs(x1)) or (cin.peek() != 10 and cin.peek() != 32)) {
+            throw INVALID_RANGE;
         }
-        std::cout << std::endl;
-        std::cout << "Введите число последовательности: ";
-        std::cin >> numberMax;
-        if((std::cin.peek() != 10 && std::cin.peek() != 32) || numberMax < 1)//Если numberMax не число или отрицательное число, вывод исключения
-        {
-            throw ERROR_POSITIVE_TERM_MAX_NUMBER;
+        cout << "\n" << "Введите число последовательности: ";
+        cin >> numberMax;
+        if((cin.peek() != 10 and cin.peek() != 32) or numberMax < 1) {
+            throw INVALID_MAX_NUMBER;
         }
-        std::cout << std::endl;
-        std::cout << "Введите абсолютную погрешность: ";
-        std::cin >> absError;
-        if (std::cin.fail() || std::cin.peek() != 10)//Если absError не число, вывод исключения
-        {
-            throw ERROR_NOT_NUMBER_ABS_ERROR;
+        cout << "\n" << "Введите абсолютную погрешность: ";
+        cin >> absError;
+        if (cin.fail() or cin.peek() != 10) {
+            throw INVALID_ABS_ERROR;
         }
-        std::cout << std::endl;
-        std::cout << "-----------------------------------\n";
-        std::cout << "x\tРезультат\n";//Выводим результат
-        std::cout << "-----------------------------------\n";
-        for (double i = x1; i <= x2; i += abs(shag))
-        {
-            double result = compLn(i,numberMax,absError);
-            if(result < 0 && result > -1.38778e-16)
-            {
-                std::cout << "0   " << "        " << result << std::endl;
+        cout << "\n "<< "--------------------------------\n";
+        cout << "X\tЗначение\n";
+        cout << "--------------------------------\n";
+        for (double i = x1; i <= x2; i += abs(shag)) {
+            double ans = result(i, numberMax, absError);
+            if(ans < 0 and ans > -1.38778e-16) {
+                cout << "0   " << "     " << ans << "\n";
             }
-            else
-            {
-                if(result == 1)//Если абсолютная погрешность не достигаема, вывод исключения
-                {
-                    std::cout << "Точность не достигнута!" << std::endl;
+            else {
+                if(ans == 1) {
+                    cout << "Точность не достигнута!" << "\n";
                 }
-                else
-                {
-                    std::cout << i << "        " << result << std::endl;
+                else {
+                    cout << i << "     " << ans << "\n";
                 }
             }
         }
-        std::cout << "-----------------------------------";
+        cout << "--------------------------------";
     }
-    catch (const char* error)//Ловим исключения
-    {
-        std::cerr << std::endl << error << std::endl;
+    catch (const char* error) {
+        cerr << "\n" << error << "\n";
         return -1;
     }
 }
 
-
-double compLn(double x, int numberMax, double absError)//Функция выводит результат последовательности
-{
-    double termSign = -1.0;
+double result(double x, int numberMax, double absError) {
     int i = 1;
     double term;
-    do
-    {
-        term = (compNum(i) / compDen(i)) * ( compPow(x, ((i+2)+(i-1)) ) / ( (i+2)+(i-1)) ) * termSign;//Подсчет каждого слагаемого
+    double sum(1.0);
+    do {
+        term = (up(i) / down(i)) * pow(x, (i * 2));
         term = round(term*(1/absError))/(1/absError);
         i++;
-        termSign *= -1.0;
-        x += term;
+        sum += term;
     }
-    while(i <= numberMax && absError <= abs(term));
-    if (absError <= abs(term))//Функция вернет -3, если абсолютная погрешность станет меньше модуля числа слагаемого
-    {
+    while(i <= numberMax and absError <= abs(term));
+    if (absError <= abs(term)) {
         return 1;
     }
-    return x;
+    return sum;
 }
 
-double compPow(double n, int power)//Функция для степени
-{
-    for (int i = 1; i < power; i++)
-    {
-        n *= n;
-    }
-    return n;
-}
-
-double compNum(double n)//Функция для числителя
-{
+double up(double n) {
     double num = 1.0;
-    for (int i = 1; i < n+2; i+=2)
-    {
-        num *= i;//Умножение каждого множителя в числителе
+    for (int i = 1; i <= n; ++i) {
+        num *= (i + i - 1.0);
     }
-    return num;//Возврат произведения числителя
+    return num;
 }
 
-double compDen(double n)//Функция для знаменателя
-{
+double down(double n) {
     double den = 1.0;
-    for (int i = 2; i < n+3; i+=2)
-    {
-        den *= i;//Умножение каждого множителя в знаменателе
+    for (int i = 1; i <= n; ++i) {
+        den *= (i + i);
     }
-    return den;//Возврат произведения знаменателя
+    return den;
 }
-
