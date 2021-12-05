@@ -1,8 +1,9 @@
 #include "string.h"
 
 int main () {
-	String str1("1abcdef");
-	String str2("1abcdef");
-	int i = str1.compare(str2);
-	std::cout << i;
+	int i;
+	String str1 = "hello world";
+	std::cout << str1 << "\n";
+	str1 = "world bye";
+	std::cout << str1 << "\n";
 }
