@@ -39,9 +39,9 @@ int main() {
         if (cin.fail() or cin.peek() != 10) {
             throw INVALID_ABS_ERROR;
         }
-        cout << "\n "<< "--------------------------------\n";
+        cout << "\n "<< "------------------------------\n";
         cout << "X\tЗначение\n";
-        cout << "--------------------------------\n";
+        cout << "-------------------------------\n";
         for (double i = x1; i <= x2; i += abs(shag)) {
             double ans = result(i, numberMax, absError);
             if(ans < 0 and ans > -1.38778e-16) {
@@ -56,7 +56,7 @@ int main() {
                 }
             }
         }
-        cout << "--------------------------------";
+        cout << "-------------------------------";
     }
     catch (const char* error) {
         cerr << "\n" << error << "\n";
