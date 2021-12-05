@@ -10,7 +10,7 @@ private:
 public:
 	String ();
 
-	String (const char* str);
+	String (const char* str); // конструктор ин
 
 	String (const String& str); // конструктор копирования
 

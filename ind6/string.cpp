@@ -35,6 +35,17 @@ String::String (const String& str) { // конструктор копирова�
 	this->length = str.length;
 }
 
+String::String(String &&str) noexcept { // конструктор перемещения
+	if (this == &str) {
+		return;
+	} else {
+		this->_raw_string = str._raw_string;
+		this->length = str.length;
+		str._raw_string = nullptr;
+		str.length = 0;
+	}
+}
+
 String::~String () { // деструктор
 	std::cout << "String of \"" << this->_raw_string << "\" destructor. " << this << "\n";
 	delete[] this->_raw_string;
