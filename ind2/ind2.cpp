@@ -82,17 +82,17 @@ double result(double x, int numberMax, double absError) {
 }
 
 double up(double n) {
-    double num = 1.0;
+    double x = 1.0;
     for (int i = 1; i <= n; ++i) {
-        num *= (i + i - 1.0);
+        x *= (i + i - 1.0);
     }
-    return num;
+    return x;
 }
 
 double down(double n) {
-    double den = 1.0;
+    double x = 1.0;
     for (int i = 1; i <= n; ++i) {
-        den *= (i + i);
+        x *= (i + i);
     }
-    return den;
+    return x;
 }
