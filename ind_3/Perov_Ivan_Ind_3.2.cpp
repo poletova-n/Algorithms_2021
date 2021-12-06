@@ -17,14 +17,14 @@ int main() {
 		int move;
 		cout << "Move for - ";
 		cin >> move;
-		if (cin.fail() or cin.peek() != 10 or move < 1)
+		if (cin.fail() or cin.peek() != 10)
 		{
 			throw INVALID_INPUT;
 			return -1;
 		}
 
 		int* DMas1 = new int[lenDMas1];
-		int* DMas2 = new int[lenDMas1 + move];
+		int* DMas2 = new int[lenDMas1];
 
 		for (int i = 0; i < lenDMas1; i++) // Наполнение первоначального массива
 		{
@@ -35,25 +35,28 @@ int main() {
 		{
 			cout << DMas1[i] << " ";
 		}
-
 		cout << endl;
-		for (int i = 0; i < move; i++) // Наполнение нулями 
+		int swap;
+		for (int i = 0; i < lenDMas1; i++) // Рассчет места чисел в новом массиве и запись
 		{
-			DMas2[i] = 0;
+			swap = (i + move) % lenDMas1;
+			if (swap < 0)
+			{
+				swap = swap + lenDMas1;
+			}
+			DMas2[swap] = DMas1[i];
 		}
-		for (int i = 0; i < lenDMas1; i++) // Копирование элементов из первого массива
-		{
-			DMas2[i + move] = DMas1[i];
-		}
-		cout << "New array moved for " << move <<" elements - ";
-		for (int i = 0; i < lenDMas1 + move; i++) // Вывод итогового массива
+
+		cout << "New array moved for " << move << " elements - ";
+		for (int i = 0; i < lenDMas1; i++) // Вывод итогового массива
 		{
 			cout << DMas2[i] << " ";
 		}
 		delete[] DMas1;
 		delete[] DMas2;
 	}
-	catch (const char* error){
+	catch (const char* error) {
 		cerr << error << endl;
+	}
 	}
 }

@@ -7,13 +7,13 @@ int main() {
 		int move;
 		cout << "Move for - ";
 		cin >> move;
-		if (cin.fail() || cin.peek() != 10 || move < 1)
+		if (cin.fail() or cin.peek() != 10)
 		{
 			throw INVALID_INPUT;
 			return -1;
 		}
 
-		int mas1[] = { 12,1112,546,456,12,21,1,1,85 }; // Наполнение первоначального массива
+		int mas1[] = { 1,2,3,4,5 }; // Наполнение первоначального массива
 		int lenMas1 = (sizeof(mas1) / sizeof(*mas1));
 
 		cout << "Initial array - ";
@@ -22,18 +22,21 @@ int main() {
 			cout << mas1[i] << " ";
 		}
 
-		int* mas2 = new int[lenMas1 + move];
-		for (int i = 0; i < move; i++) // Наполнение нулями
+		int* mas2 = new int[lenMas1];
+		int swap;
+
+		for (int i = 0; i < lenMas1; i++) // Рассчет места чисел в новом массиве и запись
 		{
-			mas2[i] = 0;
-		}
-		for (int i = 0; i < lenMas1; i++) // Копирование элементов из первого массива
-		{
-			mas2[i + move] = mas1[i];
+			swap = (i + move) % lenMas1;
+			if (swap < 0)
+			{
+				swap = swap + lenMas1;
+			}
+			mas2[swap] = mas1[i];
 		}
 
 		cout << "\nNew array moved for " << move << " elements - ";
-		for (int i = 0; i < lenMas1 + move; i++) // Вывод итогового массива
+		for (int i = 0; i < lenMas1; i++) // Вывод итогового массива
 		{
 			cout << mas2[i] << " ";
 		}
