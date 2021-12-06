@@ -2,6 +2,9 @@
 // Created by reenie on 06.12.2021.
 //
 
+#include "utils.cpp"
+
+
 class BankCard {
 public: // TODO: сделать private
 	String CardholderName;
@@ -14,82 +17,38 @@ public: // TODO: сделать private
 
 public:
 	explicit BankCard (char* source_str) {
-		while (*source_str == ' ') { // пропуск незначащих нулей
-			source_str++;
-		}
+		isSpaces(source_str);
 
-		size_t i = 0; // поиск длины подстроки
-		char* pos = source_str; // позиция первого символа подстроки
-		while (*source_str != '\0' && *source_str != ' ') {
-			source_str++; // перемещение до первого пробела
-			i++; // увеличение длины искомой подстроки
-		}
-		char* buff = new char[i+1]; // выделение памяти под копию подстроки
-		for (size_t j = 0; j < i; j++) {
-			buff[j] = pos[j]; // копирование. pos[j] == *(source_str - i + j)
-		}
-		buff[i] = '\0'; // терминальный символ
+		char* pos = source_str;
+		isWord(source_str);
+		this->CardholderSurname = strcopy(pos, source_str - pos);
 
-		this->CardholderSurname = buff; // копирующее присваивание
+		isSpaces(source_str);
+		pos = source_str;
+		isWord(source_str);
+		this->CardholderName = strcopy(pos, source_str - pos);
 
-		while (*source_str == ' ') { // пропуск незначащих нулей
-			source_str++;
-		}
+		isSpaces(source_str);
+		pos = source_str;
+		isNumber(source_str);
+		this->CardNumber = strcopy(pos, source_str - pos);
 
-		i = 0; // поиск длины подстроки
-		pos = source_str; // позиция первого символа подстроки
-		while (*source_str != '\0' && *source_str != ' ') {
-			source_str++; // перемещение до первого пробела
-			i++; // увеличение длины искомой подстроки
-		}
-		buff = new char[i+1]; // выделение памяти под копию подстроки
-		for (size_t j = 0; j < i; j++) {
-			buff[j] = pos[j]; // копирование. pos[j] == *(source_str - i + j)
-		}
-		buff[i] = '\0'; // терминальный символ
+		isSpaces(source_str);
+		pos = source_str;
+		isDate(source_str);
+		this->CardExpireDate = strcopy(pos, source_str - pos);
 
-		this->CardholderName = buff; // копирующее присваивание
+		isSpaces(source_str);
 
-		while (*source_str == ' ') { // пропуск незначащих нулей
-			source_str++;
+		if (*source_str != '\0') {
+			throw "WRONG PATTERN";
 		}
-
-		i = 0; // поиск длины подстроки
-		pos = source_str; // позиция первого символа подстроки
-		while (*source_str != '\0' && *source_str != ' ') {
-			source_str++; // перемещение до первого пробела
-			i++; // увеличение длины искомой подстроки
-		}
-		buff = new char[i+1]; // выделение памяти под копию подстроки
-		for (size_t j = 0; j < i; j++) {
-			buff[j] = pos[j]; // копирование. pos[j] == *(source_str - i + j)
-		}
-		buff[i] = '\0'; // терминальный символ
-
-		this->CardNumber = buff; // копирующее присваивание
-
-
-		while (*source_str == ' ') { // пропуск незначащих нулей
-			source_str++;
-		}
-		i = 0; // поиск длины подстроки
-		pos = source_str; // позиция первого символа подстроки
-		while (*source_str != '\0' && *source_str != ' ') {
-			source_str++; // перемещение до первого пробела
-			i++; // увеличение длины искомой подстроки
-		}
-		buff = new char[i+1]; // выделение памяти под копию подстроки
-		for (size_t j = 0; j < i; j++) {
-			buff[j] = pos[j]; // копирование. pos[j] == *(source_str - i + j)
-		}
-		buff[i] = '\0'; // терминальный символ
-
-		this->CardExpireDate = buff; // копирующее присваивание
 
 		this->BankType = this->CardNumber[0] ^ 0x30;
 	}
 
 	~BankCard () {
-		std::cout << "BankCard object at " << this << " destructor.";
+		;
 	}
 };
+
