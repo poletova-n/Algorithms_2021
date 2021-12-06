@@ -3,12 +3,12 @@
 //
 
 class BankCard {
-public:
+public: // TODO: сделать private
 	String CardholderName;
 	String CardholderSurname;
 	String CardNumber;
 	String CardExpireDate;
-	int   BankType;
+	int    BankType;
 
 
 
