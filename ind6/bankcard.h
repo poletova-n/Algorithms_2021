@@ -13,14 +13,16 @@ public:
 
 
 public:
-	BankCard (char* source_str) : CardExpireDate("default"), CardholderName("deafult2"), CardholderSurname("default3"), CardNumber("default4")
+	BankCard (char* source_str) : CardExpireDate("default"),
+								  CardholderName("deafult2"),
+								  CardholderSurname("default3"),
+								  CardNumber("default4")
 	{
-		this->CardExpireDate = 0;
+		this->BankType = 0;
 	}
 
 	~BankCard () {
 		std::cout << "Card destructor1.";
-		std::cout << "Card destructor2.";
 	}
 };
 

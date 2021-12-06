@@ -5,13 +5,16 @@ String::String() { // конструктор по умолчанию
 }
 
 String::String (const char* str) { // конструктор по умолчанию от char*
-	std::cout << "New String obj at " << this << "\n";
+
 	size_t i = 0;
 
 	if (str != nullptr) {
+		std::cout << "New String obj at " << this << " of \"" << str << "\" in init constructor\n";
 		while (str[i] != '\0') { // поиск длины строки
 			i++;
 		}
+	} else {
+		std::cout << "New String obj at " << this << " of NULL in init constructor\n";
 	}
 
 	this->_raw_string = new char[i]; // выделение памяти на строку
@@ -24,6 +27,7 @@ String::String (const char* str) { // конструктор по умолчан
 }
 
 String::String (const String& str) { // конструктор копирования
+	std::cout << "New String obj at " << this << " of \"" << str << "\" in copy constructor\n";
 	this->_raw_string = new char[str.length];
 	for (size_t i = 0; i < str.length; i++) {
 		this->_raw_string[i] = str._raw_string[i];
@@ -33,6 +37,7 @@ String::String (const String& str) { // конструктор копирова�
 }
 
 String::String(String &&str) noexcept { // конструктор перемещения
+	std::cout << "New String obj at " << this << " of \"" << str << "\" in move constructor\n";
 	if (this == &str) {
 		return;
 	} else {
@@ -44,16 +49,15 @@ String::String(String &&str) noexcept { // конструктор перемещ
 }
 
 String::~String () { // деструктор
-	std::cout << "String of \"" << this->_raw_string << "\" destructor. " << this << "\n";
+	if (this->_raw_string != nullptr)
+		std::cout << "String of \"" << this->_raw_string << "\" destructor. " << this << "\n";
+	else
+		std::cout << "String of \"NULL\" destructor. " << this << "\n";
 	delete[] this->_raw_string;
 }
 
 char& String::operator[] (size_t index) {
-	if (index < this->length) {
-		return this->_raw_string[index];
-	} else {
-		throw std::exception();
-	}
+	return this->_raw_string[index];
 }
 
 int32_t String::compare (String& str) {
@@ -76,14 +80,15 @@ int32_t String::compare (String& str) {
 	}
 }
 
-std::ostream& operator<< (std::ostream& out, String& str) {
+std::ostream& operator<< (std::ostream& out, const String& str) {
+	std::cout << "operator<< with str at " << &str << "\n";
 	out << str._raw_string;
 	return out;
 }
 
 String& String::operator=(const String& str) { // оператор присваивания копированием
-	std::cout << "temporary obj str in operator= overload at " << &str << "\n";
-	std::cout << "new obj this in operator= overload at " << this << "\n";
+	std::cout << "temporary obj str in operator=copy overload at " << &str << " of:" << "\npass\n" << str << "\nend\n";
+	std::cout << "new obj this in operator=copy overload at " << this << " of:" << "\npass\n" << *this << "\nend\n";
 	if (this == &str) {
 		return *this;
 	} else {
@@ -99,8 +104,8 @@ String& String::operator=(const String& str) { // оператор присва�
 }
 
 String& String::operator=(String&& str) noexcept { // оператор присваивания перемещением
-	std::cout << "temporary obj str in operator= overload at " << &str << "\n";
-	std::cout << "new obj this in operator= overload at " << this << "\n";
+	std::cout << "temporary obj str in operator=move overload at " << &str << " of:" << "\npass\n" << str << "\nend\n";
+	std::cout << "new obj this in operator=move overload at " << this << " of:" << "\npass\n" << *this << "\nend\n";
 	if (this == &str) {
 		return *this;
 	} else {

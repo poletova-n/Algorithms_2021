@@ -10,7 +10,7 @@ private:
 public:
 	String (); // дефолтный конструктор инициализации
 
-	explicit String (const char* str); // конструктор инициализации
+	String (const char* str); // конструктор инициализации
 
 	String (const String& str); // конструктор копирования
 
@@ -28,7 +28,7 @@ public:
 
 	int32_t compare (String& str);
 
-	friend std::ostream& operator<< (std::ostream& out, String& str);
+	friend std::ostream& operator<< (std::ostream& out, const String& str);
 };
 
 #ifndef ALGORITHMS_2021_STRING_H
