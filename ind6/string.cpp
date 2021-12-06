@@ -65,7 +65,7 @@ int32_t String::compare (String& str) {
 	if (this->length < str.length) {
 		return -1;
 	} else if (this->length > str.length) {
-		return  1;
+		return 1;
 	} else {
 		return 0;
 	}
