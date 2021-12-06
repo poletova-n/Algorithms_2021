@@ -11,7 +11,7 @@ public: // TODO: сделать private
 	String CardExpireYear;
 	int    BankType;
 public:
-	explicit BankCard (char* source_str) {
+	BankCard (char* source_str) {
 		isSpaces(source_str);
 
 		char* pos = source_str;
@@ -79,7 +79,7 @@ bool compare_order(BankCard& card1, BankCard& card2) {
 		return false;
 	} else {
 		pos = card1.CardholderName.compare(card2.CardholderName);
-	}	if (pos < 0) { // сравнение для имени
+		if (pos < 0) { // сравнение для имени
 			return true;
 		} else if (pos > 0) {
 			return false;
@@ -105,4 +105,5 @@ bool compare_order(BankCard& card1, BankCard& card2) {
 				}
 			}
 		}
+	}
 }
