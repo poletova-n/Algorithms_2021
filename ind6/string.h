@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 //
 // Created by reenie on 04.12.2021.
@@ -22,7 +23,7 @@ public:
 		return this->length;
 	}
 
-	char& operator[](size_t index); // оператор доступа по индексу
+	char operator[](size_t index); // оператор доступа по индексу
 	String& operator=(const String& str); // оператор присваивания копированием
 	String& operator=(String&& str) noexcept; // оператор присваивания перемещением
 

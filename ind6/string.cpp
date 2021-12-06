@@ -47,7 +47,7 @@ String::~String () { // деструктор
 	delete[] this->_raw_string;
 }
 
-char& String::operator[] (size_t index) {
+char String::operator[] (size_t index) {
 	return this->_raw_string[index]; // добавить проверку индексов?
 }
 
@@ -85,7 +85,7 @@ String& String::operator=(const String& str) { // оператор присва�
 		for (size_t i = 0; i < str.length; i++) {
 			(*this)._raw_string[i] = str._raw_string[i];
 		}
-		(*this)[str.length] = '\0';
+		this->_raw_string[str.length] = '\0';
 		this->length = str.length;
 		return *this;
 	}
