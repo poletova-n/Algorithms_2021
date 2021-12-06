@@ -61,6 +61,15 @@ bool isNumber (char*& str) {
 	}
 }
 
+bool isSlash (char*& str) {
+	if (*str == '/') {
+		str++;
+		return true;
+	} else {
+		return false;
+	}
+}
+
 bool isDate(char*& str) {
 	if (isDigit(str) && isDigit(str)) {
 		if (*str == '/') {
