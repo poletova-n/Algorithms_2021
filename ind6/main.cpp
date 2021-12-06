@@ -1,3 +1,4 @@
+#include <iostream>
 #include "bankcard.h"
 
 int main () {
@@ -6,7 +7,7 @@ int main () {
 		std::cout << card.CardholderSurname << "\n";
 		std::cout << card.CardholderName << "\n";
 		std::cout << card.CardNumber << "\n";
-		std::cout << card.CardExpireMonth << "/" << "\n";
+		std::cout << card.CardExpireMonth << "/" << card.CardExpireYear << "\n";
 		std::cout << card.BankType << "\n";
 	} catch (const char*& error) {
 		std::cerr << error << "\n";
