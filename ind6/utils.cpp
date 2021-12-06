@@ -70,7 +70,7 @@ bool isSlash (char*& str) {
 	}
 }
 
-bool isDate(char*& str) {
+[[maybe_unused]] bool isDate(char*& str) {
 	if (isDigit(str) && isDigit(str)) {
 		if (*str == '/') {
 			str++;

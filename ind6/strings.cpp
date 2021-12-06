@@ -4,7 +4,7 @@ String::String() { // конструктор по умолчанию
 	this->length = 0;
 }
 
-String::String (const char* str) { // конструктор по умолчанию от char*
+[[maybe_unused]] String::String (const char* str) { // конструктор по умолчанию от char*
 	if (str == nullptr) {
 		return;
 	}
@@ -23,7 +23,7 @@ String::String (const char* str) { // конструктор по умолчан
 	this->length = i; // запись длины
 }
 
-String::String (const String& str) { // конструктор копирования
+[[maybe_unused]] String::String (const String& str) { // конструктор копирования
 	this->_raw_string = new char[str.length];
 	for (size_t i = 0; i < str.length; i++) {
 		this->_raw_string[i] = str._raw_string[i];
@@ -32,7 +32,7 @@ String::String (const String& str) { // конструктор копирова�
 	this->length = str.length;
 }
 
-String::String(String &&str) noexcept { // конструктор перемещения
+[[maybe_unused]] String::String (String &&str) noexcept { // конструктор перемещения
 	if (this == &str) {
 		return;
 	} else {

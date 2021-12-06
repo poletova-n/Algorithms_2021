@@ -1,9 +1,3 @@
-#pragma once
-#include <iostream>
-//
-// Created by reenie on 04.12.2021.
-//
-
 class String {
 private:
 	char* _raw_string;
@@ -11,15 +5,15 @@ private:
 public:
 	String (); // дефолтный конструктор инициализации
 
-	String (const char* str); // конструктор инициализации
+	[[maybe_unused]] explicit String (const char* str); // конструктор инициализации
 
-	String (const String& str); // конструктор копирования
+	[[maybe_unused]] String (const String& str); // конструктор копирования
 
-	String (String&& str) noexcept; // конструктор перемещения
+	[[maybe_unused]] String (String&& str) noexcept; // конструктор перемещения
 
 	~String (); // деструктор
 
-	size_t get_length () {
+	[[maybe_unused]] [[nodiscard]] size_t get_length () const {
 		return this->length;
 	}
 
@@ -32,9 +26,4 @@ public:
 	friend std::ostream& operator<< (std::ostream& out, const String& str);
 };
 
-#ifndef ALGORITHMS_2021_STRING_H
-#define ALGORITHMS_2021_STRING_H
-
-#endif //ALGORITHMS_2021_STRING_H
-
-#include "string.cpp"
+#include "strings.cpp"

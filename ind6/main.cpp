@@ -19,7 +19,7 @@ int main () {
 			std::cerr << "UNKNOWN ERROR.\n";
 		}
 
-	for (size_t i = 1; i < cards.size()-1; i++) {
+	for (size_t i = 1; i < cards.size(); i++) {
 		for (size_t j = 1; j < cards.size()-i; j++) {
 			if (!compare_order(cards[j-1], cards[j])) {
 				std::swap(cards[j-1], cards[j]);
@@ -28,8 +28,9 @@ int main () {
 	}
 
 	for (BankCard& card: cards) {
-		std::cout << card.CardholderSurname << " " << card.CardholderName << " " << card.CardNumber << " ";
-		std::cout << card.CardExpireMonth << "/" << card.CardExpireYear << "\n";
+		std::cout << card.CardholderSurname << " " << card.CardholderName << " ";
+		std::cout << card.CardExpireMonth << "/" << card.CardExpireYear << " ";
+		std::cout << card.CardNumber << "\n";
 	}
 	return 0;
 }
