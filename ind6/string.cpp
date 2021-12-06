@@ -81,14 +81,15 @@ int32_t String::compare (String& str) {
 }
 
 std::ostream& operator<< (std::ostream& out, const String& str) {
-	std::cout << "operator<< with str at " << &str << "\n";
-	out << str._raw_string;
+	std::cout << "operator<< with str \"";
+	printf("%s", str._raw_string);
+	std::cout << "\" at " << &str << "\n";
 	return out;
 }
 
 String& String::operator=(const String& str) { // оператор присваивания копированием
-	std::cout << "temporary obj str in operator=copy overload at " << &str << " of:" << "\npass\n" << str << "\nend\n";
-	std::cout << "new obj this in operator=copy overload at " << this << " of:" << "\npass\n" << *this << "\nend\n";
+	std::cout << "temporary obj str in operator=copy overload at " << &str << " of:\n\t" << str << "\n";
+	std::cout << "new obj this in operator=copy overload at " << this << " of:\n\t" << *this << "\n";
 	if (this == &str) {
 		return *this;
 	} else {
@@ -104,8 +105,8 @@ String& String::operator=(const String& str) { // оператор присва�
 }
 
 String& String::operator=(String&& str) noexcept { // оператор присваивания перемещением
-	std::cout << "temporary obj str in operator=move overload at " << &str << " of:" << "\npass\n" << str << "\nend\n";
-	std::cout << "new obj this in operator=move overload at " << this << " of:" << "\npass\n" << *this << "\nend\n";
+	std::cout << "temporary obj str in operator=move overload at " << &str << " of:\n\t" << str;
+	std::cout << "new obj this in operator=move overload at " << this << " of:\n\t" << *this;
 	if (this == &str) {
 		return *this;
 	} else {

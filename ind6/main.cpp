@@ -2,9 +2,9 @@
 #include "bankcard.h"
 
 int main () {
-	String str = "str1";
+	String str1 = "str1";
 	String str2 = "str2";
-	std::cout << "pass\n" << str << "end\n";
-	str = std::move(str2);
-	std::cout << str << "\n";
+	std::cout << "\t" << str1;
+	str1 = std::move(str2);
+	std::cout << str1;
 }
