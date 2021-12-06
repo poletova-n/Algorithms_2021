@@ -32,9 +32,11 @@ int main () {
 	for (size_t i = 1; i < cards.size(); i++) {
 		if (cards[i-1].CardholderSurname.compare(cards[i].CardholderSurname) == 0 &&
 			cards[i-1].CardholderName.compare(cards[i].CardholderName) == 0) {
-			flag = true;
+			if (!flag) {
+				counter++;
+				flag = true;
+			}
 		} else {
-			counter += flag;
 			flag = false;
 		}
 	}
@@ -54,17 +56,22 @@ int main () {
 		}
 	}
 
-	size_t type_counter = 0;
+	size_t type_counter = 1;
 	size_t max_counter = 0;
+	int max_counter_type = 0;
 	for (size_t i = 1; i < cards.size(); i++) {
 		if (cards[i-1].BankType == cards[i].BankType) {
 			type_counter++;
 		} else {
-			max_counter = (max_counter < type_counter) ? type_counter : max_counter;
-			type_counter = 0;
+			type_counter++;
+			if (max_counter < type_counter) {
+				max_counter = type_counter;
+				max_counter_type = cards[i-1].BankType;
+			}
+			type_counter = 1;
 		}
 	}
 
-	std::cout << max_counter << "\n";
+	std::cout << max_counter_type << "\n";
 	return 0;
 }
