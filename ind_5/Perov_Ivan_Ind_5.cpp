@@ -31,7 +31,6 @@ void fillWithNumbers(int**& matrix, int mSize) {
 		for (int j = i; j < mSize-i; j++)
 		{
 			matrix[j][i] = i + 1;
-			//cout << i << " " << j << '\t';
 		}
 	}
 	int count;
@@ -44,14 +43,11 @@ void fillWithNumbers(int**& matrix, int mSize) {
 		count = -1;
 	}
 
-	
-	/*cout << splash << " - splash \t" << mSize << " - mSize" << endl;*/
 	for (int i = splash; i < mSize; i++)
 	{
 		for (int j = mSize-i-1; j <= i; j++)
 		{
 			matrix[j][i] = splash - count;
-			/*cout << i << " " << j << '\t';*/
 		}
 		count++;
 	}
@@ -62,8 +58,6 @@ void fillWithNumbers(int**& matrix, int mSize) {
 	{
 		throw FILE_NOT_FOUND;
 	}
-
-
 
 	for (int i = 0; i < mSize; i++)
 	{
@@ -98,7 +92,6 @@ int main() {
 			}
 			std::cout << "\n";
 		}
-		cout << endl;
 		fillWithNumbers(matrix, mSize);
 
 		for (int i = 0; i < mSize; i++)
