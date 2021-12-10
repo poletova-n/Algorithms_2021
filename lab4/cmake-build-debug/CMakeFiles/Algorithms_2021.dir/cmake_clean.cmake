@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "Algorithms_2021.exe.manifest"
   "Algorithms_2021.lib"
   "Algorithms_2021.pdb"
+  "CMakeFiles/Algorithms_2021.dir/H_/aboba/Algorithms_2021/ind3/main.cpp.obj"
   "CMakeFiles/Algorithms_2021.dir/task1.cpp.obj"
 )
 

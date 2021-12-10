@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="H:/aboba/Algorithms_2021/ind3/main.cpp">
+			<Option target="Algorithms_2021"/>
+		</Unit>
 		<Unit filename="H:/aboba/Algorithms_2021/lab4/task1.cpp">
 			<Option target="Algorithms_2021"/>
 		</Unit>

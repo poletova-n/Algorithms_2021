@@ -118,6 +118,30 @@ Algorithms_2021\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\build
 .PHONY : Algorithms_2021\fast
 
+H_\aboba\Algorithms_2021\ind3\main.obj: H_\aboba\Algorithms_2021\ind3\main.cpp.obj
+.PHONY : H_\aboba\Algorithms_2021\ind3\main.obj
+
+# target to build an object file
+H_\aboba\Algorithms_2021\ind3\main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\H_\aboba\Algorithms_2021\ind3\main.cpp.obj
+.PHONY : H_\aboba\Algorithms_2021\ind3\main.cpp.obj
+
+H_\aboba\Algorithms_2021\ind3\main.i: H_\aboba\Algorithms_2021\ind3\main.cpp.i
+.PHONY : H_\aboba\Algorithms_2021\ind3\main.i
+
+# target to preprocess a source file
+H_\aboba\Algorithms_2021\ind3\main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\H_\aboba\Algorithms_2021\ind3\main.cpp.i
+.PHONY : H_\aboba\Algorithms_2021\ind3\main.cpp.i
+
+H_\aboba\Algorithms_2021\ind3\main.s: H_\aboba\Algorithms_2021\ind3\main.cpp.s
+.PHONY : H_\aboba\Algorithms_2021\ind3\main.s
+
+# target to generate assembly for a file
+H_\aboba\Algorithms_2021\ind3\main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\H_\aboba\Algorithms_2021\ind3\main.cpp.s
+.PHONY : H_\aboba\Algorithms_2021\ind3\main.cpp.s
+
 task1.obj: task1.cpp.obj
 .PHONY : task1.obj
 
@@ -151,6 +175,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Algorithms_2021
+	@echo ... H_/aboba/Algorithms_2021/ind3/main.obj
+	@echo ... H_/aboba/Algorithms_2021/ind3/main.i
+	@echo ... H_/aboba/Algorithms_2021/ind3/main.s
 	@echo ... task1.obj
 	@echo ... task1.i
 	@echo ... task1.s

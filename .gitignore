@@ -32,6 +32,14 @@
 *.app
 /lab2/cmake-build-debug/
 /lab1/cmake-build-debug/
+/lab3/cmake-build-debug/
+/lab4/cmake-build-debug/
+/ind1/cmake-build-debug/
+/ind2/cmake-build-debug/
+/ind3/cmake-build-debug/
+/ind4/cmake-build-debug/
+/ind5/cmake-build-debug/
+
 /cmake-build-debug/
 /.idea
 /.vs
