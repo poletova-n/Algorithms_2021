@@ -1,6 +1,7 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 const char* error_invalid_number = "Numbers cannot be a letter";
+const char* error_zero = "a=0 the end of the prog";
 
 int main()
 {
@@ -11,36 +12,49 @@ int main()
         while (a != 0)
         {
             cin >> a;
-
-            if (cin.peek() != '\n')
+            if (a == 0)
             {
-                throw error_invalid_number;
-            }                                                                                                                                                                                                                                                                               
+
+                c1 = c;
+                cout << c1 << endl;
+                throw error_zero;
+            } 
             else
             {
-                if (a < b)
+
+                if (cin.peek() != '\n')
                 {
-                    c++;
-                    b = a;
-                }               
+                    throw error_invalid_number;
+                }
+
                 else
                 {
-                    b = 32000;
-                    if (c1 < c)
+
+                    if (a < b)
                     {
-                        c1 = c;
-                        b = 32000;
-                        c = 1;
+                        c++;
+                        b = a;
                     }
                     else
                     {
                         b = 32000;
-                        c = 1;
+                        if (c1 < c)
+                        {
+                            c1 = c;
+                            b = 32000;
+                            c = 1;
+                        }
+                        else
+                        {
+                            b = 32000;
+                            c = 1;
+                        }
                     }
                 }
+
             }
         }
-        cout << c1;
+        cout << c1 << endl;
     }
     catch (const char* error)
     {
