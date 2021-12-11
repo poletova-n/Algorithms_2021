@@ -72,24 +72,26 @@ int main()
         std::cerr << std::endl << error << std::endl;
         return -1;
     }
-    
-    if ((inter1 > -1) and (inter1 < 1)) {
-        for (int n = 0; n <= Max; n++) {
-            a += F(2 * n) * pow(x, (2 * n + 1)) / (pow(4, n) * F(n) * F(n) * (2 * n + 1));
-            if (n == Max - 2) {
-                a1 = a;
+ 
+    for (inter1; inter1 <= inter2; inter1 = inter1 + step) {
+      x = inter1;
+      
+        a = 0;
+        if ((inter1 > -1) and (inter1 < 1)) {
+            for (int n = 0; n <= Max; n++) {
+                a += F(2 * n) * pow(x, (2 * n + 1)) / (pow(4, n) * F(n) * F(n) * (2 * n + 1));
+                if (n == Max - 2)   a1 = a;
+          
             }
-        }
-        d = a - a1;
-        if (d < 0) {
-            d *= -1;
-        }
-        if (d < absError) {
-            std::cout << "arcsin(" << x << ")=" << a << "\n";
-        }
-        else {
-            std::cout << "arcsin(" << x << ") исключение по интервалу \n";
-        }
+            d = a - a1;
+
+            if (d < 0)   d *= -1;
+
+            if (d < absError)  std::cout << "arcsin(" << x << ")=" << a << "\n";
+               
+            }
+        else  std::cout << "arcsin(" << x << ") исключение по интервалу \n";
+        
     }
     return 0;
 }
