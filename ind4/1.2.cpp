@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 
 const char* file_not_open = "File not open.";
 
