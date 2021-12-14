@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+H:/aboba/Algorithms_2021/recursion/func.cpp
+func.h
+H:/aboba/Algorithms_2021/recursion/func.h
+cctype
+-
+
+H:/aboba/Algorithms_2021/recursion/func.h
+
+H:/aboba/Algorithms_2021/recursion/main.cpp
+iostream
+-
+func.h
+H:/aboba/Algorithms_2021/recursion/func.h
+

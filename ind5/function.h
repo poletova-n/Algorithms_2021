@@ -1,0 +1,8 @@
+//
+// Created by barsi on 15.12.2021.
+//
+
+#ifndef ALGORITHMS_2021_FUNCTION_H
+#define ALGORITHMS_2021_FUNCTION_H
+
+#endif //ALGORITHMS_2021_FUNCTION_H
