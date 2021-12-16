@@ -24,5 +24,5 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
-# Fortran module output directory.
+# Fortran module output.txt directory.
 set(CMAKE_Fortran_TARGET_MODULE_DIR "")

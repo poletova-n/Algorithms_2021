@@ -1,9 +1,11 @@
 #include <iostream>
 #include <fstream>
 
-const char* ERROR_INPUT_FILE_NOT_FOUND = "Error: input file not found.";
+const char* ERROR_INPUT_FILE_NOT_FOUND = "Error: input.txt file not found.";
 
-const char* ERROR_OUTPUT_FILE_NOT_FOUND = "Error: output file not found.";
+const char* ERROR_OUTPUT_FILE_NOT_FOUND = "Error: output.txt file not found.";
+
+const char* ERROR_INVALID_ARRAY_INPUT = "Error: invalid array input.txt.";
 
 const int sizeX = 3;
 
@@ -20,7 +22,7 @@ int main()
     try {
         int array[sizeX][sizeY];
 
-        std::ifstream input("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind5\\input\\input_1.txt");
+        std::ifstream input(R"(D:\PTcodes\c++\GitPull\Algorithms_2021\ind5\input\input_1.txt)");
         if (!input.is_open())
         {
             throw ERROR_INPUT_FILE_NOT_FOUND;
@@ -32,7 +34,7 @@ int main()
 
         int answer = getDuplNumber(array);
 
-        std::ofstream output("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind5\\output\\output_1.txt");
+        std::ofstream output(R"(D:\PTcodes\c++\GitPull\Algorithms_2021\ind5\output\output_1.txt)");
         if (!output.is_open())
         {
             throw ERROR_OUTPUT_FILE_NOT_FOUND;
@@ -57,7 +59,19 @@ void setArray(int (&array)[sizeX][sizeY], std::ifstream &input)
     {
         for (int j = 0; j < sizeY; ++j)
         {
-            input >> array[i][j];
+            if(!input.eof()) {
+                input >> array[i][j];
+                if(input.fail() || (input.peek() != 10 && input.peek() != 32))
+                {
+                    throw ERROR_INVALID_ARRAY_INPUT;
+                }
+            } else
+            {
+                throw ERROR_INVALID_ARRAY_INPUT;
+            }
+            if(!input.eof()){
+                throw ERROR_INVALID_ARRAY_INPUT;
+            }
         }
     }
 }

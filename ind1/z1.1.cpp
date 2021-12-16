@@ -1,10 +1,14 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain integers.";
+const char* ERROR_INVALID_INPUT = "Error: input.txt must only contain integers.";
 
 int main()
 {
-    int first = 0;
+
+    char a = 'а';
+
+    std::cout << a;
+    /*int first = 0;
     int second = 0;
     int third = 0;
     int count = 0;
@@ -47,6 +51,6 @@ int main()
     {
         std::cerr << std::endl << error << std::endl;
         return -1;
-    }
+    }*/
 }
 

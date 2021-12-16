@@ -55,8 +55,6 @@ bool operator>(Subscriber &subscriber, Subscriber &anotherSubscriber) {
 
     int answer = subscriber.getCode().compare(anotherSubscriber.getCode());
 
-    std::cout << answer <<  " " << (answer+1)/2 << std::endl;
-
     if(answer != 0){return (answer+1)/2;}
 
     answer = subscriber.getSecondName().compare(anotherSubscriber.getSecondName());

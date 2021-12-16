@@ -1,6 +1,6 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain integers.";
+const char* ERROR_INVALID_INPUT = "Error: input.txt must only contain integers.";
 
 int main()
 {

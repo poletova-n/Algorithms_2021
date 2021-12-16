@@ -47,7 +47,6 @@ std::fstream &operator<<(std::fstream &output, Subscriber::Folder &folder) {
 
 bool operator>(Subscriber &subscriber, Subscriber &anotherSubscriber) {
 
-
     int answer = subscriber._secondName.compare(anotherSubscriber._secondName);
 
     if(answer != 0){return (answer+2)%2;}
@@ -103,6 +102,7 @@ bool Subscriber::PhoneNumberFolder::isPatternCorrect(std::string &string) {
             if(string.at(i) < '0' && string.at(i) > '9') return false;
         }
     }
+    return true;
 }
 
 void Subscriber::PhoneNumberFolder::printError() {

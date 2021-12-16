@@ -1,6 +1,6 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain numbers greater than 0 and less than 9.";
+const char* ERROR_INVALID_INPUT = "Error: input.txt must only contain numbers greater than 0 and less than 9.";
 
 int main()
 {

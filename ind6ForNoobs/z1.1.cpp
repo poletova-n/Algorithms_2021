@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include "String.h"
 #include "Subscriber.h"
 #include "ArrayManager.h"
 #include "SubscribersManager.h"
@@ -14,18 +13,12 @@ const char* ERROR_INCORRECT_LENGTH = "Error: length must be integer greater than
 int main(){
     try {
 
-        /*std::string string = "amogus";
-        std::string string1 = "amogus";
-        std::cout << string.compare(string1);*/
-
         char inputAddress[40];
         char outputAddress[40];
         int length;
 
         std::cout << "Input name of file with information:"; std::cin >> inputAddress;
         std::cout << "Input name of file for output:"; std::cin >> outputAddress;
-
-        Subscriber * subscribers = new Subscriber[5];
 
         std::fstream input(inputAddress);
         if(!input.is_open()) throw ERROR_INCORRECT_INPUT_FILE_NAME;
@@ -36,6 +29,7 @@ int main(){
             throw ERROR_INCORRECT_LENGTH;
         }
 
+        Subscriber * subscribers = new Subscriber[length];
 
         SubscribersManager::readArray(subscribers, length, input);
         input.close();

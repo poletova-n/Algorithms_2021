@@ -1,9 +1,18 @@
 #include <iostream>
 
+const int size = 6;
+
+void getAnswer(int (& array)[size], int size);
+
 int main()
 {
-    const int size = 6;
-    int array[6] = {1, 2, 3, 5, -1, 0};
+    int array[size] = {1, 2, 3, 5, -1, 0};
+    getAnswer(array, size);
+    return 0;
+}
+
+void getAnswer(int (& array)[size], int size)
+{
     int max = std::numeric_limits<int>::min();
     int count = 0;
 
@@ -23,5 +32,5 @@ int main()
         }
     }
 
-    std::cout << "Answer: " << count;
+    std::cout << "Answer: " << count << std::endl;
 }

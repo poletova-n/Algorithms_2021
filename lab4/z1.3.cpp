@@ -1,6 +1,6 @@
 #include <iostream>
 
-const char* ERROR_INVALID_INPUT = "Error: input must only contain positive integers";
+const char* ERROR_INVALID_INPUT = "Error: input.txt must only contain positive integers";
 
 int main()
 {

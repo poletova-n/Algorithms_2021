@@ -12,7 +12,7 @@ const char* & hasDuplicates(char* &array);
 int main()
 {
     try {
-        std::ifstream in("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind4\\input.txt");
+        std::ifstream in("D:\\PTcodes\\c++\\GitPull\\Algorithms_2021\\ind4\\input.txt.txt");
 
         if (!in.is_open()) {
             throw ERROR_FILE_NOT_FOUND;

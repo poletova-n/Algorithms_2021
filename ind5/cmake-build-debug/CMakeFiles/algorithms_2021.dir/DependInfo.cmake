@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/PTcodes/c++/GitPull/Algorithms_2021/ind5/z1.2.cpp" "D:/PTcodes/c++/GitPull/Algorithms_2021/ind5/cmake-build-debug/CMakeFiles/algorithms_2021.dir/z1.2.cpp.obj"
+  "D:/PTcodes/c++/GitPull/Algorithms_2021/ind5/z1.1.cpp" "D:/PTcodes/c++/GitPull/Algorithms_2021/ind5/cmake-build-debug/CMakeFiles/algorithms_2021.dir/z1.1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
@@ -24,5 +24,5 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
-# Fortran module output directory.
+# Fortran module output.txt directory.
 set(CMAKE_Fortran_TARGET_MODULE_DIR "")

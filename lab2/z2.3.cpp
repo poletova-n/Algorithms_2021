@@ -9,7 +9,7 @@ int main()
     std::cin >> input[0] >> input[1] >> input[2];
     if(std::cin.fail() || std::cin.peek() != 10) // Проверка корректности ввода
     {
-        std::cout << "Error: input must only contain numbers"; // Если ввод неверный
+        std::cout << "Error: input.txt must only contain numbers"; // Если ввод неверный
     }
     else
     {

@@ -1,4 +1,4 @@
-# Install script for directory: D:/PTcodes/c++/GitPull/Algorithms_2021/ind6
+# Install script for directory: D:/PTcodes/c++/GitPull/Algorithms_2021/rek
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

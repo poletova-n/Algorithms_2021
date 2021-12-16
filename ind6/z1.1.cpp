@@ -21,8 +21,6 @@ int main(){
         std::cout << "Input name of file with information:"; std::cin >> inputAddress;
         std::cout << "Input name of file for output:"; std::cin >> outputAddress;
 
-        Subscriber * subscribers = new Subscriber[5];
-
         std::fstream input(inputAddress);
         if(!input.is_open()) throw ERROR_INCORRECT_INPUT_FILE_NAME;
 
@@ -31,6 +29,8 @@ int main(){
         {
             throw ERROR_INCORRECT_LENGTH;
         }
+
+        Subscriber * subscribers = new Subscriber[length];
 
         SubscribersManager::readArray(subscribers, length, input);
         input.close();

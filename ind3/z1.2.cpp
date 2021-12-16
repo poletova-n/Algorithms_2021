@@ -1,10 +1,15 @@
 #include <iostream>
 
-const char* ERROR_INCORRECT_INPUT = "Error: array size must be number greater than 0.";
+const char* ERROR_INCORRECT_INPUT = "Error: array size must be integer greater than 0.";
+
+void generateArray();
 
 int main()
 {
-    srand( (unsigned)time(NULL) );
+    generateArray();
+}
+
+void generateArray(){
 
     int n = 0;
 
@@ -14,8 +19,10 @@ int main()
     if(std::cin.fail() || std::cin.peek() != 10 || n < 1)
     {
         std::cerr << ERROR_INCORRECT_INPUT << std::endl;
-        return -1;
+        exit(-1);
     }
+
+    srand( (unsigned)time(NULL) );
 
     int* array = new int[n];
     int max = std::numeric_limits<int>::min();
@@ -47,8 +54,7 @@ int main()
         }
     }
 
-    std::cout << "Answer: " << count;
+    std::cout << "Answer: " << count << std::endl;
 
     delete [] array;
 }
-

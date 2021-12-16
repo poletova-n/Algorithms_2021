@@ -102,6 +102,7 @@ bool Subscriber::PhoneNumberFolder::isPatternCorrect(String &string) {
             if(string.at(i) < '0' && string.at(i) > '9') return false;
         }
     }
+    return true;
 }
 
 void Subscriber::PhoneNumberFolder::printError() {

@@ -7,6 +7,7 @@ int sqrt(int in);
 
 int main()
 {
+
     SetConsoleOutputCP(CP_UTF8);
     int a = 0,b = 0,c = 0; // Инициализация переменных
     std::cout << "Введите коэффициенты уравнения: ";

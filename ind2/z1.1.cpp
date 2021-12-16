@@ -6,6 +6,8 @@ const char* ERROR_INVALID_SECOND_BORDER_INPUT = "Error: second border must be on
 
 const char* ERROR_INVALID_TERM_MAX_NUMB_INPUT = "Error: max number of terms must be only positive integer";
 
+const char* ERROR_INVALID_STEP_INPUT = "Error: step must be only number";
+
 const char* ERROR_INVALID_ABS_ERROR_INPUT = "Error: absolute error must be only number";
 
 const char* ERROR_CANT_REACH_ABS_ERROR = "Error: absolute error can't be reached";
@@ -30,14 +32,14 @@ int main()
     {
         std::cin >> start;
 
-        if(start > 1.0 && start < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
+        if(std::cin.fail() || start > 1.0 || start < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32))
         {
             throw ERROR_INVALID_FIRST_BORDER_INPUT;
         }
 
         std::cin >> finish;
 
-        if(finish > 1.0 && finish < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32) || finish < start)
+        if(std::cin.fail() || finish > 1.0 || finish < -1.0 || (std::cin.peek() != 10 && std::cin.peek() != 32) || finish < start)
         {
             throw ERROR_INVALID_SECOND_BORDER_INPUT;
         }
@@ -46,7 +48,7 @@ int main()
 
         if(std::cin.fail() || (std::cin.peek() != 10 && std::cin.peek() != 32) || termMaxNumb < 1)
         {
-            throw ERROR_INVALID_TERM_MAX_NUMB_INPUT;
+            throw ERROR_INVALID_STEP_INPUT;
         }
 
         std::cin >> termMaxNumb;

@@ -21,7 +21,7 @@ int main()
 {
     std::string input;
     getline(std::cin,input);
-    //std::cout << stringWithOutBrackets(input);
+    //std::cout << stringWithOutBrackets(input.txt);
     std::cout << isPattern(input, 'e');
     return 0;
 }
@@ -44,8 +44,8 @@ bool isPattern(std::string input, char type)
             pPose = findChar(input, '+');
             mPose = findChar(input, '-');
 
-            //std::cout << stringBefore(input, pPose) << std::endl;
-            //std::cout << stringAfter(input, pPose) << std::endl;
+            //std::cout << stringBefore(input.txt, pPose) << std::endl;
+            //std::cout << stringAfter(input.txt, pPose) << std::endl;
 
             //std::cout << mPose << " " << pPose << std::endl;
 
@@ -62,13 +62,13 @@ bool isPattern(std::string input, char type)
             if(ans1 || ans2 || ans3) ans = true;
             break;
         case 't':
-            //std::cout << "t " << input << std::endl;
+            //std::cout << "t " << input.txt << std::endl;
 
             pPose = findChar(input, '+');
             zPose = findChar(input, '*');
 
-            //std::cout << stringBefore(input, pPose) << std::endl;
-            //std::cout << stringAfter(input, pPose) << std::endl;
+            //std::cout << stringBefore(input.txt, pPose) << std::endl;
+            //std::cout << stringAfter(input.txt, pPose) << std::endl;
 
             ans1 = isPattern(input, 'm');
 
@@ -87,7 +87,7 @@ bool isPattern(std::string input, char type)
             if(ans1 || ans2 || ans3) ans = true;
             break;
         case 'm':
-            //std::cout << "m " << input << std::endl;
+            //std::cout << "m " << input.txt << std::endl;
 
             ans1 = isPattern(input, 'f');
 
@@ -100,7 +100,7 @@ bool isPattern(std::string input, char type)
             ans = ans1 || ans2 || ans3;
             break;
         case 'f':
-            //std::cout << "f " << input << std::endl;
+            //std::cout << "f " << input.txt << std::endl;
 
             ans1 = isPattern(input, 'n');
 
@@ -110,12 +110,12 @@ bool isPattern(std::string input, char type)
             if(ans1 || ans2) ans = true;
             break;
         case 'i':
-            //std::cout << "i "<< input << std::endl;
+            //std::cout << "i "<< input.txt << std::endl;
             ans = (input == "x" || input == "y" || input == "z");
             //if(ans) ans = true;
             break;
         case 'n':
-            //std::cout << "n " << input << std::endl;
+            //std::cout << "n " << input.txt << std::endl;
             ans = (input == "0" || input == "1");
             //std::cout << ans << " " << "n" << std::endl;
             //if(ans1) ans = true;

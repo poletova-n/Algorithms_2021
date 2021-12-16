@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/Point.h
+Point.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/Point.h
+iostream
+-
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/Triangle.h
+iostream
+-
+Point.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/Point.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/z1.1.cpp
+Point.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/Point.h
+Triangle.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/oop1/Triangle.h
+iostream
+-
+

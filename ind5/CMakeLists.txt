@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(EXECUTABLE_OUTPUT_PATH Dir_where_executable_program_is_located)
 
-add_executable(algorithms_2021 z1.2.cpp)
+add_executable(algorithms_2021 z1.1.cpp)
