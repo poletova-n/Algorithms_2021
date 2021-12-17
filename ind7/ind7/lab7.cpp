@@ -23,10 +23,10 @@ void sortDinamicArray(T**, int, int);
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     try {
-        char inputFileName[40];
+        String inputFileName;
         std::cout << "Введите путь до файла с входными данными: "; std::cin >> inputFileName;
         std::cout << '\n';
-        std::fstream inputFile(inputFileName);
+        std::ifstream inputFile(inputFileName.getCString());
         if (!inputFile.is_open())throw ERROR_OPEN_FILE;
 
         int strCount;
@@ -151,9 +151,9 @@ int main() {
             std::cout << "\n\nСортировка по Имени, году рождения, фамилии:\n";
             printPersons(array.getData(), persCount);
 
-            char outputFileName[40];
+            String outputFileName;
             std::cout << "\nВведите путь до файла с выходными данными: "; std::cin >> outputFileName;
-            std::fstream outputFile(outputFileName);
+            std::fstream outputFile(outputFileName.getCString());
             if (!outputFile.is_open())throw ERROR_OPEN_FILE;
             outputFile << persCount <<'\n';
             for (int i = 0; i < persCount; i++) {

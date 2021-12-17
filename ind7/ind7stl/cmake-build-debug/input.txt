@@ -1,7 +1,7 @@
 12
 Zba Abc 2000
 -Abc Aaa 2000
-Aaa Abc 2000
+Abc Abc 2000
 Abc Abc 2030
 A-bc Aba 2005
 Abc    Abc  2000
