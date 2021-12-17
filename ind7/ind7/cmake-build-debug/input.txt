@@ -1,0 +1,13 @@
+12
+Zba Abc 2000
+-Abc Aaa 2000
+Aaa Abc 2000
+Abc Abc 2020 Abc
+A-bc Aba 2005
+Abc    Abc  2000
+Abc Abc 2000g
+Abcd Abcd 200
+A.bc Abc 2000
+Zba Abc 2003
+Abc Abd 2000
+Aaa Abc 2000
