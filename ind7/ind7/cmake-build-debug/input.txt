@@ -2,7 +2,7 @@
 Zba Abc 2000
 -Abc Aaa 2000
 Aaa Abc 2000
-Abc Abc 2020 Abc
+Abc Abc 2020
 A-bc Aba 2005
 Abc    Abc  2000
 Abc Abc 2000g
