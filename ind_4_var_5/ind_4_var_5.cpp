@@ -1,97 +1,90 @@
-
 #include <iostream>
-#include <fstream>
-#include <windows.h>
-
+#include <Windows.h>
+#include <conio.h>
 
 using namespace std;
 
-const char* ERROR_FILE_NOT_OPENED = "file is not open";
-
-char* findSym(const char* arr1, int size1, char* arr2, int size2);
-
-int main() 
+int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    try
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    char string1[] = { "12345" };
+    char string2[] = { "92348" };
+    char string3[20] = {};
+    char string4[20] = {};
+    for (int z = 0; z < 20; z++)
     {
-        bool flag = false;
-        int position(0);
-        int size(0);
-        char* arr1 = new char[size];
-        char* arr2 = new char[size];
-        int size1(0);
-        int size2(0);
-        ifstream fin("C:\\Users\\Ольга\\Documents\\учеба\\поликек\\c++\\Algorithms_2021\\ind_4_var_5\\input.txt");
-       
-        if (!fin.is_open()) 
+        for (int j = 0; j < 20; j++)
         {
-            throw ERROR_FILE_NOT_OPENED;
-        }
-        else 
-        {
-            while (!fin.eof()) 
+            char temp, temp2;
+            for (int i = 0; i < sizeof(string1); i++)
             {
 
-                fin.seekg(position);
-                fin >> size;
-
-                char* arr = new char[size];
-
-                fin.seekg(position + 3);
-                char currentSymbol;
-                int i(0);
-                while (fin.get(currentSymbol) && i < size)
+                for (int k = 0; k < sizeof(string2); k++)
                 {
-                    
-                    arr[i] = currentSymbol;
-                    i++;
-                   
+                    if (string1[i] != string2[k])
+                    {
+                        temp2 = string2[k];
+                        temp = string1[i];
+                    }
+                    else
+                    {
+                        temp = NULL; temp2 = NULL;
+                        break;
+                    }
                 }
-                arr[size] = '\0';
 
-                position += size + 5;
-               
-                if (flag == false)
+                string3[j] = temp;
+                string4[z] = temp2;
+                if (string3[j] != NULL)
                 {
-                    arr1 = arr;
-                    size1 = size;
+                    j++;
                 }
-                else 
+                if (string4[z] != NULL)
                 {
-                    arr2 = arr;
-                    size2 = size;
+                    z++;
                 }
-                flag = true;
             }
-            findSym(arr1, size1, arr2, size2);
         }
-        fin.close();
-      
-        return 0;
-    }
-    catch (const char* error)
-    {
-        cerr << endl << error << endl;
-        return -1;
-    }
-}
 
-char* findSym(const char* arr1, int size1, char* arr2, int size2) 
-{
-    fstream fout("C:\\Users\\Ольга\\Documents\\учеба\\поликек\\c++\\Algorithms_2021\\ind_4_var_5\\output.txt");
-   
-    for (int i = 0; i < size1; ++i) 
+    }
+    for (int a = 0; a < 20; a++)
     {
-        for (int j = 0; j < size2; ++j)
+        for (int b = 0; b < 20; b++)
         {
-            if (arr1[i] != arr2[j]) 
+            char temp, temp2;
+            for (int k = 0; k < sizeof(string2); k++)
             {
-                fout << arr2[j];
-                fout << ", ";
+
+                for (int i = 0; i < sizeof(string1); i++)
+                {
+                    if (string2[k] != string1[i])
+                    {
+                        temp2 = string2[k];
+                        temp = string1[i];
+                    }
+                    else
+                    {
+                        temp = NULL; temp2 = NULL;
+                        break;
+                    }
+                }
+
+
+                string4[b] = temp2;
+
+                if (string4[b] != NULL)
+                {
+                    b++;
+                }
             }
         }
+
     }
-    fout.close();
-    return arr2;
+    cout << string3;
+    cout << string4;
+
+    cout << endl;
+    _getch();
+    return 0;
 }
