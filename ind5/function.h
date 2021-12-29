@@ -1,8 +1,13 @@
-//
-// Created by barsi on 15.12.2021.
-//
+#ifndef FUNCTION_H
 
-#ifndef ALGORITHMS_2021_FUNCTION_H
-#define ALGORITHMS_2021_FUNCTION_H
+#define FUNCTION_H
 
-#endif //ALGORITHMS_2021_FUNCTION_H
+namespace laba5 {
+
+    void printArr(const int* arr, int X, int Y);
+
+    void first();
+
+}
+
+#endif

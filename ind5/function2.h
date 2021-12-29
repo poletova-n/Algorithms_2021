@@ -1,8 +1,11 @@
-//
-// Created by barsi on 15.12.2021.
-//
+#ifndef FUNCTION2_H
 
-#ifndef ALGORITHMS_2021_FUNCTION2_H
-#define ALGORITHMS_2021_FUNCTION2_H
+#define FUNCTION2_H
 
-#endif //ALGORITHMS_2021_FUNCTION2_H
+namespace laba5 {
+
+    void second();
+
+}
+
+#endif

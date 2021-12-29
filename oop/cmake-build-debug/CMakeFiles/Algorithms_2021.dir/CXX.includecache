@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+H:/aboba/Algorithms_2021/classes/main.cpp
+function2.h
+H:/aboba/Algorithms_2021/classes/function2.h
+fstream
+-
+iostream
+-
+function.h
+H:/aboba/Algorithms_2021/classes/function.h
+iostream
+-
+fstream
+-
+iomanip
+-
+iostream
+-
+function.h
+H:/aboba/Algorithms_2021/classes/function.h
+function2.h
+H:/aboba/Algorithms_2021/classes/function2.h
+
