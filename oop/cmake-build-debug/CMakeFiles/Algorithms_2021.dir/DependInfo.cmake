@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "H:/aboba/Algorithms_2021/classes/main.cpp" "H:/aboba/Algorithms_2021/classes/cmake-build-debug/CMakeFiles/Algorithms_2021.dir/main.cpp.obj"
+  "H:/aboba/Algorithms_2021/oop/BankCard.cpp" "H:/aboba/Algorithms_2021/oop/cmake-build-debug/CMakeFiles/Algorithms_2021.dir/BankCard.cpp.obj"
+  "H:/aboba/Algorithms_2021/oop/Funcs.cpp" "H:/aboba/Algorithms_2021/oop/cmake-build-debug/CMakeFiles/Algorithms_2021.dir/Funcs.cpp.obj"
+  "H:/aboba/Algorithms_2021/oop/main.cpp" "H:/aboba/Algorithms_2021/oop/cmake-build-debug/CMakeFiles/Algorithms_2021.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

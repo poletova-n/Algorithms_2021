@@ -6,25 +6,23 @@
 
 #IncludeRegexTransform: 
 
-H:/aboba/Algorithms_2021/classes/main.cpp
-function2.h
-H:/aboba/Algorithms_2021/classes/function2.h
+H:/aboba/Algorithms_2021/oop/BankCard.h
+string
+-
+
+H:/aboba/Algorithms_2021/oop/Funcs.h
+BankCard.h
+H:/aboba/Algorithms_2021/oop/BankCard.h
+
+H:/aboba/Algorithms_2021/oop/main.cpp
+iostream
+-
 fstream
 -
-iostream
+string
 -
-function.h
-H:/aboba/Algorithms_2021/classes/function.h
-iostream
--
-fstream
--
-iomanip
--
-iostream
--
-function.h
-H:/aboba/Algorithms_2021/classes/function.h
-function2.h
-H:/aboba/Algorithms_2021/classes/function2.h
+BankCard.h
+H:/aboba/Algorithms_2021/oop/BankCard.h
+funcs.h
+H:/aboba/Algorithms_2021/oop/Funcs.h
 

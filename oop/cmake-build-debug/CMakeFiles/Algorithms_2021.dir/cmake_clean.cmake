@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "Algorithms_2021.exe.manifest"
   "Algorithms_2021.lib"
   "Algorithms_2021.pdb"
+  "CMakeFiles/Algorithms_2021.dir/BankCard.cpp.obj"
+  "CMakeFiles/Algorithms_2021.dir/Funcs.cpp.obj"
   "CMakeFiles/Algorithms_2021.dir/main.cpp.obj"
 )
 

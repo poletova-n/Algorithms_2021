@@ -1,4 +1,4 @@
-# Install script for directory: H:/aboba/Algorithms_2021/classes
+# Install script for directory: H:/aboba/Algorithms_2021/oop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "H:/aboba/Algorithms_2021/classes/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "H:/aboba/Algorithms_2021/oop/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

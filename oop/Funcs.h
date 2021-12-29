@@ -1,8 +1,21 @@
-//
-// Created by barsi on 29.12.2021.
-//
+#ifndef FUNCS_H
 
-#ifndef ALGORITHMS_2021_FUNCS_H
-#define ALGORITHMS_2021_FUNCS_H
+#define FUNCS_H
 
-#endif //ALGORITHMS_2021_FUNCS_H
+#include "BankCard.h"
+
+namespace laba6 {
+
+    void sortByName(BankCard* cards, int N);
+
+    void sortByNum(BankCard* cards, int N);
+
+    void sortByDate(BankCard* cards, int N);
+
+    int countCard(const BankCard* cards, int N);
+
+    bool isEqualSurnamesAndUnequalNames(const BankCard* cards, int N);
+
+}
+
+#endif

@@ -46,10 +46,10 @@ RM = "H:\CLION\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = H:\aboba\Algorithms_2021\classes
+CMAKE_SOURCE_DIR = H:\aboba\Algorithms_2021\oop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = H:\aboba\Algorithms_2021\classes\cmake-build-debug
+CMAKE_BINARY_DIR = H:\aboba\Algorithms_2021\oop\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -76,9 +76,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start H:\aboba\Algorithms_2021\classes\cmake-build-debug\CMakeFiles H:\aboba\Algorithms_2021\classes\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start H:\aboba\Algorithms_2021\oop\cmake-build-debug\CMakeFiles H:\aboba\Algorithms_2021\oop\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start H:\aboba\Algorithms_2021\classes\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start H:\aboba\Algorithms_2021\oop\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -118,6 +118,54 @@ Algorithms_2021\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\build
 .PHONY : Algorithms_2021\fast
 
+BankCard.obj: BankCard.cpp.obj
+.PHONY : BankCard.obj
+
+# target to build an object file
+BankCard.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\BankCard.cpp.obj
+.PHONY : BankCard.cpp.obj
+
+BankCard.i: BankCard.cpp.i
+.PHONY : BankCard.i
+
+# target to preprocess a source file
+BankCard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\BankCard.cpp.i
+.PHONY : BankCard.cpp.i
+
+BankCard.s: BankCard.cpp.s
+.PHONY : BankCard.s
+
+# target to generate assembly for a file
+BankCard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\BankCard.cpp.s
+.PHONY : BankCard.cpp.s
+
+Funcs.obj: Funcs.cpp.obj
+.PHONY : Funcs.obj
+
+# target to build an object file
+Funcs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\Funcs.cpp.obj
+.PHONY : Funcs.cpp.obj
+
+Funcs.i: Funcs.cpp.i
+.PHONY : Funcs.i
+
+# target to preprocess a source file
+Funcs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\Funcs.cpp.i
+.PHONY : Funcs.cpp.i
+
+Funcs.s: Funcs.cpp.s
+.PHONY : Funcs.s
+
+# target to generate assembly for a file
+Funcs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Algorithms_2021.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Algorithms_2021.dir\Funcs.cpp.s
+.PHONY : Funcs.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -151,6 +199,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Algorithms_2021
+	@echo ... BankCard.obj
+	@echo ... BankCard.i
+	@echo ... BankCard.s
+	@echo ... Funcs.obj
+	@echo ... Funcs.i
+	@echo ... Funcs.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
