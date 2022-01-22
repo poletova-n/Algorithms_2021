@@ -1,0 +1,8 @@
+//
+// Created by barsi on 22.01.2022.
+//
+
+#ifndef ALGORITHMS_2021_STRING_H
+#define ALGORITHMS_2021_STRING_H
+
+#endif //ALGORITHMS_2021_STRING_H

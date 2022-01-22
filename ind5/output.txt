@@ -1,0 +1,1 @@
+Number of columns that includes repeating elements : 1
