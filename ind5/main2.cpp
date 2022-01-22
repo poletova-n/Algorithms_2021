@@ -54,7 +54,7 @@ int main()
         }
         \
 
-        output << answer;
+        output << answer + 1;
         output.close();
         for (int i = 0; i < sizeX; ++i)
         {
@@ -88,9 +88,9 @@ void setArray(int** &array, int sizeX, int sizeY, std::ifstream &input) {
 int numcol( int**& array, int sizeX, int sizeY)
 {
     int i, j, col = 1, tmp, num=0;
-    for ( i = 0; i < sizeX; i++)
+    for ( i = 0; i < sizeY; i++)
     {
-        for(j=0; j < sizeY; j++)
+        for(j=0; j < sizeX; j++)
         {
             tmp = j+1;
             while(tmp<sizeX && array[tmp][i] == array[j][i])
