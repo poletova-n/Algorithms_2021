@@ -6,21 +6,19 @@
 
 #IncludeRegexTransform: 
 
-D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/ArrayManager.h
-fstream
+D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/Subscriber.cpp
+istream
 -
 iostream
 -
-
-D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/Subscriber.h
-
-D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/z1.1.cpp
-iostream
--
 fstream
+-
+utility
+-
+sstream
 -
 Subscriber.h
 D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/Subscriber.h
-ArrayManager.h
-D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/ArrayManager.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/notlabs/ind6ForNoobs/Subscriber.h
 

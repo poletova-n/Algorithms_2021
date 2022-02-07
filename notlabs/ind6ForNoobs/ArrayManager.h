@@ -21,29 +21,12 @@ public:
 
 };
 
-/*template<class T>
-void ArrayManager::sortArray(T *&array, int length) {
-    std::cout << 1;
-    T current;
-    int prevIndex;
-    for (int counter = 1; counter < length; counter++)
-    {
-        current = array[counter];
-        prevIndex = counter-1;
-        while(prevIndex >= 0 && array[prevIndex] > current)
-        {
-            array[prevIndex + 1] = array[prevIndex];
-            array[prevIndex] = current;
-            prevIndex--;
-        }
-    }
-}*/
-
 template<class T>
 void ArrayManager::sortArray(T *&array, int length) {
     T temp;
     for (int i = 0; i < length - 1; i++) {
         for (int j = 0; j < length - i - 1; j++) {
+
             if (array[j] > array[j + 1]) {
                 temp = array[j];
                 array[j] = array[j + 1];

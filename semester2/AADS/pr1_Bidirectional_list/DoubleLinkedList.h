@@ -1,7 +1,9 @@
 #ifndef __DOUBLE_LINKED_LIST
 #define __DOUBLE_LINKED_LIST
 
-//  DoubleLinkedList.h - Дважды связный список целых чисел  
+#include <fstream>
+
+//  DoubleLinkedList.h - Дважды связный список целых чисел
 //
 class DoubleLinkedList
 {
@@ -48,7 +50,7 @@ private:
 public:
 
     // Конструктор "по умолчанию" - создание пустого списка
-    DoubleLinkedList() : count_(0), head_(nullptr), tail_(nullptr) {  }
+    DoubleLinkedList();
 
     // Конструктор "копирования" – создание копии имеющегося списка
     DoubleLinkedList(const DoubleLinkedList& src);
@@ -61,16 +63,20 @@ public:
 
     // Оператор перемещающего присваивания 
     DoubleLinkedList& operator=(DoubleLinkedList&& right) noexcept;
+
+    bool operator==(DoubleLinkedList& right);
+
+    friend std::ostream& operator<<(std::ostream& output, DoubleLinkedList &doubleLinkedList);
    
     // количество элементов списка
-    int count()const { return count_; }
+    [[nodiscard]] int count()const { return count_; }
 
     // Доступ к информации головного узла списка
-    int headItem() const;
+    [[nodiscard]] int headItem() const;
     int& headItem();
 
     // Доступ к информации хвостового узла списка
-    int tailItem() const;
+    [[nodiscard]] int tailItem() const;
     int& tailItem();
 
     // Добавление элемента в голову списка
@@ -86,19 +92,34 @@ public:
     bool deleteTail();
 
     // Удаление узла с заданным значением  
-    bool deleteItem(const int item);
+    bool deleteItem(const int item, bool all = false);
 
     // Поиск записи с заданным значением  
     bool searchItem(int item);
 
     // Замена информации узла на новое 
-    bool replaceItem(int itemOld, int itemNew);
+    bool replaceItem(int itemOld, int itemNew, bool all = false);
 
     // Вывод элементов списка в текстовом виде в стандартный выходной поток 
     void outAll();
 
+    void add(DoubleLinkedList & list);
+
     // Деструктор списка	
     virtual ~DoubleLinkedList();
+
 };
+
+/*bool operator==(DoubleLinkedList &right, DoubleLinkedList& left) {
+    if(&right == &left) return true;
+    if(right.count_ != left.count_) return false;
+    right.
+    for (int i = 0; i < ; ++i) {
+
+    }
+    return false;
+}*/
+
+
 #endif
 

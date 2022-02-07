@@ -1,14 +1,27 @@
 #include "DoubleLinkedList.h"
 #include "DoubleLinkedList.h"
-//  DoubleLinkedList.cpp - Дважды связный список целых чисел - реализация методов класса  
-//
 #include <iostream>
 
 // Конструктор "по умолчанию" - создание пустого списка - см. Описание класса
-// DoubleLinkedList::DoubleLinkedList(): count_(0), head_(nullptr), tail_(nullptr) {  }
+DoubleLinkedList::DoubleLinkedList(): count_(0), head_(nullptr), tail_(nullptr) {  }
 
 // Конструктор "копирования" – создание копии имеющегося списка
-// DoubleLinkedList::DoubleLinkedList (const DoubleLinkedList::DoubleLinkedList & src) {}
+DoubleLinkedList::DoubleLinkedList (const DoubleLinkedList & list) : count_(0), head_(nullptr), tail_(nullptr)  {
+
+    if(list.head_ == nullptr) return;
+
+    this->insertHead(new Node(list.head_->item_));
+
+    if(list.count_ > 1) return;
+
+    Node *temp = list.head_->next_;
+    this->insertTail(new Node(temp->item_));
+    for (int i = 0; i < list.count_ - 2; ++i) {
+        temp = temp->next_;
+        this->insertTail(new Node(temp->item_));
+    }
+
+}
 
 void DoubleLinkedList::swap(DoubleLinkedList& other) noexcept
 {
@@ -51,9 +64,13 @@ DoubleLinkedList& DoubleLinkedList::operator=(DoubleLinkedList&& right) noexcept
 // Добавление сформированного узла в хвост списка
 void DoubleLinkedList::insertTail(Node* x)
 {
-	// !!!                                      !!!
-	// !!! Здесь долна быть реализация метода   !!!
-	// !!!                                      !!!
+	x->prev_ = tail_;
+    if(head_ != nullptr){
+        tail_->next_ = x;
+    }
+    else head_ = x;
+    tail_ = x;
+    count_++;
 }
 
 // Добавление сформированного узла в начало списка
@@ -79,23 +96,19 @@ void DoubleLinkedList::deleteNode(Node* x)
 		throw ("DoubleLinkedList::deleteNode  - неверно задан адрес удаляемого узла");
 	}
 	if (x->prev_ != nullptr) {
-		// удаляется НЕ голова списка
 		(x->prev_)->next_ = x->next_;
 	}
 	else {
-		// удаляется голова списка,  второй элемент становится первым
 		head_ = x->next_;
 	}
 	if (x->next_ != nullptr) {
-		// удаляется НЕ хвост
 		(x->next_)->prev_ = x->prev_;
 	}
 	else {
-		// удаляется хвост
 		tail_ = x->prev_;
 	}
-	delete x;      // 
-	count_--;     // число элементов списка уменьшилось
+	delete x;
+	count_--;
 }
 
 // Поиск узла (адрес) с заданным значением  
@@ -111,14 +124,9 @@ DoubleLinkedList::Node* DoubleLinkedList::searchNode(int item)
 // Замена информации узла на новое 
 DoubleLinkedList::Node* DoubleLinkedList::replaceNode(DoubleLinkedList::Node* x, int item)
 {
-	// !!!                                      !!!
-	// !!! Здесь долна быть реализация метода   !!!
-	// !!!                                      !!!
-	return x; // !!!!!
+	x->item_ = item;
+	return x;
 }
-
-// количество элементов списка
-//  int DoubleLinkedList::сount()const{ return count_; }
 
 // Доступ к информации головного узла списка
 int DoubleLinkedList::headItem() const
@@ -155,68 +163,93 @@ int& DoubleLinkedList::tailItem()
 
 // Добавление элемента в голову списка
 void DoubleLinkedList::insertHead(int item)
-{   // создаем новый элемент списка и добавляем в голову 
+{
 	insertHead(new Node(item));
 }
 
 
 // Добавление элемента в хвост списка
 void DoubleLinkedList::insertTail(int item)
-{   // создаем новый элемент списка и добавляем в хвост 
+{
 	insertTail(new Node(item));
 }
 
 // Удаление элемента с головы списка
 bool DoubleLinkedList::deleteHead()
 {
-	if (head_ == nullptr) {
-		return 0;  // список пуст, удалений нет
-	}
+	if (head_ == nullptr) return false;
 	deleteNode(head_);
-	return 1;      // список был НЕ пуст, удаление головы
+	return true;
 }
 
 // Удаление элемента из хвоста списка
 bool DoubleLinkedList::deleteTail()
 {
-	// !!!                                      !!!
-	// !!! Здесь долна быть реализация метода   !!!
-	// !!!                                      !!!
-	return 0; // !!! удалить после реализации метода  !!!  
+    if(tail_ == nullptr) return false;
+    deleteNode(tail_);
+	return true;
 }
 
 // Удаление узла с заданным значением  
-bool DoubleLinkedList::deleteItem(const int item)
+bool DoubleLinkedList::deleteItem(const int item, bool all)
 {
-	// !!!                                      !!!
-	// !!! Здесь долна быть реализация метода   !!!
-	// !!!                                      !!!
-	return 0; // !!! удалить после реализации метода  !!!
+
+    bool isSuccessful = false;
+    Node* current = head_;
+
+    while(current != nullptr)
+    {
+        if (current->item_ == item)
+        {
+            current = current->next_;
+            deleteNode(current->prev_);
+            if(!all) return true;
+            isSuccessful = true;
+        }
+        else current = current->next_;
+    }
+    return isSuccessful;
+
 }
 
 // Поиск записи с заданным значением  
 bool DoubleLinkedList::searchItem(int item)
-{   // возвращаем TRUE, если узел найден 
+{
 	return (searchNode(item) != nullptr);
 }
 
 
 // Замена информации узла на новое 
-bool DoubleLinkedList::replaceItem(int itemOld, int itemNew)
+bool DoubleLinkedList::replaceItem(int itemOld, int itemNew, bool all)
 {
-	// !!!                                      !!!
-	// !!! Здесь долна быть реализация метода   !!!
-	// !!!                                      !!!
-	return 0; // !!! удалить после реализации метода  !!!
+    bool isSuccessful = false;
+    Node* current = head_;
+
+    while(current != nullptr)
+    {
+        if (current->item_ == itemOld)
+        {
+            current->item_ = itemNew;
+            if(!all) return true;
+            isSuccessful = true;
+        }
+        current = current->next_;
+    }
+    return isSuccessful;
 }
 
 // Вывод элементов списка в текстовом виде в стандартный выходной поток 
 void DoubleLinkedList::outAll()
 {
-	Node* current = head_;       // Указатель на элемент
+    if(head_ == nullptr) {
+        std::cout << "List is empty" << std::endl;
+        return;
+    }
+
+	Node* current = head_;
 	while (current != nullptr) {
 		std::cout << current->item_ << ' ';
-		current = current->next_;  // Переход к следующему элементу
+		current = current->next_;
 	}
 	std::cout << std::endl;
 }
@@ -224,11 +257,53 @@ void DoubleLinkedList::outAll()
 // Деструктор списка	
 DoubleLinkedList::~DoubleLinkedList()
 {
-	Node* current = nullptr;   // указатель на элемент, подлежащий удалению
-	Node* next = head_;        // указатель на следующий элемент
-	while (next != nullptr) {  // пока есть еще элементы в списке
+	Node* current = nullptr;
+	Node* next = head_;
+	while (next != nullptr) {
 		current = next;
-		next = next->next_;    // переход к следующему элементу
-		delete current;        // освобождение памяти
+		next = next->next_;
+		delete current;
 	}
+
+}
+
+void DoubleLinkedList::add(DoubleLinkedList &list) {
+
+    if(list.head_ == nullptr) return;
+
+    this->insertTail(new Node(list.head_->item_));
+
+    if(list.count_ > 1) return;
+
+    Node *temp = list.head_->next_;
+    this->insertTail(new Node(temp->item_));
+    for (int i = 0; i < list.count_ - 2; ++i) {
+        temp = temp->next_;
+        this->insertTail(new Node(temp->item_));
+    }
+
+}
+
+bool DoubleLinkedList::operator==(DoubleLinkedList &right) {
+
+    if(&right == this) return true;
+
+    if(right.count_ != this->count_) return false;
+
+    Node* first = head_;
+    Node* second = right.head_;
+
+    for (int i = 0; i < right.count_; ++i) {
+        if(first != second) return false;
+        first = first->next_;
+        second = second->next_;
+    }
+
+    return true;
+}
+
+std::ostream &operator<<(std::ostream &output, DoubleLinkedList &doubleLinkedList) {
+
+    doubleLinkedList.outAll();
+    return output;
 }

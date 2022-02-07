@@ -9,21 +9,9 @@ std::fstream &operator>>(std::fstream &input, Subscriber &subscriber) {
 
     std::string stringInput;
     std::getline(input, stringInput);
+
     std::string stringInputSplited [4] = {"", "", "", ""};
     int cur = 0;
-
-    /*for (int i = 0; i < 4; ++i) {
-        while(stringInput[cur] == ' '){
-            i++;
-            if(cur == stringInput.length()) break;
-        }
-        while(stringInput[cur] != ' ')
-        {
-            stringInputSplited[i] += stringInput[cur];
-            i++;
-            if(cur == stringInput.length()) break;
-        }
-    }*/
 
     stringInputSplited[0] += stringInput[0];
     for (int i = 1; i < stringInput.length(); ++i) {
@@ -33,21 +21,19 @@ std::fstream &operator>>(std::fstream &input, Subscriber &subscriber) {
         }
     }
 
-    /*for (int i = 0; i < 4; ++i) {
-        std::cout << stringInputSplited[i] << std::endl;
-    }*/
-
     subscriber.setSecondName(stringInputSplited[0]);
     subscriber.setFirstName(stringInputSplited[1]);
     subscriber.setCode(stringInputSplited[2]);
     subscriber.setPhone(stringInputSplited[3]);
+
     return input;
 }
 
 std::fstream &operator<<(std::fstream &output, Subscriber &subscriber) {
-    //std::string outputString = subscriber.getSecondName() + " " + subscriber.getFirstName() + " " + subscriber.getCode() + " " + subscriber.getPhone();
+
     std::string outputString = subscriber.getCode() + " " + subscriber.getSecondName() + " " + subscriber.getFirstName() + " " + subscriber.getPhone();
     output << outputString << std::endl;
+
     return output;
 }
 
@@ -68,6 +54,8 @@ bool operator>(Subscriber &subscriber, Subscriber &anotherSubscriber) {
     answer =  subscriber.getPhone().compare(anotherSubscriber.getPhone());
 
     if( answer != 0){return (answer+1)/2;}
+
+    return false;
 }
 
 const std::string &Subscriber::getFirstName() const {
@@ -112,7 +100,7 @@ Subscriber::Subscriber(const std::string &firstName, const std::string &secondNa
 
 bool Subscriber::isFirstNameCorrect( const std::string &string) {
     return (string.at(0) >= 'A' && string.at(0) <= 'Y'
-                                   & string.at(1) == '.' && string.length() == 2);
+        && string.at(1) == '.' && string.length() == 2);
 }
 
 bool Subscriber::isSecondNameCorrect(const std::string &string) {

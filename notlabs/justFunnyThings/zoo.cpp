@@ -1,15 +1,14 @@
 #include <iostream>
-#include <ctime>
+using std::cout;
+
 
 int main(){
 
-    std::srand(0);
-    int sus = 0;
-    for (int i = 0; i < 100000; ++i) {
-        for (int j = 0; j < 100000; ++j) {
-            sus++;
-        }
-    }
-    std::cout << "runtime = " << clock()/1000.0 << std::endl;
-    return 0;
-}
+    int a = 2;
+
+    int b = 4;
+
+    float c = 4 / a++ - ++b / 2.0;
+
+    std::cout << a << ' ' << b << ' ' << cout << std::endl;
+};
