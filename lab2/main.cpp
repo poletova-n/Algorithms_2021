@@ -1,51 +1,90 @@
-#pragma ide diagnostic ignored "hicpp-exception-baseclass"
+//
+// Created by Foko on 25.02.2022.
+//
 #include <iostream>
-#include "DoubleLinkedList.h"
+
+class SinglyOrderedList {
+private:
+    struct Node {
+        Node* next;
+        int key;
+
+        Node (int key, Node* next = nullptr): key(key),
+                                              next(next)
+                                              {
+           ;
+        }
+    };
+private:
+    Node* head;
+    size_t length;
+public:
+    SinglyOrderedList (): length(0)
+                          {
+        head = nullptr;
+    }
+
+    SinglyOrderedList (const SinglyOrderedList& list): length(list.length) {
+        Node* item = list.head; // item указатель копируемого списка
+        Node* current_item;
+        // current_item указатель на элемент текущего списка
+
+        if (item != nullptr) {
+            head = new Node(item->key);
+        }
+
+        while (item != nullptr) {
+            current_item = current_item->next = new Node(item->key); //конструктор копирования ноды в новую область памяти
+            item = item->next;
+        }
+    }
+
+    SinglyOrderedList (SinglyOrderedList&& list) noexcept {
+        if (this != &list) {
+            head = list.head;
+            length = list.length;
+
+            list.head = nullptr;
+            list.length = 0;
+        }
+    }
+
+    SinglyOrderedList& operator=(const SinglyOrderedList& list) {
+        if (this != &list) {
+            delete head;
+            head = nullptr;
+
+            Node* item = list.head; // item указатель копируемого списка
+            Node* current_item;
+            // current_item указатель на элемент текущего списка
+
+            if (item != nullptr) {
+                head = new Node(item->key);
+            }
+
+            while (item != nullptr) {
+                delete current_item->next;
+                current_item = current_item->next = new Node(item->key); //конструктор копирования ноды в новую область памяти
+
+                item = item->next;
+            }
+        }
+        return *this;
+    }
+
+    SinglyOrderedList& operator=(SinglyOrderedList&& list) noexcept {
+        if (this != &list) {
+            head = list.head;
+            length = list.length;
+
+            list.head = nullptr;
+            list.length = 0;
+        }
+        return *this;
+    }
+};
+
 
 int main () {
-    DoubleLinkedList list;
-    for (int i = 0; i < 10; i++) {
-        list.insertTail(i);
-    }
-
-
-    list.deleteHead();
-
-    list.deleteTail();
-
-    list.deleteItem(5);
-
-    list.headItem() = 10;
-
-    list.replaceItem(3, 15);
-
-    list.insertHead(91);
-
-    list.tailItem() = 87;
-
-    std::cout << list << "\n";
-
-    std::cout << list.headItem() << (list.searchItem(list.headItem()) ? "1" : "0")
-              << list.tailItem() << (list.searchItem(list.tailItem()) ? "1" : "0") << "\n";
-
-    DoubleLinkedList another_list;
-    for (int i = 0; i < 10; i++) {
-        another_list.insertTail(10 - i);
-    }
-    std::cout << another_list << "\n";
-
-    std::cout << (list == another_list ? "1" : "0") << "\n";
-
-    list.add(another_list);
-
-    std::cout << list.deleteItem(4345, true) << "\n";
-    std::cout << list.deleteItem(6, true) << "\n";
-
-    std::cout << list.replaceItem(478389, 1001, true) << "\n";
-
-    std::cout << list << "\n";
-
-    std::cout  << (list == another_list ? "1" : "0") << "\n";
-
     return 0;
 }
