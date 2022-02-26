@@ -14,6 +14,10 @@ private:
                                               {
            ;
         }
+
+        ~Node () {
+            delete next;
+        }
     };
 private:
     Node* head;
@@ -49,6 +53,10 @@ public:
         }
     }
 
+    ~SinglyOrderedList () {
+        delete head;
+    }
+
     SinglyOrderedList& operator=(const SinglyOrderedList& list) {
         if (this != &list) {
             delete head;
@@ -82,9 +90,41 @@ public:
         }
         return *this;
     }
+
+    bool insert (int key) {
+        if (head == nullptr) { // проверка на пустой список
+            head = new Node(key);
+            return true;
+        }
+
+        if (key < head->key) { // вставка в начало списка
+            head = new Node(key, head);
+            return true;
+        }
+
+        Node *item = head; // вставка в конец или после элемента
+        while (item->next != nullptr && item->next->key < key) {
+            item = item->next; // поиск места вставки
+        }
+        if (item->key != key) { // т.к. следующий элемент точно удовлетворяет условиям, нужно проверить предыдущий
+            item->next = new Node(key, item->next); // вставка в конец тоже работает
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 };
 
 
 int main () {
-    return 0;
+    SinglyOrderedList list;
+    list.insert(0);
+    list.insert(9);
+    list.insert(-1);
+    list.insert(6);
+    list.insert(10);
+    list.insert(3);
+
+    std::cout << "\n";
 }
