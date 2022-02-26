@@ -28,7 +28,7 @@ int main()
                 std::cout << "Number of found cases: " << count;
                 break;
             }
-            if (first < second && second > third)
+            if (first < second && second < third)
             {
                 count++;
             }
