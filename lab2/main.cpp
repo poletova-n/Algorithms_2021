@@ -14,14 +14,22 @@ private:
                                               {
            ;
         }
-
-        ~Node () {
-            delete next;
-        }
     };
 private:
     Node* head;
     size_t length;
+private:
+    Node* search (const int* key) {
+        Node* item = head;
+        while (item != nullptr && item->key < *key) {
+            item = item->next;
+        }
+        if (item != nullptr && item->key == *key) {
+            return item;
+        } else {
+            return nullptr;
+        }
+    }
 public:
     SinglyOrderedList (): length(0)
                           {
@@ -54,7 +62,13 @@ public:
     }
 
     ~SinglyOrderedList () {
-        delete head;
+        Node* item = head;
+        while (item->next != nullptr) {
+            head = item->next;
+            delete item;
+            item = head;
+        }
+        delete item;
     }
 
     SinglyOrderedList& operator=(const SinglyOrderedList& list) {
@@ -106,15 +120,55 @@ public:
         while (item->next != nullptr && item->next->key < key) {
             item = item->next; // поиск места вставки
         }
-        if (item->key != key) { // т.к. следующий элемент точно удовлетворяет условиям, нужно проверить предыдущий
-            item->next = new Node(key, item->next); // вставка в конец тоже работает
+        if (item->key != key) { // т.к. следующий элемент точно не удовлетворяет ключу, нужно проверить текущий
+            item->next = new Node(key, item->next); // вставка в конце
             return true;
         } else {
             return false;
         }
     }
 
+    bool search (int key) {
+        return this->search(&key) == nullptr;
+    }
+
+    bool remove (int key) {
+        if (head == nullptr) {
+            return false;
+        }
+
+        Node* item = head; // вставка в конец или после элемента
+        if (head->key == key) {
+            head = head->next;
+            delete item;
+            return true;
+        }
+
+        while (item->next != nullptr && item->next->key < key) {
+            item = item->next; // поиск места вставки
+        }
+        if (item->next != nullptr && item->next->key == key) { // т.к. следующий элемент точно меньше
+            Node* temp = item->next->next; // копирование указателя
+            delete item->next; // удаление элемента
+            item->next = temp; // сшивание списка
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    friend std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list);
 };
+
+std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list) {
+    SinglyOrderedList::Node* item = list.head;
+    while (item != nullptr) {
+        out << item->key << ' ';
+        item = item->next;
+    }
+    out << '\n';
+    return out;
+}
 
 
 int main () {
@@ -126,5 +180,14 @@ int main () {
     list.insert(10);
     list.insert(3);
 
+
+    std::cout << list;
+
+    list.remove(-1);
+    list.remove(4);
+    list.remove(6);
+    list.remove(10);
+
+    std::cout << list;
     std::cout << "\n";
 }
