@@ -18,7 +18,7 @@ private:
         }
     };
 private:
-    Node* head;
+    Node* head{};
     size_t length;
 private:
     Node* search (const int* key) const {
@@ -38,10 +38,13 @@ public:
         head = nullptr;
     }
 
-    SinglyOrderedList (const SinglyOrderedList& list): length(list.length),
-                                                       head(list.head)
+    SinglyOrderedList (const SinglyOrderedList& list): length(list.length)
                                                        {
-        ;
+        Node* item = list.head;
+        while (item != nullptr) {
+            this->insert(new Node(item->key));
+            item = item->next;
+        }
     }
 
     SinglyOrderedList (SinglyOrderedList&& list) noexcept {
@@ -67,8 +70,9 @@ public:
 
     SinglyOrderedList& operator=(const SinglyOrderedList& list) {
         if (this != &list) {
-            head = list.head;
-            length = list.length;
+            SinglyOrderedList* copy = this;
+            *this = SinglyOrderedList(list);
+            delete copy;
         }
         return *this;
     }
@@ -222,31 +226,35 @@ std::string checkout (SinglyOrderedList& list) {
 int main () {
     SinglyOrderedList list1;
     list1.insert(0);
-    list1.insert(9);
-    list1.insert(-1);
+    list1.insert(1);
+    list1.insert(2);
+    list1.insert(4);
+    list1.insert(5);
     list1.insert(6);
-    list1.insert(10);
-    list1.insert(3);
 
     std::cout << list1;
 
     SinglyOrderedList list2;
-    list2.insert(1);
-    list2.insert(-1);
-    list2.insert(2);
-    list2.insert(13);
+    list2.insert(3);
     list2.insert(4);
-    list2.insert(4);
-    list2.insert(6);
     list2.insert(5);
+    list2.insert(6);
+    list2.insert(7);
     list2.insert(8);
-    list2.insert(9);
 
     std::cout << list2;
 
-    SinglyOrderedList list3 = intersection(list1, list2);
+    SinglyOrderedList list3 = list1;
+    SinglyOrderedList list4 = list1;
 
-    std::cout << "\n" << list1 << list2 << list3;
+    SinglyOrderedList list2_copy(list2);
+
+    list3.addiction(list2_copy);
+    list4.subtraction(list2);
+    SinglyOrderedList list5 = intersection(list1, list2);
+
+
+    std::cout << "\n" << list1 << list2 << list3 << list4 << list5;
 
     std::cout << "\n";
 }
