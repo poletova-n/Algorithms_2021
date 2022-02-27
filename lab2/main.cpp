@@ -11,7 +11,7 @@ private:
         Node* next;
         int key;
 
-        Node (int key, Node* next = nullptr): key(key),
+        explicit Node (int key, Node* next = nullptr): key(key),
                                               next(next)
                                               {
            ;
@@ -38,19 +38,10 @@ public:
         head = nullptr;
     }
 
-    SinglyOrderedList (const SinglyOrderedList& list): length(list.length) {
-        Node* item = list.head; // item указатель копируемого списка
-        Node* current_item;
-        // current_item указатель на элемент текущего списка
-
-        if (item != nullptr) {
-            head = new Node(item->key);
-        }
-
-        while (item != nullptr) {
-            current_item = current_item->next = new Node(item->key); //конструктор копирования ноды в новую область памяти
-            item = item->next;
-        }
+    SinglyOrderedList (const SinglyOrderedList& list): length(list.length),
+                                                       head(list.head)
+                                                       {
+        ;
     }
 
     SinglyOrderedList (SinglyOrderedList&& list) noexcept {
@@ -76,23 +67,8 @@ public:
 
     SinglyOrderedList& operator=(const SinglyOrderedList& list) {
         if (this != &list) {
-            delete head;
-            head = nullptr;
-
-            Node* item = list.head; // item указатель копируемого списка
-            Node* current_item;
-            // current_item указатель на элемент текущего списка
-
-            if (item != nullptr) {
-                head = new Node(item->key);
-            }
-
-            while (item != nullptr) {
-                delete current_item->next;
-                current_item = current_item->next = new Node(item->key); //конструктор копирования ноды в новую область памяти
-
-                item = item->next;
-            }
+            head = list.head;
+            length = list.length;
         }
         return *this;
     }
@@ -141,7 +117,7 @@ public:
     }
 
     bool search (int key) const {
-        return this->search(&key) == nullptr;
+        return this->search(&key) != nullptr;
     }
 
     bool remove (int key) {
@@ -172,6 +148,10 @@ public:
     }
 
     void addiction (SinglyOrderedList& list) {
+        if (this == &list) {
+            return;
+        }
+
         Node* buffer;
 
         if (list.head == nullptr) {
@@ -188,6 +168,13 @@ public:
     };
     
     void subtraction (const SinglyOrderedList& list) {
+        if (this == &list) {
+            SinglyOrderedList* copy = this;
+            *this = SinglyOrderedList();
+            delete copy;
+            return;
+        }
+
         Node* item = list.head;
         while (item != nullptr) {
             this->remove(item->key);
@@ -240,10 +227,6 @@ int main () {
     list1.insert(6);
     list1.insert(10);
     list1.insert(3);
-    list1.remove(-1);
-    list1.remove(4);
-    list1.remove(6);
-    list1.remove(10);
 
     std::cout << list1;
 
@@ -261,9 +244,9 @@ int main () {
 
     std::cout << list2;
 
-    list1.addiction(list2);
+    SinglyOrderedList list3 = intersection(list1, list2);
 
-    std::cout << "\n" << list1 << list2;
+    std::cout << "\n" << list1 << list2 << list3;
 
     std::cout << "\n";
 }
