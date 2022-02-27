@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "modernize-use-auto"
 //
 // Created by Foko on 25.02.2022.
 //
@@ -19,7 +21,7 @@ private:
     Node* head;
     size_t length;
 private:
-    Node* search (const int* key) {
+    Node* search (const int* key) const {
         Node* item = head;
         while (item != nullptr && item->key < *key) {
             item = item->next;
@@ -63,7 +65,8 @@ public:
 
     ~SinglyOrderedList () {
         Node* item = head;
-        while (item->next != nullptr) {
+
+        while (head != nullptr) {
             head = item->next;
             delete item;
             item = head;
@@ -104,31 +107,40 @@ public:
         }
         return *this;
     }
-
-    bool insert (int key) {
+    
+    Node* insert (Node* insert_node) {
         if (head == nullptr) { // проверка на пустой список
-            head = new Node(key);
-            return true;
+            head = insert_node;
+            length++;
+            return insert_node;
         }
 
-        if (key < head->key) { // вставка в начало списка
-            head = new Node(key, head);
-            return true;
+        if (insert_node->key < head->key) { // вставка в начало списка
+            insert_node->next = head;
+            head = insert_node;
+            length++;
+            return insert_node;
         }
 
         Node *item = head; // вставка в конец или после элемента
-        while (item->next != nullptr && item->next->key < key) {
+        while (item->next != nullptr && item->next->key <= insert_node->key) {
             item = item->next; // поиск места вставки
         }
-        if (item->key != key) { // т.к. следующий элемент точно не удовлетворяет ключу, нужно проверить текущий
-            item->next = new Node(key, item->next); // вставка в конце
-            return true;
-        } else {
-            return false;
+        if (item->key != insert_node->key) { // т.к. следующий элемент точно не удовлетворяет ключу, нужно проверить текущий
+            insert_node->next = item->next;
+            item->next = insert_node;
+            length++;
+            return insert_node;
+        } else { 
+            return nullptr;
         }
     }
 
-    bool search (int key) {
+    bool insert (int key) {
+        return insert(new Node(key, nullptr)) == nullptr;
+    }
+
+    bool search (int key) const {
         return this->search(&key) == nullptr;
     }
 
@@ -141,24 +153,63 @@ public:
         if (head->key == key) {
             head = head->next;
             delete item;
+            length--;
             return true;
         }
 
         while (item->next != nullptr && item->next->key < key) {
-            item = item->next; // поиск места вставки
+            item = item->next; // поиск места
         }
         if (item->next != nullptr && item->next->key == key) { // т.к. следующий элемент точно меньше
             Node* temp = item->next->next; // копирование указателя
             delete item->next; // удаление элемента
             item->next = temp; // сшивание списка
+            length--;
             return true;
         } else {
             return false;
         }
     }
 
+    void addiction (SinglyOrderedList& list) {
+        Node* buffer;
+
+        if (list.head == nullptr) {
+            return;
+        }
+
+        while (list.head->next != nullptr) {
+            buffer = list.head; // копирование текущего указателя item
+            list.head = list.head->next; // перемещение к следующему указателю
+            this->insert(buffer); // вставка элемента по сохраненному указателю
+        }
+        this->insert(list.head);
+        list.head = nullptr;
+    };
+    
+    void subtraction (const SinglyOrderedList& list) {
+        Node* item = list.head;
+        while (item != nullptr) {
+            this->remove(item->key);
+            item = item->next;
+        }
+    }
+
+    friend std::string checkout(SinglyOrderedList& list);
+    friend SinglyOrderedList& intersection (const SinglyOrderedList& first, const SinglyOrderedList& second);
     friend std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list);
 };
+
+SinglyOrderedList& intersection (const SinglyOrderedList& first, const SinglyOrderedList& second) {
+    SinglyOrderedList* list = new SinglyOrderedList();
+    SinglyOrderedList::Node* item = first.head;
+    while (item != nullptr) {
+        if (second.search(item->key))
+            list->insert(item->key);
+        item = item->next;
+    }
+    return *list;
+}
 
 std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list) {
     SinglyOrderedList::Node* item = list.head;
@@ -170,24 +221,49 @@ std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list) {
     return out;
 }
 
+std::string checkout (SinglyOrderedList& list) {
+    SinglyOrderedList::Node* item = list.head;
+    std::string outstring;
+
+    while (item != nullptr) {
+        outstring += (std::to_string(item->key) + " ");
+        item = item->next;
+    }
+    return outstring;
+}
 
 int main () {
-    SinglyOrderedList list;
-    list.insert(0);
-    list.insert(9);
-    list.insert(-1);
-    list.insert(6);
-    list.insert(10);
-    list.insert(3);
+    SinglyOrderedList list1;
+    list1.insert(0);
+    list1.insert(9);
+    list1.insert(-1);
+    list1.insert(6);
+    list1.insert(10);
+    list1.insert(3);
+    list1.remove(-1);
+    list1.remove(4);
+    list1.remove(6);
+    list1.remove(10);
 
+    std::cout << list1;
 
-    std::cout << list;
+    SinglyOrderedList list2;
+    list2.insert(1);
+    list2.insert(-1);
+    list2.insert(2);
+    list2.insert(13);
+    list2.insert(4);
+    list2.insert(4);
+    list2.insert(6);
+    list2.insert(5);
+    list2.insert(8);
+    list2.insert(9);
 
-    list.remove(-1);
-    list.remove(4);
-    list.remove(6);
-    list.remove(10);
+    std::cout << list2;
 
-    std::cout << list;
+    list1.addiction(list2);
+
+    std::cout << "\n" << list1 << list2;
+
     std::cout << "\n";
 }
