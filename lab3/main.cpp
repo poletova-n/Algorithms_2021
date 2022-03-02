@@ -132,15 +132,52 @@ public:
             if (getSpaces(infix, index)) {
                 continue;
             }
-            throw "WRONG BRACES";
+            return false;
         }
         if (index == buf_index) {
-            throw "UNKNOWN SYMBOLS";
+            return false;
         }
         while (top >= 0) {
             postfix += pop();
             postfix += " ";
         }
+    }
+
+    int evaluatePostfix (const std::string& postfix, size_t stackSize) {
+        size_t index = 0;
+        while (index != postfix.length()) {
+            size_t buf_index = index;
+            if (getOperand(postfix, index)) {
+                push(postfix.substr(buf_index, index-buf_index));
+            }
+            if (getOperator(postfix, index)) {
+                char* op = const_cast<char *>(postfix.substr(buf_index, index - buf_index).c_str());
+                int temp = std::stoi(pop());
+                switch (*op) {
+                    case '+': {
+                        push(std::to_string(std::stoi(pop()) + temp));
+                        break;
+                    }
+                    case '-': {
+                        push(std::to_string(std::stoi(pop()) - temp)); //
+                        break;
+                    }
+                    case '*': {
+                        push(std::to_string(std::stoi(pop()) * temp));
+                        break;
+                    }
+                    case '/': {
+                        push(std::to_string(std::stoi(pop()) / temp));
+                        break;
+                    }
+                }
+            }
+            if (getSpaces(postfix, index)) {
+                continue;
+            }
+            throw "UNKNOWN SYMBOLS";
+        }
+        return std::stoi(pop());
     }
 
     std::string checkout() {
@@ -153,12 +190,16 @@ public:
 };
 
 int main () {
-    StackArray<std::string> list(100);
-    try {
-        std::string temp;
-        list.getPostfixFromInfix("(A+B)*(C+D)-E", temp, 100);
-        std::cout << temp;
-    } catch (const char* error) {
-        std::cout << error << "\n";
-    }
+    StackArray<std::string> list(1024);
+    std::string temp;
+    while (temp != "exit")
+        try {
+            std::string postfix;
+            std::getline(std::cin, temp);
+            list.getPostfixFromInfix(temp, postfix, 100);
+            int i = list.evaluatePostfix(postfix, 100);
+            std::cout << i << "\n";
+        } catch (const char* error) {
+            std::cout << error << "\n";
+        }
 }
