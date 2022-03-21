@@ -212,17 +212,6 @@ std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list) {
     return out;
 }
 
-std::string checkout (SinglyOrderedList& list) {
-    SinglyOrderedList::Node* item = list.head;
-    std::string outstring;
-
-    while (item != nullptr) {
-        outstring += (std::to_string(item->key) + " ");
-        item = item->next;
-    }
-    return outstring;
-}
-
 int main () {
     SinglyOrderedList list1;
     list1.insert(0);

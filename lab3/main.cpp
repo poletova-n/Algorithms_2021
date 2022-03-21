@@ -2,10 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <iomanip>
-#include <sstream>
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wwritable-strings"
 char getPriority (std::string& op) {
     if (op == "(") {
         return 0;
@@ -43,39 +40,9 @@ bool getOperator(const std::string& str, size_t& index) {
     return false;
 }
 
-bool getVar(const std::string& str, size_t& index) {
-    if ((str[index] >= 'a' && str[index] <= 'z') || (str[index] >= 'A' && str[index] <= 'Z')) {
-        getVar(str, ++index);
-        return true;
-    } else {
-        return false;
-    }
-}
-
 bool getInt (const std::string& str, size_t& index) {
     if (str[index] >= '0' && str[index] <= '9') {
         getInt(str, ++index);
-        return true;
-    } else {
-        return false;
-    }
-}
-
-bool getDot(const std::string& str, size_t& index) {
-    if (str[index] == '.') {
-        ++index;
-        return true;
-    } else {
-        return false;
-    }
-}
-
-bool getOperand(const std::string& str, size_t& index) {
-    if (getInt(str, index)) {
-        getDot(str, index);
-        getInt(str, index);
-        return true;
-    } else if (getDot(str, index) && getInt(str, index)) {
         return true;
     } else {
         return false;
@@ -131,7 +98,7 @@ public:
         size_t index = 0;
         size_t old_index = index;
         while (index != infix.length()) {
-            if (getOperand(infix, index) || getVar(infix, index)) {
+            if (getInt(infix, index)) {
                 postfix += infix.substr(old_index, index - old_index);
                 postfix += " ";
             } else if (getOperator(infix, index)) {
@@ -170,47 +137,31 @@ public:
         return true;
     }
 
-    double evaluatePostfix (const std::string& postfix, size_t stackSize) {
+    int evaluatePostfix (const std::string& postfix, size_t stackSize) {
         size_t index = 0;
-        std::stringstream accumulator("");
-        accumulator << std::setprecision(15);
         while (index != postfix.length()) {
-            size_t buf_index = index;
-            if (getOperand(postfix, index)) {
-                push(postfix.substr(buf_index, index-buf_index));
+            size_t old_index = index;
+            if (getInt(postfix, index)) {
+                push(postfix.substr(old_index, index-old_index));
             }
             if (getOperator(postfix, index)) {
-                const char* op = postfix.substr(buf_index, index - buf_index).c_str();
-                double temp = std::stod(pop());
+                const char* op = postfix.substr(old_index, index - old_index).c_str();
+                int temp = std::stod(pop());
                 switch (*op) {
                     case '+': {
-                        accumulator << std::stod(pop()) + temp;
-                        push(accumulator.str());
-                        accumulator.str("");
+                        push(std::to_string(std::stoi(pop()) + temp));
                         break;
                     }
                     case '-': {
-                        accumulator << std::stod(pop()) - temp;
-                        push(accumulator.str());
-                        accumulator.str("");
+                        push(std::to_string(std::stoi(pop()) - temp));
                         break;
                     }
                     case '*': {
-                        accumulator << std::stod(pop()) * temp;
-                        push(accumulator.str());
-                        accumulator.str("");
+                        push(std::to_string(std::stoi(pop()) * temp));
                         break;
                     }
                     case '/': {
-                        accumulator << std::stod(pop()) / temp;
-                        push(accumulator.str());
-                        accumulator.str("");
-                        break;
-                    }
-                    case '^': {
-                        accumulator << std::pow(std::stod(pop()), temp);
-                        push(accumulator.str());
-                        accumulator.str("");
+                        push(std::to_string(std::stoi(pop()) / temp));
                         break;
                     }
                 }
@@ -221,21 +172,13 @@ public:
             throw "UNKNOWN SYMBOLS";
         }
         if (top == 0) {
-            return std::stod(pop());
+            return std::stoi(pop());
         } else {
             while (!isEmpty()) {
                 pop();
             }
             throw "INCOMPLETE SENTENCE";
         }
-    }
-
-    std::string checkout() {
-        std::string temp;
-        for (uint32_t i = 0; i < length; ++i) {
-            temp += array[i];
-        }
-        return temp;
     }
 };
 
@@ -252,12 +195,10 @@ int main () {
             }
             std::string postfix;
             list.getPostfixFromInfix(temp, postfix, 100);
-            double i = list.evaluatePostfix(postfix, 100);
-            std::cout << postfix << "\n";
+            int32_t i = list.evaluatePostfix(postfix, 100);
+            //std::cout << postfix << "\n";
             std::cout << i << "\n";
         } catch (const char* error) {
             std::cout << "INCOMPLETE SENTENCE" << "\n";
         }
 }
-
-#pragma clang diagnostic pop
