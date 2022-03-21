@@ -151,7 +151,7 @@ public:
         }
     }
 
-    void addiction (SinglyOrderedList& list) {
+    void addition (SinglyOrderedList& list) {
         if (this == &list) {
             return;
         }
@@ -186,7 +186,7 @@ public:
         }
     }
 
-    friend std::string checkout(SinglyOrderedList& list);
+
     friend SinglyOrderedList& intersection (const SinglyOrderedList& first, const SinglyOrderedList& second);
     friend std::ostream& operator<<(std::ostream& out, const SinglyOrderedList& list);
 };
@@ -238,7 +238,7 @@ int main () {
 
     SinglyOrderedList list2_copy(list2);
 
-    list3.addiction(list2_copy);
+    list3.addition(list2_copy);
     list4.subtraction(list2);
     SinglyOrderedList list5 = intersection(list1, list2);
 
