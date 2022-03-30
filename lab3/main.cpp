@@ -155,7 +155,7 @@ public:
     }
 
     int evaluatePostfix (const std::string& postfix, size_t stackSize) {
-        size_t index = 0;
+        size_t index = 0;  ;
         while (index != postfix.length()) {
             size_t old_index = index;
             if (getInt(postfix, index)) {
