@@ -137,6 +137,23 @@ public:
         return true;
     }
 
+    bool checkBraces(const std::string& infix) {
+        for (char c: infix) {
+            if (c == '(') {
+                push(""); // не важно, что пушить, главное -- куда, ауф
+            } else if (c == ')') {
+                if (!isEmpty()) {
+                    pop();
+                } else{
+                    return false;
+                }
+            } else {
+                ;
+            };
+        }
+        return true;
+    }
+
     int evaluatePostfix (const std::string& postfix, size_t stackSize) {
         size_t index = 0;
         while (index != postfix.length()) {
@@ -145,7 +162,8 @@ public:
                 push(postfix.substr(old_index, index-old_index));
             }
             if (getOperator(postfix, index)) {
-                const char* op = postfix.substr(old_index, index - old_index).c_str();
+                std::string buf = postfix.substr(old_index, index - old_index);
+                const char* op = buf.c_str();
                 int temp = std::stod(pop());
                 switch (*op) {
                     case '+': {
@@ -185,7 +203,6 @@ public:
 int main () {
     StackArray<std::string> list(1024);
     std::string temp;
-    std::cout << std::setprecision(15);
     while (temp != "exit")
         try {
             std::cout << ">>> ";
@@ -193,10 +210,11 @@ int main () {
             if (temp.empty()) {
                 continue;
             }
-            std::string postfix;
+            std::string postfix = "";
             list.getPostfixFromInfix(temp, postfix, 100);
-            int32_t i = list.evaluatePostfix(postfix, 100);
-            //std::cout << postfix << "\n";
+            int32_t i =  list.evaluatePostfix(postfix, 100);
+            std::cout << postfix << "\n";
+            std::cout << list.checkBraces(temp) << "\n";
             std::cout << i << "\n";
         } catch (const char* error) {
             std::cout << "INCOMPLETE SENTENCE" << "\n";
