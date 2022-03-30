@@ -195,7 +195,7 @@ public:
             while (!isEmpty()) {
                 pop();
             }
-            throw "INCOMPLETE SENTENCE";
+            throw "INCOMPLETE SENTENCE ";
         }
     }
 };
