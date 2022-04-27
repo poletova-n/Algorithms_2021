@@ -25,29 +25,27 @@ private:
         ~Node () = default;
 
         void deleteNode () {
-            if (right != nullptr && left != nullptr) {
-                Node* item = right;
-                while (item->left != nullptr)
-                    item = item->left;
-                key = item->key;
-                if (right == item) // исключительный вариант
-                    right = nullptr;
-                delete item;
-            } else if (right != nullptr && left == nullptr) {
-                key = right->key;
-                delete right;
-                right = nullptr;
+
+        }
+
+        std::string print() {
+            std::string result = std::to_string(key);
+            if (left != nullptr && right != nullptr) {
+                result += "(";
+                result += left->print();
+                result += ",";
+                result += right->print();
+                result += ")";
             } else if (right == nullptr && left != nullptr) {
-                key = left->key;
-                delete left;
-                left = nullptr;
-            } else
-                if (parent->left != nullptr && parent->left->key == key) {
-                    parent->left == nullptr;
-                } else if (parent->left != nullptr && parent->left->key == key) {
-                    parent->right == nullptr;
-                }
-                delete this;
+                result += "(";
+                result += left->print();
+                result += ")";
+            } else if (right != nullptr && left == nullptr) {
+                result += "(";
+                result += right->print();
+                result += ")";
+            }
+            return result;
         }
 
         size_t getDepth(size_t current_depth) {
@@ -61,10 +59,11 @@ private:
                 return current_depth;
             }
         }
-    };
 
-    Node* root_;
-    size_t size;
+        inline size_t getSize () {
+            return ((left != nullptr) ? left->getCount : 0) + ((right != nullptr) ? right->getCount : 0) + 1;
+        }
+    };
 
     Node* searchNode(T search_key) {
         Node* item = root_;
@@ -78,6 +77,9 @@ private:
         return item;
     }
 
+    Node* root_;
+    size_t size;
+
 public:
     BinarySearchTree () {
         size = 0;
@@ -88,6 +90,12 @@ public:
         size = 1;
     }
 
+    ~BinarySearchTree () {
+        delete root_->right;
+        delete root_->left;
+        delete root_;
+    }
+
     BinarySearchTree (const BinarySearchTree&) = delete;
 
     BinarySearchTree (BinarySearchTree&& tree)  noexcept {
@@ -96,10 +104,6 @@ public:
 
         tree.root_ = nullptr;
         size = 0;
-    }
-
-    ~BinarySearchTree () {
-        delete root_;
     }
 
     BinarySearchTree& operator=(const BinarySearchTree&) = delete;
@@ -132,7 +136,7 @@ public:
                 item = item->right;
             }
         }
-        if (item == root_)
+        if (item == nullptr)
             root_ = new Node(new_key);
     }
 
@@ -140,13 +144,76 @@ public:
         return searchNode(search_key) != nullptr;
     }
 
+    std::string print() {
+        if (root_) {
+            return root_->print();
+        } else {
+            return "";
+        }
+    }
+
     bool deleteNode (T delete_key) {
         Node* item = searchNode(delete_key);
-        if (item) {
-            item->deleteNode();
-            return true;
-        } else
+        Node* parent = item->parent;
+
+        if (item == nullptr) {
             return false;
+        }
+
+        if (item->left == nullptr && item->right == nullptr) { //частный случай удаления листа
+            if (parent == nullptr) { // удаление корня
+                delete root_;
+                root_ = nullptr;
+            } else { // удаление остальных вариантов
+                if (parent->left == item) {
+                    parent->left == nullptr;
+                } else if (parent->right == item) {
+                    parent->right == nullptr;
+                }
+                delete item;
+             }
+        } else if (item->left != nullptr && item->right != nullptr) { // удаление центрального
+            Node* replacement = item->right; // поиск минимально большего значения
+            while (replacement->left != nullptr) { // спуск вниз
+                replacement = replacement->left;
+            }
+
+            if (replacement->parent->left == replacement) {
+                replacement->parent->left = nullptr; // удаление минимально большего
+            } else {
+                replacement->parent->right = nullptr;
+            }
+
+            replacement->left = item->left;
+            replacement->right = item->right;
+            replacement->parent = parent;
+
+            if (parent != nullptr) {
+                if (parent->left == item) {
+                    parent->left = replacement;
+                } else {
+                    parent->right = replacement;
+                }
+                delete item;
+            } else {
+                delete root_;
+                root_ = replacement;
+            }
+        } else {
+            Node* replacement = item->left != nullptr ? item->left : item->right;
+            replacement->parent = parent;
+            if (parent != nullptr) {
+                if (parent->right == item) {
+                    parent->right = replacement;
+                } else {
+                    parent->left = replacement;
+                }
+            } else {
+                delete root_;
+                root_ = replacement;
+            }
+        }
+        return true; // ппц какой-то
     }
 };
 

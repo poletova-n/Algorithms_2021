@@ -6,10 +6,8 @@
 
 int main () {
     BinarySearchTree<int> tree(0);
-    tree.insert(-1);
-    tree.insert(45);
-    tree.insert(23);
-    tree.insert(-92);
+
+        tree.insert(-92);
     tree.insert(-32);
     tree.insert(-12);
     tree.insert(36);
@@ -22,8 +20,11 @@ int main () {
     tree.insert(76);
     tree.insert(-43);
     tree.insert(26);
+    std::cout << tree.print() << "\n";
     int i = tree.search(10);
     int j = tree.deleteNode(10);
     int k = tree.search(10);
+    std::cout << i << " " << j << " " << k << "\n";
+    std::cout << tree.print() << "\n";
     return 0;
 }
