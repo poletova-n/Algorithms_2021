@@ -6,6 +6,7 @@
 #define ONE_WAY_LIST_BINARYSEARCHTREE_H
 
 #include <iostream>
+#include <stack>
 
 template <typename T> class BinarySearchTree {
 private:
@@ -62,6 +63,16 @@ private:
 
         inline size_t getSize () {
             return ((left != nullptr) ? left->getCount : 0) + ((right != nullptr) ? right->getCount : 0) + 1;
+        }
+
+        void recursiveInfix (void* todo) {
+            if (left) {
+                left->recursiveInfix(todo);
+            }
+            if (right) {
+                right->recursiveInfix(todo);
+            }
+            todo(this);
         }
     };
 
@@ -214,6 +225,26 @@ public:
             }
         }
         return true; // ппц какой-то
+    }
+
+    void iterativeInfix(void* todo) {
+        std::stack<Node*> stack{root_};
+        while (stack.top()) {
+            if (stack.top()->left) {
+                stack.push(stack.top()->left);
+            } else {
+                todo(stack.pop());
+            }
+            if (stack.top()->right) {
+                stack.push(stack.top()->right);
+            } else {
+                todo(stack.pop());
+            }
+        }
+    }
+
+    void recursiveInfix(void* todo) {
+        root_->recursiveInfix(todo);
     }
 };
 

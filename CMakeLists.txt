@@ -8,3 +8,4 @@ add_executable(lab1 lab1/main.cpp lab1/DoubleLinkedList.cpp lab1/DoubleLinkedLis
 add_executable(lab2 lab2/main.cpp lab2/SinglyOrderedList.cpp lab2/SinglyOrderedList.h)
 add_executable(lab3 lab3/main.cpp lab3/Stack.cpp lab3/Stack.h)
 add_executable(lab4 lab4/main.cpp lab4/BinarySearchTree.cpp lab4/BinarySearchTree.h)
+add_executable(lab5 lab5/main.cpp)

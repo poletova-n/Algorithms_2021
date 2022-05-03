@@ -21,10 +21,7 @@ int main () {
     tree.insert(-43);
     tree.insert(26);
     std::cout << tree.print() << "\n";
-    int i = tree.search(10);
-    int j = tree.deleteNode(10);
-    int k = tree.search(10);
-    std::cout << i << " " << j << " " << k << "\n";
+    tree.deleteNode(0);
     std::cout << tree.print() << "\n";
     return 0;
 }
