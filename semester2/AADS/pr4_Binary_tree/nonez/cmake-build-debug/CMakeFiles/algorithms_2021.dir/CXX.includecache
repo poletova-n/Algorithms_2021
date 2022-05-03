@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr4_Binary_tree/nonez/BinarySearchTree.h
+iostream
+-
+ostream
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr4_Binary_tree/nonez/ostream
+stack
+-
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr4_Binary_tree/nonez/main.cpp
+BinarySearchTree.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr4_Binary_tree/nonez/BinarySearchTree.h
+iostream
+-
+

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/Graph.h
+SmartMatrix.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/SmartMatrix.h
+stack
+-
+queue
+-
+limits
+-
+vector
+-
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/SmartArray.h
+iostream
+-
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/SmartMatrix.h
+SmartArray.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/SmartArray.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/main.cpp
+iostream
+-
+Graph.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/Graph.h
+SmartArray.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/SmartArray.h
+SmartMatrix.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/coursework/arrayRealiz/SmartMatrix.h
+

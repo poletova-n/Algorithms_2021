@@ -1,0 +1,3 @@
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/LabPractic/cmake-build-debug/CMakeFiles/algorithms_2021.dir
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/LabPractic/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/LabPractic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

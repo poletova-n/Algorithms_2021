@@ -8,10 +8,40 @@ int main() {
 
 	DoubleLinkedList list;
 
-	std::cout << ((list.searchItem(1)) ? "1 find" : "1 not find") << std::endl;
-	std::cout << ((list.searchItem(8)) ? "8 find" : "8 not find") << std::endl;
+    list.insertHead(1);
+
+    std::cout << list;
+
+	//std::cout << ((list.searchItem(1)) ? "1 find" : "1 not find") << std::endl;
+	//std::cout << ((list.searchItem(8)) ? "8 find" : "8 not find") << std::endl;
 
 	DoubleLinkedList list1(list);
+
+    std::cout << list1;
+
+    //list1.insertHead(1);
+
+    std::cout << (list == list1 ? "Yes" : "No") << std::endl;
+
+    list1.insertHead(1);
+
+    list.insertHead(2);
+
+    std::cout << (list == list1 ? "Yes" : "No") << std::endl;
+
+    std::cout << list;
+
+    std::cout << list1;
+
+    list.add(list1);
+
+    std::cout << list;
+
+    list.add(list);
+
+    std::cout << list;
+
+    /*list1.insertHead(2);
 
     std::cout << (list == list1 ? "Yes" : "No") << std::endl;
 
@@ -42,6 +72,8 @@ int main() {
 
     std::cout << list1;
 
+    std::cout << ((list1.searchItem(1)) ? "1 find" : "1 not find") << std::endl;
+
     std::cout << (list1.replaceItem(7, 5) ? "Replaced" : "Not found") << std::endl;
     std::cout << (list1.replaceItem(1, 5, true) ? "Replaced" : "Not found") << std::endl;
 
@@ -50,6 +82,12 @@ int main() {
     std::cout << (list1.deleteItem(2) ? "Deleted" : "Not found" ) << std::endl;
 
     std::cout << list1;
+
+    list.insertHead(1);
+
+    list1.add(list);
+
+    std::cout << list1;*/
 
     return 0;
 }

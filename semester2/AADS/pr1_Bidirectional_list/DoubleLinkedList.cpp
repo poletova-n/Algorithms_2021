@@ -12,10 +12,11 @@ DoubleLinkedList::DoubleLinkedList (const DoubleLinkedList & list) : count_(0), 
 
     this->insertHead(new Node(list.head_->item_));
 
-    if(list.count_ > 1) return;
+    if(list.count_ < 2) return;
 
     Node *temp = list.head_->next_;
     this->insertTail(new Node(temp->item_));
+
     for (int i = 0; i < list.count_ - 2; ++i) {
         temp = temp->next_;
         this->insertTail(new Node(temp->item_));
@@ -271,13 +272,16 @@ void DoubleLinkedList::add(DoubleLinkedList &list) {
 
     if(list.head_ == nullptr) return;
 
+    int count = list.count_;
+
     this->insertTail(new Node(list.head_->item_));
 
-    if(list.count_ > 1) return;
+    if(list.count_ < 2) return;
 
     Node *temp = list.head_->next_;
     this->insertTail(new Node(temp->item_));
-    for (int i = 0; i < list.count_ - 2; ++i) {
+
+    for (int i = 0; i < count - 2; ++i) {
         temp = temp->next_;
         this->insertTail(new Node(temp->item_));
     }
@@ -294,7 +298,7 @@ bool DoubleLinkedList::operator==(DoubleLinkedList &right) {
     Node* second = right.head_;
 
     for (int i = 0; i < right.count_; ++i) {
-        if(first != second) return false;
+        if(first->item_ != second->item_) return false;
         first = first->next_;
         second = second->next_;
     }

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/Glossary.h
+SinglyOrderedList.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/SinglyOrderedList.h
+ranges
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/ranges
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/SinglyOrderedList.h
+xstring
+-
+functional
+-
+algorithm
+-
+SinglyOrderedList.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/SinglyOrderedList.h
+
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/main.cpp
+SinglyOrderedList.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/SinglyOrderedList.h
+Glossary.h
+D:/PTcodes/c++/GitPull/Algorithms_2021/semester2/AADS/pr2_Singly_connected_ordered_list(2)/Glossary.h
+iostream
+-
+algorithm
+-
+
