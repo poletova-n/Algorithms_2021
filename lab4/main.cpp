@@ -4,6 +4,8 @@
 #include <iostream>
 #include "BinarySearchTree.h"
 
+
+
 int main () {
     BinarySearchTree<int> tree(0);
 
@@ -21,7 +23,6 @@ int main () {
     tree.insert(-43);
     tree.insert(26);
     std::cout << tree.print() << "\n";
-    tree.deleteNode(0);
-    std::cout << tree.print() << "\n";
+    tree.iterativeInfix();
     return 0;
 }

@@ -65,14 +65,14 @@ private:
             return ((left != nullptr) ? left->getCount : 0) + ((right != nullptr) ? right->getCount : 0) + 1;
         }
 
-        void recursiveInfix (void* todo) {
+        void recursiveInfix () {
             if (left) {
-                left->recursiveInfix(todo);
+                left->recursiveInfix();
             }
+            std::cout << key << "\n";
             if (right) {
-                right->recursiveInfix(todo);
+                right->recursiveInfix();
             }
-            todo(this);
         }
     };
 
@@ -227,24 +227,24 @@ public:
         return true; // ппц какой-то
     }
 
-    void iterativeInfix(void* todo) {
-        std::stack<Node*> stack{root_};
-        while (stack.top()) {
-            if (stack.top()->left) {
-                stack.push(stack.top()->left);
+    void iterativeInfix() {
+        std::stack<Node*> stack;
+        Node* item = root_;
+        while (!stack.empty() or item != nullptr) {
+            if (item) {
+                stack.push(item);
+                item = item->left;
             } else {
-                todo(stack.pop());
-            }
-            if (stack.top()->right) {
-                stack.push(stack.top()->right);
-            } else {
-                todo(stack.pop());
+                item = stack.top();
+                stack.pop();
+                std::cout << item->key << "\n";
+                item = item->right;
             }
         }
     }
 
-    void recursiveInfix(void* todo) {
-        root_->recursiveInfix(todo);
+    void recursiveInfix() {
+        root_->recursiveInfix();
     }
 };
 
