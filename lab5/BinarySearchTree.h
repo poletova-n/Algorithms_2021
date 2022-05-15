@@ -18,6 +18,8 @@ private:
 
         explicit Node (T node_key, Node* node_parent = nullptr);
 
+        Node () {}
+
         ~Node () = default;
 
         void deleteNode ();
@@ -62,8 +64,13 @@ public:
     void iterativeInfix();
 
     void recursiveInfix();
-};
 
+    void levelOrder ();
+
+    bool compare(BinarySearchTree<T> &other);
+
+    void intersection(BinarySearchTree<T> &other);
+};
 
 
 

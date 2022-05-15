@@ -9,7 +9,7 @@
 int main () {
     BinarySearchTree<int> tree(0);
 
-        tree.insert(-92);
+    tree.insert(-92);
     tree.insert(-32);
     tree.insert(-12);
     tree.insert(36);

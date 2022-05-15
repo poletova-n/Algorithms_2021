@@ -3,6 +3,7 @@
 //
 
 #include "BinarySearchTree.h"
+#include "CircleQueue.h"
 
 template<typename T>
 BinarySearchTree<T>::Node::Node(T node_key, BinarySearchTree::Node *node_parent) {
@@ -242,6 +243,108 @@ void BinarySearchTree<T>::iterativeInfix() {
 template<typename T>
 void BinarySearchTree<T>::recursiveInfix() {
     root_->recursiveInfix();
+}
+
+template<typename T>
+void BinarySearchTree<T>::levelOrder() {
+    CircleQueue<Node*> queue(size / 2 + 1);
+    queue.enQueue(root_);
+    while (!queue.isEmpty()) {
+        Node* item = queue.deQueue();
+        std::cout << item->key << "\n";
+        if (item->left) {
+            queue.enQueue(item->left);
+        }
+        if (item->right) {
+            queue.enQueue(item->right);
+        }
+    }
+}
+
+template<typename T>
+bool BinarySearchTree<T>::compare(BinarySearchTree<T> &other) {
+
+    if (other.size != size){
+        return false;
+    }
+
+    CircleQueue<Node*> queue(size);
+    std::stack<Node*> stack;
+
+    Node *item = root_;
+    while (item != nullptr || !stack.empty()) {
+        if (item != nullptr) {
+            stack.push(item);
+            item = item->left;
+        } else {
+            item = stack.top();
+            stack.pop();
+            queue.enQueue(item);
+            item = item->right;
+        }
+    }
+
+    item = other.root_;
+    while (item != nullptr || !stack.empty()) {
+        if (item != nullptr) {
+            stack.push(item);
+            item = item->left;
+        } else {
+            item = stack.top();
+            stack.pop();
+            if (queue.deQueue()->key != item->key) {
+                return false;
+            }
+            item = item->right;
+        }
+    }
+    return true;
+}
+
+template<typename T>
+void BinarySearchTree<T>::intersection(BinarySearchTree<T> &other) {
+    CircleQueue<Node*> queue(size);
+    std::stack<Node*> stack;
+
+    Node *item = root_;
+    while (item != nullptr || !stack.empty()) {
+        if (item != nullptr) {
+            stack.push(item);
+            item = item->left;
+        } else {
+            item = stack.top();
+            stack.pop();
+            queue.enQueue(item);
+            item = item->right;
+        }
+    }
+
+
+    item = other.root_;
+    while (item != nullptr || !stack.empty()) {
+        if (queue.isEmpty()) {
+            std::cout << "END";
+            break;
+        }
+        if (item != nullptr) {
+            stack.push(item);
+            item = item->left;
+        } else {
+            item = stack.top();
+            stack.pop();
+            Node* temp = queue.deQueue();
+            while(item->key < temp->key && !stack.empty()) {
+                item = stack.top();
+                stack.pop();
+            }
+            if (temp->key == item->key) {
+                std::cout << item->key << " ";
+            }
+            item = item->right;
+        }
+    }
+
+    std::cout << std::endl;
 }
 
 template class BinarySearchTree<int>;
